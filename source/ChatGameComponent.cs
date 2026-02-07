@@ -53,9 +53,7 @@ namespace EchoColony
     // Usar el formato nativo de RimWorld (ya completamente localizado)
     string nativeDate = GenDate.DateFullStringWithHourAt(GenTicks.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile));
     string[] parts = nativeDate.Split(' ');
-	string yearWithoutComma = parts[5].TrimEnd(',');
-	//{parts[0]} = Day; {parts[1]} = "number day"º.; {parts[2]} = of; {parts[3]} = Quantum; {parts[4]} = of; {tearWithoutComma = year}
-    string dateOnly = parts.Length >= 6 ? $"{parts[0]} {parts[1]} {parts[2]} {parts[3]} {parts[4]} {yearWithoutComma}" : nativeDate;
+    string dateOnly = parts.Length >= 3 ? $"{parts[0]} {parts[1]} {parts[2]}" : nativeDate;
     
     return $"--- {dateOnly} ---";
 }

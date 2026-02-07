@@ -10,7 +10,6 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <BaseOutputPath>D:\rimworld 1.6\EchoColony-main\EchoColony-main\1.6\Assemblies</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

@@ -351,20 +351,15 @@ namespace EchoColony
 
         public void ExposeData()
         {
-            if (Scribe.mode == LoadSaveMode.LoadingVars)
-            {
-                dailyMemories = new Dictionary<int, Dictionary<string, string>>();
-            }
-
             if (Scribe.mode == LoadSaveMode.Saving)
             {
-                List<int> Sdays = new List<int>();
-                List<List<string>> SgroupKeys = new List<List<string>>();
-                List<List<string>> SgroupValues = new List<List<string>>();
+                List<int> days = new List<int>();
+                List<List<string>> groupKeys = new List<List<string>>();
+                List<List<string>> groupValues = new List<List<string>>();
 
                 foreach (var kvp in dailyMemories)
                 {
-                    Sdays.Add(kvp.Key);
+                    days.Add(kvp.Key);
                     List<string> keys = new List<string>();
                     List<string> values = new List<string>();
 
@@ -374,53 +369,54 @@ namespace EchoColony
                         values.Add(pair.Value);
                     }
 
-                    SgroupKeys.Add(keys);
-                    SgroupValues.Add(values);
+                    groupKeys.Add(keys);
+                    groupValues.Add(values);
                 }
 
-                Scribe_Collections.Look(ref Sdays, "days", LookMode.Value);
-                Scribe_Collections.Look(ref SgroupKeys, "groupKeys", LookMode.Value, LookMode.Value);
-                Scribe_Collections.Look(ref SgroupValues, "groupValues", LookMode.Value, LookMode.Value);
+                Scribe_Collections.Look(ref days, "days", LookMode.Value);
+                Scribe_Collections.Look(ref groupKeys, "groupKeys", LookMode.Value, LookMode.Value);
+                Scribe_Collections.Look(ref groupValues, "groupValues", LookMode.Value, LookMode.Value);
             }
 
-            
-            List<int> days = null;
-            List<List<string>> groupKeys = null;
-            List<List<string>> groupValues = null;
-
-            Scribe_Collections.Look(ref days, "days", LookMode.Value);
-            Scribe_Collections.Look(ref groupKeys, "groupKeys", LookMode.Value, LookMode.Value);
-            Scribe_Collections.Look(ref groupValues, "groupValues", LookMode.Value, LookMode.Value);
-
-
-            if (Scribe.mode == LoadSaveMode.LoadingVars && days != null)
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
-                dailyMemories.Clear();
-                for (int i = 0; i < days.Count; i++)
+                List<int> days = null;
+                List<List<string>> groupKeys = null;
+                List<List<string>> groupValues = null;
+
+                Scribe_Collections.Look(ref days, "days", LookMode.Value);
+                Scribe_Collections.Look(ref groupKeys, "groupKeys", LookMode.Value, LookMode.Value);
+                Scribe_Collections.Look(ref groupValues, "groupValues", LookMode.Value, LookMode.Value);
+
+                if (days != null && groupKeys != null && groupValues != null)
                 {
-                    Dictionary<string, string> groupData = new Dictionary<string, string>();
-                        
-                    // ✅ VERIFICACIÓN DE BOUNDS PARA EVITAR CRASHES
-                    if (i < groupKeys.Count && i < groupValues.Count)
+                    dailyMemories.Clear();
+                    for (int i = 0; i < days.Count; i++)
                     {
-                        for (int j = 0; j < groupKeys[i].Count && j < groupValues[i].Count; j++)
-                        {
-                            string key = groupKeys[i][j];
-                            string val = groupValues[i][j];
-                            groupData[key] = val;
-                        }
-                    }
+                        Dictionary<string, string> groupData = new Dictionary<string, string>();
                         
-                    dailyMemories[days[i]] = groupData;
-                }
+                        // ✅ VERIFICACIÓN DE BOUNDS PARA EVITAR CRASHES
+                        if (i < groupKeys.Count && i < groupValues.Count)
+                        {
+                            for (int j = 0; j < groupKeys[i].Count && j < groupValues[i].Count; j++)
+                            {
+                                string key = groupKeys[i][j];
+                                string val = groupValues[i][j];
+                                groupData[key] = val;
+                            }
+                        }
+                        
+                        dailyMemories[days[i]] = groupData;
+                    }
                     
-                Log.Message($"[EchoColony] 📖 Cargadas {dailyMemories.Count} días de memorias grupales desde save");
-            }
-            else
-            {
-                // ✅ INICIALIZAR SI NO HAY DATOS GUARDADOS
-                dailyMemories = new Dictionary<int, Dictionary<string, string>>();
-                Log.Message("[EchoColony] 📖 Inicializadas memorias grupales vacías (primera vez)");
+                    Log.Message($"[EchoColony] 📖 Cargadas {dailyMemories.Count} días de memorias grupales desde save");
+                }
+                else
+                {
+                    // ✅ INICIALIZAR SI NO HAY DATOS GUARDADOS
+                    dailyMemories = new Dictionary<int, Dictionary<string, string>>();
+                    Log.Message("[EchoColony] 📖 Inicializadas memorias grupales vacías (primera vez)");
+                }
             }
             
             // ✅ INICIALIZACIÓN POST-CARGA

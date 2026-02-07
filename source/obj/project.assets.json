@@ -7,6 +7,7 @@
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
           "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
           "ref/net472/ISharpZipLib.dll": {},
           "ref/net472/Mono.Security.dll": {},
           "ref/net472/NAudio.dll": {},
@@ -261,6 +262,8 @@
         "krafs.rimworld.ref.nuspec",
         "ref/net472/Assembly-CSharp-firstpass.dll",
         "ref/net472/Assembly-CSharp.dll",
+        "ref/net472/Assembly-CSharp_hash.hash",
+        "ref/net472/Assembly-CSharp_publicised.dll",
         "ref/net472/ISharpZipLib.dll",
         "ref/net472/Mono.Security.dll",
         "ref/net472/NAudio.dll",
@@ -973,11 +976,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "D:\\rimworld 1.6\\EchoColony-main\\EchoColony-main\\source\\mod.csproj",
+      "projectUniqueName": "D:\\rimworld 1.6\\EchoColony-main\\source\\mod.csproj",
       "projectName": "EchoColony",
-      "projectPath": "D:\\rimworld 1.6\\EchoColony-main\\EchoColony-main\\source\\mod.csproj",
+      "projectPath": "D:\\rimworld 1.6\\EchoColony-main\\source\\mod.csproj",
       "packagesPath": "C:\\Users\\furel\\.nuget\\packages\\",
-      "outputPath": "D:\\rimworld 1.6\\EchoColony-main\\EchoColony-main\\source\\obj\\",
+      "outputPath": "D:\\rimworld 1.6\\EchoColony-main\\source\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1010,7 +1013,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net472": {
@@ -1030,7 +1033,7 @@
             "version": "[1.0.3, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
