@@ -1,0 +1,446 @@
+using System.Collections.Generic;
+using System.Linq;
+using EchoColony;
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+public class ColonistMemoryViewer : Window
+{
+    private Pawn pawn;
+    private Vector2 scrollPos;
+    private Dictionary<int, string> allMemories;
+    private Dictionary<int, Vector2> entryScrollPositions = new Dictionary<int, Vector2>();
+    private Dictionary<int, bool> entryExpandedStates = new Dictionary<int, bool>();
+    
+    // Debouncing system for memory editing
+    private Dictionary<int, float> lastEditTimes = new Dictionary<int, float>();
+    private Dictionary<int, string> pendingEdits = new Dictionary<int, string>();
+    private const float EDIT_DEBOUNCE_TIME = 2.0f;
+
+    public ColonistMemoryViewer(Pawn pawn)
+    {
+        this.pawn = pawn;
+        this.doCloseX = true;
+        this.absorbInputAroundWindow = true;
+        this.forcePause = true;
+        this.closeOnClickedOutside = false;
+
+        LoadMemories();
+    }
+
+    private bool ContainsMultipleColonistNames(string memory)
+    {
+        if (string.IsNullOrEmpty(memory)) return false;
+
+        var allColonists = Find.CurrentMap?.mapPawns?.FreeColonists;
+        if (allColonists == null) return false;
+
+        int colonistNamesFound = 0;
+        
+        foreach (var colonist in allColonists)
+        {
+            if (memory.Contains(colonist.LabelShort) || 
+                memory.Contains(colonist.Name?.ToStringShort ?? ""))
+            {
+                colonistNamesFound++;
+                if (colonistNamesFound >= 2)
+                    return true;
+            }
+        }
+        
+        return false;
+    }
+
+    private void LoadMemories()
+    {
+        // ✅ CORREGIDO: Usar GetOrCreate()
+        var manager = ColonistMemoryManager.GetOrCreate();
+        var tracker = manager?.GetTrackerFor(pawn);
+
+        var savedMemories = tracker?.GetAllMemories();
+        allMemories = savedMemories != null
+            ? new Dictionary<int, string>(savedMemories)
+            : new Dictionary<int, string>();
+
+        int currentDay = GenDate.DaysPassed;
+
+        // Carga la memoria/interacciones en curso del día de hoy desde GetCurrentDayMemoryFormatted
+        if (!allMemories.ContainsKey(currentDay) && tracker != null)
+        {
+            string todayFormatted = tracker.GetCurrentDayMemoryFormatted();
+            if (!string.IsNullOrWhiteSpace(todayFormatted) &&
+                !todayFormatted.StartsWith("*You haven't interacted"))
+            {
+                allMemories[currentDay] = todayFormatted;
+            }
+        }
+
+        foreach (var day in allMemories.Keys)
+        {
+            if (!entryScrollPositions.ContainsKey(day))
+                entryScrollPositions[day] = Vector2.zero;
+            
+            if (!entryExpandedStates.ContainsKey(day))
+                entryExpandedStates[day] = false;
+        }
+
+        Log.Message($"[EchoColony] {"EchoColony.MemoriesLoaded".Translate(allMemories.Count, pawn.LabelShort)}");
+    }
+
+    public override Vector2 InitialSize => new Vector2(750f, 600f);
+
+    public override void DoWindowContents(Rect inRect)
+    {
+
+        // Header
+        Text.Font = GameFont.Medium;
+        var headerRect = new Rect(0f, 0f, inRect.width, 50f);
+        
+        Widgets.DrawBoxSolid(headerRect, new Color(0.15f, 0.2f, 0.3f, 0.9f));
+        
+        Rect portraitRect = new Rect(10f, 10f, 30f, 30f);
+        GUI.DrawTexture(portraitRect, PortraitsCache.Get(pawn, new Vector2(30f, 30f), Rot4.South, default, 1f));
+        
+        Widgets.Label(new Rect(50f, 12f, inRect.width - 150f, 30f), $"🧠 {"EchoColony.MemoriesOf".Translate()} {pawn.LabelCap}");
+        
+        Text.Font = GameFont.Small;
+        GUI.color = new Color(0.8f, 0.9f, 1f);
+        Widgets.Label(new Rect(inRect.width - 140f, 18f, 130f, 25f), $"📚 {allMemories.Count} {"EchoColony.MemoriesEntries".Translate()}");
+        GUI.color = Color.white;
+
+        Text.Font = GameFont.Small;
+        float currentY = 60f;
+
+        // Content area
+        var contentRect = new Rect(0f, currentY, inRect.width, inRect.height - currentY - 50f);
+        
+        if (allMemories.Count == 0)
+        {
+            Widgets.DrawBoxSolid(contentRect, new Color(0.1f, 0.1f, 0.1f, 0.3f));
+            
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Text.Font = GameFont.Medium;
+            GUI.color = new Color(0.6f, 0.6f, 0.6f);
+            Widgets.Label(contentRect, $"📭\n\n{"EchoColony.NoMemoriesSaved".Translate()}\n\n{"EchoColony.MemoriesAutoCreated".Translate()}");
+            GUI.color = Color.white;
+            Text.Anchor = TextAnchor.UpperLeft;
+            Text.Font = GameFont.Small;
+        }
+        else
+        {
+            DrawMemories(contentRect);
+        }
+
+        // Footer
+        var footerRect = new Rect(0f, inRect.height - 40f, inRect.width, 35f);
+        Widgets.DrawBoxSolid(footerRect, new Color(0.1f, 0.1f, 0.1f, 0.8f));
+
+        // Toggle all button
+        var toggleAllRect = new Rect(10f, inRect.height - 35f, 120f, 25f);
+        bool anyExpanded = entryExpandedStates.Values.Any(expanded => expanded);
+        string toggleText = anyExpanded ? $"📁 {"EchoColony.CollapseAll".Translate()}" : $"📂 {"EchoColony.ExpandAll".Translate()}";
+        
+        if (Widgets.ButtonText(toggleAllRect, toggleText))
+        {
+            bool newState = !anyExpanded;
+            var keys = entryExpandedStates.Keys.ToList();
+            foreach (var key in keys)
+            {
+                entryExpandedStates[key] = newState;
+            }
+        }
+
+        // Refresh button
+        var refreshRect = new Rect(inRect.width - 130f, inRect.height - 35f, 120f, 25f);
+        if (Widgets.ButtonText(refreshRect, $"🔄 {"EchoColony.RefreshButton".Translate()}"))
+        {
+            LoadMemories();
+        }
+
+        // Clear all button
+        var clearRect = new Rect(inRect.width - 260f, inRect.height - 35f, 120f, 25f);
+        if (Widgets.ButtonText(clearRect, $"🗑️ {"EchoColony.ClearAllMemories".Translate()}"))
+        {
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
+                "EchoColony.ClearAllMemoriesConfirm".Translate(pawn.LabelShort),
+                () =>
+                {
+                    // ✅ CORREGIDO: Usar GetOrCreate()
+                    var manager = ColonistMemoryManager.GetOrCreate();
+                    var tracker = manager?.GetTrackerFor(pawn);
+                    tracker?.ClearAllMemories();
+                    LoadMemories();
+                    Messages.Message("EchoColony.MemoriesDeleted".Translate(pawn.LabelShort), MessageTypeDefOf.TaskCompletion);
+                }));
+        }
+
+        // Current day info
+        int currentDay = GenDate.DaysPassed;
+        GUI.color = new Color(0.7f, 0.8f, 0.9f);
+        Widgets.Label(new Rect(140f, inRect.height - 30f, 200f, 25f), $"📅 {"EchoColony.CurrentDay".Translate()} {currentDay}");
+        GUI.color = Color.white;
+    }
+
+    private void DrawMemories(Rect contentRect)
+    {
+        float padding = 10f;
+        var scrollRect = new Rect(contentRect.x + padding, contentRect.y + padding, 
+                                 contentRect.width - padding * 2, contentRect.height - padding * 2);
+
+        // Calculate dynamic height based on expansion states
+        float spacing = 15f;
+        float availableWidth = scrollRect.width - 16f;
+
+        // 1. Calculamos el alto total acumulado de todas las entradas dinámicas
+        float totalHeight = 0f;
+        foreach (var kvp in allMemories)
+        {
+            bool isExpanded = entryExpandedStates.ContainsKey(kvp.Key) && entryExpandedStates[kvp.Key];
+            totalHeight += GetEntryHeight(kvp.Value, isExpanded, availableWidth) + spacing;
+        }
+
+        var viewRect = new Rect(0f, 0f, availableWidth, totalHeight);
+
+        Widgets.BeginScrollView(scrollRect, ref scrollPos, viewRect);
+
+        float y = 0f;
+        int entryIndex = 0;
+        
+        foreach (var kvp in allMemories.OrderByDescending(k => k.Key))
+        {
+            int day = kvp.Key;
+            string memory = kvp.Value ?? "";
+            bool isExpanded = entryExpandedStates.ContainsKey(day) ? entryExpandedStates[day] : false;
+
+            // 2. Obtenemos la altura calculada para esta tarjeta específica
+            float currentEntryHeight = GetEntryHeight(memory, isExpanded, viewRect.width);
+            var entryRect = new Rect(0f, y, viewRect.width, currentEntryHeight);
+
+            // Alternating background
+            Color bgColor = entryIndex % 2 == 0 
+                ? new Color(0.12f, 0.15f, 0.2f, 0.8f) 
+                : new Color(0.08f, 0.12f, 0.18f, 0.8f);
+            
+            Widgets.DrawBoxSolid(entryRect, bgColor);
+            
+            // Colored left border
+            int daysDiff = GenDate.DaysPassed - day;
+            Color borderColor = daysDiff == 0 ? Color.green :
+                               daysDiff <= 3 ? Color.yellow :
+                               daysDiff <= 7 ? Color.gray : Color.red;
+            
+            var borderRect = new Rect(0f, y, 4f, currentEntryHeight);
+            Widgets.DrawBoxSolid(borderRect, borderColor);
+
+            // Clickable header for expand/collapse
+            var headerRect = new Rect(15f, y + 8f, viewRect.width - 200f, 25f);
+            
+            if (Widgets.ButtonInvisible(headerRect))
+            {
+                entryExpandedStates[day] = !isExpanded;
+            }
+
+            // Expansion icon
+            string expandIcon = isExpanded ? "▼" : "▶";
+            GUI.color = Color.white;
+            Widgets.Label(new Rect(15f, y + 8f, 20f, 25f), expandIcon);
+            
+            // Date and age
+            Text.Font = GameFont.Small;
+            GUI.color = Color.cyan;
+            string dayText = day == GenDate.DaysPassed ? "EchoColony.Today".Translate().ToString() : "EchoColony.Day".Translate().ToString() + " " + day;
+            string ageText = daysDiff == 0 ? "" : 
+                           daysDiff == 1 ? " " + "EchoColony.Yesterday".Translate().ToString() : 
+                           $" ({daysDiff} " + "EchoColony.DaysAgo".Translate().ToString() + ")";
+            Widgets.Label(new Rect(40f, y + 8f, 200f, 25f), $"📅 {dayText}{ageText}");
+            
+            // Source indicator
+            bool isGroupMemory = memory.StartsWith("[Conversación grupal") || 
+                               memory.Contains("conversación grupal") || 
+                               memory.Contains("Conversación grupal") ||
+                               ContainsMultipleColonistNames(memory);
+            
+            GUI.color = isGroupMemory 
+                ? new Color(0.7f, 0.9f, 1f)
+                : new Color(0.9f, 1f, 0.7f);
+            
+            string sourceIcon = isGroupMemory ? "👥" : "💬";
+            Widgets.Label(new Rect(viewRect.width - 50f, y + 8f, 40f, 25f), sourceIcon);
+            GUI.color = Color.white;
+
+            // Expandable content
+            if (isExpanded)
+            {
+                var memoryContentRect = new Rect(15f, y + 40f, viewRect.width - 30f, currentEntryHeight - 50f);
+                DrawMemoryContent(memoryContentRect, day, memory);
+            }
+            else
+            {
+                // Collapsed preview
+                var previewRect = new Rect(15f, y + 35f, viewRect.width - 30f, 35f);
+                Text.Font = GameFont.Tiny;
+                GUI.color = new Color(0.8f, 0.8f, 0.8f);
+                
+                string preview = memory.Length > 100 ? memory.Substring(0, 100) + "..." : memory;
+                preview = preview.Replace("\n", " ").Replace("\r", "");
+                
+                Widgets.Label(previewRect, preview);
+                GUI.color = Color.white;
+            }
+
+            y += currentEntryHeight + spacing;
+            entryIndex++;
+        }
+
+        Widgets.EndScrollView();
+        Text.Font = GameFont.Small;
+    }
+
+    // Draw memory content with debounced editing
+    private void DrawMemoryContent(Rect contentRect, int day, string memory)
+    {
+        Widgets.DrawBoxSolid(contentRect, new Color(0.05f, 0.08f, 0.12f, 0.9f));
+        
+        var scrollArea = new Rect(contentRect.x + 5f, contentRect.y + 5f, 
+                                 contentRect.width - 15f, contentRect.height - 10f);
+        
+        Text.Font = GameFont.Tiny;
+        Text.WordWrap = true;
+        
+        float availableTextWidth = scrollArea.width - 20f;
+        float requiredTextHeight = Text.CalcHeight(memory, availableTextWidth);
+        float minHeight = scrollArea.height + 10f;
+        float finalTextHeight = Mathf.Max(requiredTextHeight + 20f, minHeight);
+        
+        var viewRect = new Rect(0f, 0f, availableTextWidth, finalTextHeight);
+        
+        Vector2 currentScrollPos = entryScrollPositions.ContainsKey(day) ? entryScrollPositions[day] : Vector2.zero;
+        
+        Widgets.BeginScrollView(scrollArea, ref currentScrollPos, viewRect);
+        
+        var textRect = new Rect(0f, 0f, viewRect.width, viewRect.height);
+        
+        try
+        {
+            Text.Font = GameFont.Tiny;
+            Text.WordWrap = true;
+            
+            string newMemory = Widgets.TextArea(textRect, memory);
+            
+            if (newMemory != memory)
+            {
+                allMemories[day] = newMemory;
+                pendingEdits[day] = newMemory;
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Log.Warning($"[EchoColony] Error in TextArea for memory day {day}: {ex.Message}");
+            
+            GUI.color = new Color(0.9f, 0.9f, 0.9f);
+            Widgets.Label(textRect, memory);
+            GUI.color = Color.white;
+        }
+        
+        Widgets.EndScrollView();
+        
+        entryScrollPositions[day] = currentScrollPos;
+
+        // Individual delete button
+        var deleteRect = new Rect(contentRect.xMax - 23f, contentRect.y - 25f, 20f, 20f);
+        GUI.color = new Color(1f, 0.4f, 0.4f);
+        TooltipHandler.TipRegion(deleteRect, "EchoColony.DeleteMemoryTooltip".Translate());
+        
+        if (Widgets.ButtonText(deleteRect, "×"))
+        {
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
+                "EchoColony.DeleteMemoryConfirm".Translate(day),
+                () =>
+                {
+                    // ✅ CORREGIDO: Usar GetOrCreate()
+                    var manager = ColonistMemoryManager.GetOrCreate();
+                    var tracker = manager?.GetTrackerFor(pawn);
+                    tracker?.RemoveMemoryForDay(day);
+                    allMemories.Remove(day);
+                    entryScrollPositions.Remove(day);
+                    entryExpandedStates.Remove(day);
+                    
+                    // Clean up any pending edits for this entry
+                    if (pendingEdits.ContainsKey(day))
+                        pendingEdits.Remove(day);
+                    if (lastEditTimes.ContainsKey(day))
+                        lastEditTimes.Remove(day);
+                        
+                    Messages.Message("EchoColony.MemoryDeleted".Translate(), MessageTypeDefOf.TaskCompletion);
+                }));
+        }
+        GUI.color = Color.white;
+
+        Text.WordWrap = false;
+        Text.Font = GameFont.Small;
+
+        // BOTÓN PROCESAR IA (✨)
+        var aiBtnRect = new Rect(deleteRect.x - 105f, contentRect.y - 25f, 100f, 20f);
+
+        bool hasChanges = pendingEdits.ContainsKey(day);
+        if (hasChanges) GUI.color = new Color(0.6f, 0.8f, 1f);
+
+        if (Widgets.ButtonText(aiBtnRect, "✨ Process with IA"))
+        {
+            if (pendingEdits.ContainsKey(day))
+            {
+                // ✅ CORREGIDO: Usar GetOrCreate()
+                var manager = ColonistMemoryManager.GetOrCreate();
+                var tracker = manager?.GetTrackerFor(pawn);
+                tracker?.OptimizeCustomMemoryWithAI(day, pendingEdits[day]);
+
+                pendingEdits.Remove(day);
+                Messages.Message("La IA está personificando tu nota...", MessageTypeDefOf.TaskCompletion);
+            }
+        }
+        GUI.color = Color.white;
+    }
+
+    private float GetEntryHeight(string memory, bool isExpanded, float width)
+    {
+        if (!isExpanded)
+            return 80f; // Altura colapsada estándar
+
+        // Ancho útil disponible para el texto dentro del recuadro
+        float textWidth = width - 50f;
+
+        // Medimos la altura exacta que ocupará la fuente GameFont.Tiny
+        Text.Font = GameFont.Tiny;
+        float requiredTextHeight = Text.CalcHeight(memory ?? "", textWidth);
+        Text.Font = GameFont.Small;
+
+        // Sumamos ~65px para cabeceras, márgenes y botones
+        float totalCalculated = requiredTextHeight + 65f;
+
+        // Mínimo 180px, Máximo 400px (ajustable)
+        return Mathf.Clamp(totalCalculated, 180f, 400f);
+    }
+
+    public override void PostClose()
+    {
+        base.PostClose();
+
+        // ✅ CORREGIDO: Usar GetOrCreate()
+        var manager = ColonistMemoryManager.GetOrCreate();
+        var tracker = manager?.GetTrackerFor(pawn);
+
+        if (tracker != null && pendingEdits.Count > 0)
+        {
+            int count = 0;
+            foreach (var edit in pendingEdits)
+            {
+                tracker.UpdateMemory(edit.Key, edit.Value);
+                count++;
+            }
+
+            Log.Message($"[EchoColony] Guardado finalizado: {count} memorias actualizadas localmente al cerrar ventana.");
+            pendingEdits.Clear();
+        }
+    }
+}

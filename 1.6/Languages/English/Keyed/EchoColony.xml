@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <EchoColony.EnableSocialAffectsPersonality>💬 Social skill affects personality</EchoColony.EnableSocialAffectsPersonality>
+  <EchoColony.EnableRoleplayResponses>🎭 Enable roleplay-style responses</EchoColony.EnableRoleplayResponses>
+  <EchoColony.ModelSource>🌐 Model source:</EchoColony.ModelSource>
+  <EchoColony.UseGemini>Use Gemini (cloud-based)</EchoColony.UseGemini>
+  <EchoColony.UseLocal>Use local model (e.g., Ollama, KoboldAI, LM Studio)</EchoColony.UseLocal>
+  <EchoColony.UseOpenRouter>Use OpenRouter (external hosted)</EchoColony.UseOpenRouter>
+  <EchoColony.LocalModelProvider>Local Model Provider:</EchoColony.LocalModelProvider>
+  <EchoColony.LocalModelEndpoint>Local model endpoint:</EchoColony.LocalModelEndpoint>
+  <EchoColony.LocalModelName>Name model:</EchoColony.LocalModelName>
+  <EchoColony.OpenRouterEndpoint>OpenRouter endpoint:</EchoColony.OpenRouterEndpoint>
+  <EchoColony.OpenRouterAPIKey>OpenRouter API Key:</EchoColony.OpenRouterAPIKey>
+  <EchoColony.GeminiAPIKey>Gemini API Key:</EchoColony.GeminiAPIKey>
+  <EchoColony.Model>Model:</EchoColony.Model>
+  <EchoColony.GlobalPrompt>Global prompt (applies to all colonists):</EchoColony.GlobalPrompt>
+  <EchoColony.MaxResponseLength>Character limit per response: {0}</EchoColony.MaxResponseLength>
+  <EchoColony.SaveButton>Save</EchoColony.SaveButton>
+  
+  <EchoColony.ChatSessionTimeoutUnlimited>Unlimited</EchoColony.ChatSessionTimeoutUnlimited>
+  <EchoColony.ChatSessionTimeoutHours>Chat retention</EchoColony.ChatSessionTimeoutHours>
+  <EchoColony.ChatSessionTimeoutHoursTooltip>Time in game hours during which the context of the current conversation will be maintained. After this time, the chat will not be included in the prompt, but the memories will. Set to 0 for unlimited retention.</EchoColony.ChatSessionTimeoutHoursTooltip>
+  
+    <!-- ======== Gizmos ========= -->
+  <EchoColony.ChatGizmoLabel>Talk</EchoColony.ChatGizmoLabel>
+  <EchoColony.ChatGizmoDesc>Start a conversation with this colonist.</EchoColony.ChatGizmoDesc>
+  <EchoColony.ChatGizmoChatPris>Talk to Prisoner</EchoColony.ChatGizmoChatPris>
+  <EchoColony.ChatGizmoChatPDes>Have a conversation with this prisoner.</EchoColony.ChatGizmoChatPDes>
+  <EchoColony.ChatGizmoChatSlave>Talk to Slave</EchoColony.ChatGizmoChatSlave>
+  <EchoColony.ChatGizmoChatSDes>Have a conversation with this slave.</EchoColony.ChatGizmoChatSDes>
+  <EchoColony.GroupChat>Group conversation</EchoColony.GroupChat>
+  <EchoColony.GroupChatDesc>Start a group chat with nearby colonists.</EchoColony.GroupChatDesc> 
+  
+  <EchoColony.SendButton>Send</EchoColony.SendButton>
+  <EchoColony.GeminiTooltip>
+    gemini flash: Fast and light.
+    gemini pro: More immersive, but slower and more demanding.
+  </EchoColony.GeminiTooltip>
+  <EchoColony.ExportButton>Export</EchoColony.ExportButton>
+  <EchoColony.PersonalizeButton>Personalize...</EchoColony.PersonalizeButton>
+  <EchoColony.TalkingWithLabel>💬 Talking with {0}</EchoColony.TalkingWithLabel>
+  <EchoColony.UserPrefix>You: </EchoColony.UserPrefix>
+  <EchoColony.ColonistThinking>{0}: Thinking...</EchoColony.ColonistThinking>
+  <EchoColony.UndoTooltip>Undo this message and response</EchoColony.UndoTooltip>
+  <EchoColony.DebugModeLabel>Enable Debug Mode (Save AI responses to Desktop)</EchoColony.DebugModeLabel>
+  <EchoColony.DebugModeTooltip>Creates a text file with each AI response to help diagnose issues. Only activate if necessary.</EchoColony.DebugModeTooltip>
+  <EchoColony.ClearAllButton>Clear all</EchoColony.ClearAllButton>
+  <EchoColony.ClearAllConfirm>Are you sure you want to delete the entire conversation?</EchoColony.ClearAllConfirm>
+  <EchoColony.LastExchangeDeleted>🗑 Last exchange deleted.</EchoColony.LastExchangeDeleted>
+  <EchoColony.EditButton>Edit</EchoColony.EditButton>
+  <EchoColony.RegenerateButton>Regenerate</EchoColony.RegenerateButton>
+  <EchoColony.SaveButton>Save</EchoColony.SaveButton>
+  <EchoColony.CancelButton>Cancel</EchoColony.CancelButton>
+  <EchoColony.OpenRouterModel>OpenRouter Model</EchoColony.OpenRouterModel>
+  <EchoColony.ChooseVoiceTitle>Choose voice for {0}:</EchoColony.ChooseVoiceTitle>
+  <EchoColony.PlayAudio>Play Audio</EchoColony.PlayAudio>
+  <EchoColony.VoiceLabel>Voice:</EchoColony.VoiceLabel>
+  <EchoColony.ImportPlayer2Button>Import Player2</EchoColony.ImportPlayer2Button>
+  <EchoColony.PlayTestAudioTooltip>Play test audio</EchoColony.PlayTestAudioTooltip>
+  <EchoColony.TestTextLabel>Test text:</EchoColony.TestTextLabel>
+  <EchoColony.SelectVoicePlaceholder>Select voice</EchoColony.SelectVoicePlaceholder>
+  <EchoColony.UsePlayer2Label>Use Player2</EchoColony.UsePlayer2Label>
+  <EchoColony.UsePlayer2Tooltip>You just need Player2 running and logged in. No API key or extra setup required.</EchoColony.UsePlayer2Tooltip>
+  <EchoColony.Player2Warning>⚠️ Player2 is active. Other model settings are ignored.</EchoColony.Player2Warning>
+  <EchoColony.EnableTTS>Enable TTS (text to speech)</EchoColony.EnableTTS>
+  <EchoColony.AutoPlayVoice>Auto-play voice on each reply</EchoColony.AutoPlayVoice>
+
+  <EchoColony.MemoriesOf>Memories of</EchoColony.MemoriesOf>
+  <EchoColony.MemoriesEntries>entries</EchoColony.MemoriesEntries>
+  <EchoColony.NoMemoriesSaved>No memories saved</EchoColony.NoMemoriesSaved>
+  <EchoColony.MemoriesAutoCreated>Memories will be created automatically\nwhen closing conversations</EchoColony.MemoriesAutoCreated>
+  <EchoColony.CollapseAll>Collapse All</EchoColony.CollapseAll>
+  <EchoColony.ExpandAll>Expand All</EchoColony.ExpandAll>
+  <EchoColony.RefreshButton>Refresh</EchoColony.RefreshButton>
+  <EchoColony.ClearAllMemories>Clear All</EchoColony.ClearAllMemories>
+  <EchoColony.ClearAllMemoriesConfirm>Are you sure you want to delete all memories of {0}?\n\nThis action cannot be undone.</EchoColony.ClearAllMemoriesConfirm>
+  <EchoColony.MemoriesDeleted>Memories of {0} deleted</EchoColony.MemoriesDeleted>
+  <EchoColony.CurrentDay>Current day:</EchoColony.CurrentDay>
+  <EchoColony.Today>TODAY</EchoColony.Today>
+  <EchoColony.Day>Day</EchoColony.Day>
+  <EchoColony.Yesterday>(yesterday)</EchoColony.Yesterday>
+  <EchoColony.DaysAgo>(days ago)</EchoColony.DaysAgo>
+  <EchoColony.DeleteMemoryConfirm>Delete this memory from day {0}?</EchoColony.DeleteMemoryConfirm>
+  <EchoColony.MemoryDeleted>Memory deleted</EchoColony.MemoryDeleted>
+  <EchoColony.MemoryEdited>Memory edited for {0} day {1}</EchoColony.MemoryEdited>
+  <EchoColony.MemoriesLoaded>Loaded {0} memories for {1}</EchoColony.MemoriesLoaded>
+
+  <EchoColony.ColonistJoins>{0} joins the conversation.</EchoColony.ColonistJoins>
+  <EchoColony.ColonistNoLongerPresent>{0} is no longer part of this conversation.</EchoColony.ColonistNoLongerPresent>
+  <EchoColony.AllColonistsGone>The conversation comes to an end.</EchoColony.AllColonistsGone>
+  <EchoColony.SavingMemories>Recording memories of the conversation...</EchoColony.SavingMemories>
+  <EchoColony.MemoriesSaved>Conversation memories recorded</EchoColony.MemoriesSaved>
+  
+<!-- ===== Group Chat Window ===== -->
+  <EchoColony.GCWExpotB>Export</EchoColony.GCWExpotB>
+  <EchoColony.GCWClearB>Clear</EchoColony.GCWClearB>
+  <EchoColony.GroupChatLabel>Group conversation with</EchoColony.GroupChatLabel>
+  <EchoColony.GCWHideMemB>Hide Members</EchoColony.GCWHideMemB>
+  <EchoColony.GCWManegeMemB>Manage Members</EchoColony.GCWManegeMemB>
+  <EchoColony.GCWManagerColonNear>Colonists nearby: ({0}) </EchoColony.GCWManagerColonNear>
+  <EchoColony.GCWManagerKickedOut>Previously removed: ({0})</EchoColony.GCWManagerKickedOut>
+  <EchoColony.GCWClearMessage>Are you sure you want to clear the entire chat history?</EchoColony.GCWClearMessage>
+  <EchoColony.GCWClearConfirmation>Chat cleared</EchoColony.GCWClearConfirmation>
+  <EchoColony.GCWSelectMode>Selection mode</EchoColony.GCWSelectMode>
+  <EchoColony.GCWModeRoom>Room</EchoColony.GCWModeRoom>
+  <EchoColony.GCWModeArea>Area</EchoColony.GCWModeArea>
+  <EchoColony.GCWModeMap>Map</EchoColony.GCWModeMap>
+  <EchoColony.GCWReAdd>Re-Add</EchoColony.GCWReAdd>
+  <EchoColony.GCWAdd>Add</EchoColony.GCWAdd>
+  <EchoColony.GCWSend>Send</EchoColony.GCWSend>
+  
+  <!-- ===== PROMPT EDITOR ===== -->
+  <EchoColony.PersonalizingTitle>Customizing: {0}</EchoColony.PersonalizingTitle>
+  <EchoColony.MemoriesButton>🧠 Memories</EchoColony.MemoriesButton>
+  <EchoColony.MemoriesTooltip>View and edit {0}'s memories
+
+Memories are automatically generated during conversations and help the colonist remember past interactions.</EchoColony.MemoriesTooltip>
+
+  <!-- Voice Configuration -->
+  <EchoColony.VoiceConfigurationTitle>🎵 Voice Configuration</EchoColony.VoiceConfigurationTitle>
+  <EchoColony.ImportButton>📥 Import</EchoColony.ImportButton>
+  <EchoColony.TestButton>▶ Test</EchoColony.TestButton>
+  <EchoColony.TestVoiceTooltip>Play test text with the selected voice</EchoColony.TestVoiceTooltip>
+
+  <!-- Custom Prompt -->
+  <EchoColony.CustomPromptTitle>📝 Custom Prompt</EchoColony.CustomPromptTitle>
+
+  <!-- Messages -->
+  <EchoColony.ConfigurationSaved>Configuration saved for {0}</EchoColony.ConfigurationSaved>
+  <EchoColony.NoCharactersFound>⚠️ No characters found in Player2. Make sure Player2 is running and has characters loaded.</EchoColony.NoCharactersFound>
+  <EchoColony.CharacterImportedAuto>✅ Automatically imported {0}'s description and voice.</EchoColony.CharacterImportedAuto>
+  <EchoColony.CharacterImported>✅ Imported {0}'s description and voice.</EchoColony.CharacterImported>
+  <EchoColony.IgnoreAgeLabel>Ignore biological age for behavior</EchoColony.IgnoreAgeLabel>
+  <EchoColony.IgnoreAgeTooltip>Use for synthetic or alien colonists to ignore age-based behavior.</EchoColony.IgnoreAgeTooltip>
+
+  <EchoColony.IgnoreDangers>Colonists ignore dangers in conversations</EchoColony.IgnoreDangers>
+  <EchoColony.IgnoreDangersTooltip>When enabled, colonists will not mention enemies, threats, or combat situations in their conversations. They will focus on daily life, relationships, work, and peaceful topics instead.</EchoColony.IgnoreDangersTooltip>
+  
+  
+  <!-- Memorias Sistema -->
+  <EchoColony.EnableMemorySystem>Enable Memory System</EchoColony.EnableMemorySystem>
+  <EchoColony.EnableMemorySystemTooltip>When enabled, colonists will remember past conversations. This uses more AI tokens but creates more immersive roleplay. Disable to reduce API costs.</EchoColony.EnableMemorySystemTooltip>
+  
+  <EchoColony.MemorySystemEnabled>Memory system is active - colonists will remember conversations</EchoColony.MemorySystemEnabled>
+  <EchoColony.MemorySystemDisabled>Memory system is disabled - conversations won't be saved to memory</EchoColony.MemorySystemDisabled>
+  
+  <EchoColony.DisableMemorySystemConfirm>You are about to disable the memory system. Do you want to delete all existing memories to free up save file space?\n\nNote: This action cannot be undone.</EchoColony.DisableMemorySystemConfirm>
+  
+  <!-- Herramientas de Debug de Memorias -->
+  <EchoColony.MemoryDebugTools>Memory Debug Tools</EchoColony.MemoryDebugTools>
+  <EchoColony.CheckMemoryState>Check Memory System State</EchoColony.CheckMemoryState>
+  <EchoColony.ForceCleanMemories>Force Clean All Memories</EchoColony.ForceCleanMemories>
+  <EchoColony.ForceCleanMemoriesConfirm>This will permanently delete ALL memories for ALL colonists. This action cannot be undone.\n\nAre you sure you want to continue?</EchoColony.ForceCleanMemoriesConfirm>
+  
+  <!-- Visor de Memorias -->
+  <EchoColony.MemoriesLoaded>Loaded {0} memories for {1}</EchoColony.MemoriesLoaded>
+  <EchoColony.MemoriesOf>Memories of</EchoColony.MemoriesOf>
+  <EchoColony.MemoriesEntries>entries</EchoColony.MemoriesEntries>
+  <EchoColony.NoMemoriesSaved>No memories saved yet</EchoColony.NoMemoriesSaved>
+  <EchoColony.MemoriesAutoCreated>Memories will be automatically created from conversations</EchoColony.MemoriesAutoCreated>
+  
+  <EchoColony.CollapseAll>Collapse All</EchoColony.CollapseAll>
+  <EchoColony.ExpandAll>Expand All</EchoColony.ExpandAll>
+  <EchoColony.RefreshButton>Refresh</EchoColony.RefreshButton>
+  <EchoColony.ClearAllMemories>Clear All</EchoColony.ClearAllMemories>
+  <EchoColony.ClearAllMemoriesConfirm>Are you sure you want to delete all memories for {0}? This action cannot be undone.</EchoColony.ClearAllMemoriesConfirm>
+  <EchoColony.CurrentDay>Current day</EchoColony.CurrentDay>
+  
+  <EchoColony.Today>Today</EchoColony.Today>
+  <EchoColony.Day>Day</EchoColony.Day>
+  <EchoColony.Yesterday>yesterday</EchoColony.Yesterday>
+  <EchoColony.DaysAgo>days ago</EchoColony.DaysAgo>
+  
+  <EchoColony.DeleteMemoryTooltip>Delete this memory</EchoColony.DeleteMemoryTooltip>
+  <EchoColony.DeleteMemoryConfirm>Are you sure you want to delete the memory from day {0}?</EchoColony.DeleteMemoryConfirm>
+  
+  <EchoColony.MemoryEdited>Memory for {0} (day {1}) has been edited</EchoColony.MemoryEdited>
+  <EchoColony.MemoriesDeleted>Memories deleted for {0}</EchoColony.MemoriesDeleted>
+  <EchoColony.MemoryDeleted>Memory deleted</EchoColony.MemoryDeleted>
+  
+  <!-- ===== SPONTANEOUS MESSAGES SYSTEM ===== -->
+  
+  <!-- Settings Section -->
+  <EchoColony.SpontaneousMessagesTitle>Spontaneous Messages System</EchoColony.SpontaneousMessagesTitle>
+  <EchoColony.SpontaneousMessageMode>Message Mode:</EchoColony.SpontaneousMessageMode>
+  <EchoColony.SpontaneousMode.Disabled>Disabled</EchoColony.SpontaneousMode.Disabled>
+  <EchoColony.SpontaneousMode.RandomOnly>Random Only</EchoColony.SpontaneousMode.RandomOnly>
+  <EchoColony.SpontaneousMode.IncidentsOnly>Incidents Only</EchoColony.SpontaneousMode.IncidentsOnly>
+  <EchoColony.SpontaneousMode.Full>Full (Random + Incidents)</EchoColony.SpontaneousMode.Full>
+  
+  <EchoColony.MaxMessagesPerDay>Max messages per colonist per day:</EchoColony.MaxMessagesPerDay>
+  <EchoColony.CooldownHours>Cooldown between messages (hours):</EchoColony.CooldownHours>
+  <EchoColony.RandomMessageInterval>Random message interval (hours):</EchoColony.RandomMessageInterval>
+  <EchoColony.PrioritizeSocialTraits>Prioritize colonists with social traits</EchoColony.PrioritizeSocialTraits>
+  <EchoColony.MinConsciousness>Minimum consciousness to speak (%):</EchoColony.MinConsciousness>
+  <EchoColony.ConfigureIndividualColonists>Configure Individual Colonists</EchoColony.ConfigureIndividualColonists>
+  <EchoColony.NeedActiveGame>Need an active game to configure colonists</EchoColony.NeedActiveGame>
+  
+  <!-- Colonist Message Letter -->
+  <EchoColony.ColonistWantsToTalk>{0} wants to talk</EchoColony.ColonistWantsToTalk>
+  
+  <!-- Colonist Message Dialog -->
+  <EchoColony.OpenChat>Open Chat</EchoColony.OpenChat>
+  <EchoColony.Dismiss>Dismiss</EchoColony.Dismiss>
+  
+  <!-- Context strings for message types -->
+  <EchoColony.MessageType.Incident>Wants to talk about an incident</EchoColony.MessageType.Incident>
+  <EchoColony.MessageType.Random>Wants to have a casual chat</EchoColony.MessageType.Random>
+  <EchoColony.MessageType.CriticalNeed>Urgent message</EchoColony.MessageType.CriticalNeed>
+  <EchoColony.MessageType.ColonySituation>About the colony situation</EchoColony.MessageType.ColonySituation>
+  
+  <!-- Mood descriptions -->
+  <EchoColony.Mood.Happy>Happy</EchoColony.Mood.Happy>
+  <EchoColony.Mood.OK>OK</EchoColony.Mood.OK>
+  <EchoColony.Mood.Sad>Sad</EchoColony.Mood.Sad>
+  
+  <!-- Individual Colonist Config Window -->
+  <EchoColony.ColonistMessageConfig>Colonist Message Configuration</EchoColony.ColonistMessageConfig>
+  <EchoColony.EnabledColumn>Enabled</EchoColony.EnabledColumn>
+  <EchoColony.ColonistColumn>Colonist</EchoColony.ColonistColumn>
+  <EchoColony.MaxPerDayColumn>Max/Day</EchoColony.MaxPerDayColumn>
+  <EchoColony.CooldownColumn>Cooldown (h)</EchoColony.CooldownColumn>
+  <EchoColony.TriggersColumn>Triggers</EchoColony.TriggersColumn>
+  <EchoColony.ApplyToAll>Apply to All</EchoColony.ApplyToAll>
+  <EchoColony.ResetDefaults>Reset Defaults</EchoColony.ResetDefaults>
+  <EchoColony.ConfigureTriggers>Configure Triggers</EchoColony.ConfigureTriggers>
+  
+  <!-- Trigger Configuration -->
+  <EchoColony.TriggerConfig>Configure Triggers for {0}</EchoColony.TriggerConfig>
+  <EchoColony.AllowedTriggers>Allowed Triggers:</EchoColony.AllowedTriggers>
+  <EchoColony.Trigger.Random>Random messages</EchoColony.Trigger.Random>
+  <EchoColony.Trigger.Incident>Incident reactions</EchoColony.Trigger.Incident>
+  <EchoColony.Trigger.CriticalNeed>Critical needs (hunger, exhaustion, etc.)</EchoColony.Trigger.CriticalNeed>
+  <EchoColony.Trigger.ColonySituation>Colony situation updates</EchoColony.Trigger.ColonySituation>
+  
+  <!-- Debug Tools -->
+  <EchoColony.SpontaneousMessagesDebug>Spontaneous Messages Testing</EchoColony.SpontaneousMessagesDebug>
+  <EchoColony.CheckSystemStatus>🔍 Check System Status</EchoColony.CheckSystemStatus>
+  <EchoColony.ForceTestMessage>✉️ Force Test Message</EchoColony.ForceTestMessage>
+  <EchoColony.SimulateTestRaid>⚔️ Simulate Test Raid</EchoColony.SimulateTestRaid>
+  <EchoColony.ResetAllCooldowns>🔄 Reset All Cooldowns</EchoColony.ResetAllCooldowns>
+  <EchoColony.ListColonistsStatus>📋 List Colonists Status</EchoColony.ListColonistsStatus>
+  
+  <!-- Spontaneous Messages Mode Labels -->
+  <EchoColony.SpontaneousMessagesMode>Message Mode:</EchoColony.SpontaneousMessagesMode>
+  <EchoColony.ModeDisabled>Disabled</EchoColony.ModeDisabled>
+  <EchoColony.ModeRandomOnly>Random Only</EchoColony.ModeRandomOnly>
+  <EchoColony.ModeIncidentsOnly>Incidents Only</EchoColony.ModeIncidentsOnly>
+  <EchoColony.ModeFull>Full</EchoColony.ModeFull>
+  
+  <!-- Spontaneous Messages Mode Descriptions -->
+  <EchoColony.ModeDisabledDesc>No spontaneous messages</EchoColony.ModeDisabledDesc>
+  <EchoColony.ModeRandomOnlyDesc>Colonists message randomly</EchoColony.ModeRandomOnlyDesc>
+  <EchoColony.ModeIncidentsOnlyDesc>Colonists react to incidents</EchoColony.ModeIncidentsOnlyDesc>
+  <EchoColony.ModeFullDesc>Both random and incident messages</EchoColony.ModeFullDesc>
+  
+  <!-- Additional Settings Labels -->
+  <EchoColony.DefaultMaxMessagesPerDay>Default max messages per day</EchoColony.DefaultMaxMessagesPerDay>
+  <EchoColony.DefaultCooldownHours>Default cooldown hours</EchoColony.DefaultCooldownHours>
+  <EchoColony.PrioritizeSocialTraitsTooltip>Colonists with social traits (Kind, Chatty, etc.) are more likely to initiate conversations</EchoColony.PrioritizeSocialTraitsTooltip>
+
+<!-- Storyteller Spontaneous Messages -->
+<EchoColony.StorytellerMessagesMode>Storyteller Message Mode:</EchoColony.StorytellerMessagesMode>
+
+<!-- Mode Labels -->
+<EchoColony.StorytellerModeDisabled>Disabled</EchoColony.StorytellerModeDisabled>
+<EchoColony.StorytellerModeRandomOnly>Random Only</EchoColony.StorytellerModeRandomOnly>
+<EchoColony.StorytellerModeIncidentsOnly>Incidents Only</EchoColony.StorytellerModeIncidentsOnly>
+<EchoColony.StorytellerModeFull>Full (Random + Incidents)</EchoColony.StorytellerModeFull>
+
+<!-- Mode Descriptions -->
+<EchoColony.StorytellerModeDisabledDesc>No messages</EchoColony.StorytellerModeDisabledDesc>
+<EchoColony.StorytellerModeRandomOnlyDesc>Random observations</EchoColony.StorytellerModeRandomOnlyDesc>
+<EchoColony.StorytellerModeIncidentsOnlyDesc>React to events</EchoColony.StorytellerModeIncidentsOnlyDesc>
+<EchoColony.StorytellerModeFullDesc>Both random and events</EchoColony.StorytellerModeFullDesc>
+
+<!-- Settings -->
+<EchoColony.StorytellerRandomInterval>Random Message Interval (minutes)</EchoColony.StorytellerRandomInterval>
+<EchoColony.StorytellerIncidentChance>Incident Comment Chance</EchoColony.StorytellerIncidentChance>
+<EchoColony.StorytellerMessageAutoClose>Auto-close message window</EchoColony.StorytellerMessageAutoClose>
+<EchoColony.StorytellerMessageAutoCloseDelay>Auto-close delay (seconds)</EchoColony.StorytellerMessageAutoCloseDelay>
+<EchoColony.StorytellerMessagePlaySound>Play sound with messages</EchoColony.StorytellerMessagePlaySound>
+<EchoColony.StorytellerMessageTest>🧪 Test Random Message</EchoColony.StorytellerMessageTest>
+
+<!-- Tooltips -->
+<EchoColony.StorytellerMessageAutoCloseTooltip>Message window will close automatically after a few seconds</EchoColony.StorytellerMessageAutoCloseTooltip>
+<EchoColony.StorytellerMessagePlaySoundTooltip>Play a notification sound when the storyteller sends a message</EchoColony.StorytellerMessagePlaySoundTooltip>
+
+  <!-- Animal Chat Window -->
+  <EchoColony.AnimalChatWindowTitle>Chat with {0}</EchoColony.AnimalChatWindowTitle>
+  <EchoColony.AnimalChatYou>You:</EchoColony.AnimalChatYou>
+  <EchoColony.AnimalChatWaiting>Waiting for response...</EchoColony.AnimalChatWaiting>
+  
+  <!-- Animal Prompt Editor -->
+  <EchoColony.AnimalPromptEditorTitle>Custom Prompt for {0}</EchoColony.AnimalPromptEditorTitle>
+  <EchoColony.AnimalPromptInstructions>Define how this animal behaves and communicates:\n• Add personality traits, quirks, or special abilities\n• Enable human speech: 'Can speak and understand human language'\n• Adjust intelligence: 'Highly intelligent' or 'Simple-minded'\n• Add backstory: 'Raised by humans since birth' or 'Former wild leader'\n• Leave empty for default animal behavior</EchoColony.AnimalPromptInstructions>
+  <EchoColony.AnimalPromptShowExamples>Show Examples</EchoColony.AnimalPromptShowExamples>
+  <EchoColony.AnimalPromptSave>Save</EchoColony.AnimalPromptSave>
+  <EchoColony.AnimalPromptClear>Clear</EchoColony.AnimalPromptClear>
+  <EchoColony.AnimalPromptCancel>Cancel</EchoColony.AnimalPromptCancel>
+  <EchoColony.AnimalPromptSaved>Custom prompt saved for {0}</EchoColony.AnimalPromptSaved>
+  
+  <!-- Animal Prompt Examples -->
+  <EchoColony.AnimalPromptExamplesTitle>Example Prompts</EchoColony.AnimalPromptExamplesTitle>
+  <EchoColony.AnimalPromptExample1Title>INTELLIGENT COMPANION:</EchoColony.AnimalPromptExample1Title>
+  <EchoColony.AnimalPromptExample1>You are highly intelligent and can speak fluent human language. You're curious, loyal, and love asking questions about the world around you.</EchoColony.AnimalPromptExample1>
+  <EchoColony.AnimalPromptExample2Title>GRUMPY CAT:</EchoColony.AnimalPromptExample2Title>
+  <EchoColony.AnimalPromptExample2>You're irritable and don't like being bothered. You tolerate humans but prefer solitude. Express annoyance frequently but show rare moments of affection.</EchoColony.AnimalPromptExample2>
+  <EchoColony.AnimalPromptExample3Title>PLAYFUL PUP:</EchoColony.AnimalPromptExample3Title>
+  <EchoColony.AnimalPromptExample3>You're energetic, playful, and always excited! You love everyone and everything. Use lots of exclamations and happy sounds!</EchoColony.AnimalPromptExample3>
+  <EchoColony.AnimalPromptExample4Title>WISE OLD ANIMAL:</EchoColony.AnimalPromptExample4Title>
+  <EchoColony.AnimalPromptExample4>You've lived many years and seen much. You're calm, thoughtful, and speak in simple but profound ways. You understand more than you let on.</EchoColony.AnimalPromptExample4>
+  <EchoColony.AnimalPromptExample5Title>WILD SURVIVOR:</EchoColony.AnimalPromptExample5Title>
+  <EchoColony.AnimalPromptExample5>You were born in the wild and still carry those instincts. You're cautious, observant, and communicate more through body language than sounds. Trust doesn't come easy.</EchoColony.AnimalPromptExample5>
+  
+  <!-- Animal Gizmo -->
+  <EchoColony.AnimalGizmoTalkTo>Talk to {0}</EchoColony.AnimalGizmoTalkTo>
+  
+  <!-- Settings -->
+  <EchoColony.AnimalNarrativeStyle>Animal Narrative Style</EchoColony.AnimalNarrativeStyle>
+  <EchoColony.AnimalNarrativeStyleTooltip>How animals describe their actions:\nFirst Person: "I wag my tail"\nThird Person: "The dog wags its tail"</EchoColony.AnimalNarrativeStyleTooltip>
+  <EchoColony.AnimalNarrativeFirstPerson>First Person</EchoColony.AnimalNarrativeFirstPerson>
+  <EchoColony.AnimalNarrativeThirdPerson>Third Person</EchoColony.AnimalNarrativeThirdPerson>
+  
+  <!-- Divine Actions - Narratives -->
+  <EchoColony.ActionHealNarrative1>A gentle warmth flows through {0}'s body as wounds begin to close...</EchoColony.ActionHealNarrative1>
+  <EchoColony.ActionHealNarrative2>{0}'s injuries slowly fade as divine energy surrounds them.</EchoColony.ActionHealNarrative2>
+  <EchoColony.ActionHealNarrative3>You place your hand on {0}. Their wounds start healing.</EchoColony.ActionHealNarrative3>
+  <EchoColony.ActionHealNarrative4>A soft glow envelops {0}, mending their injuries.</EchoColony.ActionHealNarrative4>
+  
+  <EchoColony.ActionRemovePainNarrative1>{0} relaxes as the pain fades away...</EchoColony.ActionRemovePainNarrative1>
+  <EchoColony.ActionRemovePainNarrative2>The suffering leaves {0}'s eyes as comfort washes over them.</EchoColony.ActionRemovePainNarrative2>
+  <EchoColony.ActionRemovePainNarrative3>You ease {0}'s pain with a gentle touch.</EchoColony.ActionRemovePainNarrative3>
+  <EchoColony.ActionRemovePainNarrative4>{0} breathes easier as the ache subsides.</EchoColony.ActionRemovePainNarrative4>
+  
+  <EchoColony.ActionCureDiseaseNarrative1>The sickness leaves {0}'s body, vitality returning.</EchoColony.ActionCureDiseaseNarrative1>
+  <EchoColony.ActionCureDiseaseNarrative2>{0} shakes off the illness as health is restored.</EchoColony.ActionCureDiseaseNarrative2>
+  <EchoColony.ActionCureDiseaseNarrative3>Divine light purges the disease from {0}.</EchoColony.ActionCureDiseaseNarrative3>
+  <EchoColony.ActionCureDiseaseNarrative4>{0}'s fever breaks as the infection clears.</EchoColony.ActionCureDiseaseNarrative4>
+  
+  <EchoColony.ActionLearnSkillNarrative1>{0}'s eyes light up with understanding as new knowledge takes hold.</EchoColony.ActionLearnSkillNarrative1>
+  <EchoColony.ActionLearnSkillNarrative2>You guide {0} through the lesson. They learn quickly.</EchoColony.ActionLearnSkillNarrative2>
+  <EchoColony.ActionLearnSkillNarrative3>Something clicks for {0} - they've mastered a new skill.</EchoColony.ActionLearnSkillNarrative3>
+  <EchoColony.ActionLearnSkillNarrative4>{0} practices intently and suddenly grasps the technique.</EchoColony.ActionLearnSkillNarrative4>
+  
+  <EchoColony.ActionImproveBondNarrative1>The bond between you and {0} grows stronger...</EchoColony.ActionImproveBondNarrative1>
+  <EchoColony.ActionImproveBondNarrative2>{0} nuzzles closer, trust deepening in their eyes.</EchoColony.ActionImproveBondNarrative2>
+  <EchoColony.ActionImproveBondNarrative3>A moment of connection - {0} understands you better now.</EchoColony.ActionImproveBondNarrative3>
+  <EchoColony.ActionImproveBondNarrative4>You and {0} share a meaningful moment together.</EchoColony.ActionImproveBondNarrative4>
+  
+  <EchoColony.ActionTameNarrative1>{0} looks at you with newfound trust and acceptance.</EchoColony.ActionTameNarrative1>
+  <EchoColony.ActionTameNarrative2>The wildness fades from {0}'s eyes as they join your colony.</EchoColony.ActionTameNarrative2>
+  <EchoColony.ActionTameNarrative3>{0} finally accepts you as family.</EchoColony.ActionTameNarrative3>
+  <EchoColony.ActionTameNarrative4>Something shifts in {0} - they're one of yours now.</EchoColony.ActionTameNarrative4>
+  
+  <EchoColony.ActionFeedNarrative1>You provide {0} with nourishment. They eat contentedly.</EchoColony.ActionFeedNarrative1>
+  <EchoColony.ActionFeedNarrative2>{0}'s hunger fades as sustenance appears before them.</EchoColony.ActionFeedNarrative2>
+  <EchoColony.ActionFeedNarrative3>Food materializes for {0}, who devours it eagerly.</EchoColony.ActionFeedNarrative3>
+  <EchoColony.ActionFeedNarrative4>You ensure {0} is well-fed and satisfied.</EchoColony.ActionFeedNarrative4>
+  
+  <EchoColony.ActionRestNarrative1>{0} settles down, peaceful sleep overtaking them.</EchoColony.ActionRestNarrative1>
+  <EchoColony.ActionRestNarrative2>Exhaustion leaves {0}'s body as rest is granted.</EchoColony.ActionRestNarrative2>
+  <EchoColony.ActionRestNarrative3>You ease {0} into comfortable, restorative slumber.</EchoColony.ActionRestNarrative3>
+  <EchoColony.ActionRestNarrative4>{0} yawns and curls up, fatigue melting away.</EchoColony.ActionRestNarrative4>
+  
+  <EchoColony.ActionComfortNarrative1>You comfort {0}, their spirits visibly lifting.</EchoColony.ActionComfortNarrative1>
+  <EchoColony.ActionComfortNarrative2>{0}'s mood brightens as worry fades away.</EchoColony.ActionComfortNarrative2>
+  <EchoColony.ActionComfortNarrative3>A sense of peace washes over {0}.</EchoColony.ActionComfortNarrative3>
+  <EchoColony.ActionComfortNarrative4>{0} seems happier, stress leaving their demeanor.</EchoColony.ActionComfortNarrative4>
+  
+  <EchoColony.ActionGenericNarrative>Divine energy flows through {0}...</EchoColony.ActionGenericNarrative>
+  
+  <!-- Divine Actions - Notifications -->
+  <EchoColony.ActionExecutedNotification>Divine actions on {0}: {1}</EchoColony.ActionExecutedNotification>
+
+   <!-- Section header & description -->
+  <EchoColony.ConvSectionHeader>💬  Pawn Conversations</EchoColony.ConvSectionHeader>
+  <EchoColony.ConvSectionDesc>Colonists (and animals) generate AI dialogue bubbles during interactions.</EchoColony.ConvSectionDesc>
+  <EchoColony.ConvSectionDescTooltip>Requires the 'Interaction Bubbles' mod. Bubbles reflect each pawn's personality, health, relationships and current mood.</EchoColony.ConvSectionDescTooltip>
+
+  <!-- Master switch -->
+  <EchoColony.ConvEnableLabel>Enable Pawn Conversations</EchoColony.ConvEnableLabel>
+  <EchoColony.ConvEnableTooltip>When enabled, colonists will generate short AI dialogue bubbles during interactions.</EchoColony.ConvEnableTooltip>
+  <EchoColony.ConvDisabledHint>  ↳ Enable to access conversation settings.</EchoColony.ConvDisabledHint>
+
+  <!-- Lines per colonist -->
+  <!-- {0} = lines per pawn, {1} = total bubbles -->
+  <EchoColony.ConvLinesLabel>Lines per colonist: {0}   (total bubbles = {1})</EchoColony.ConvLinesLabel>
+  <EchoColony.ConvLinesTooltip>How many dialogue lines each pawn contributes. 1 per colonist = 2 bubbles total. Recommended to keep low.</EchoColony.ConvLinesTooltip>
+
+  <!-- Bubble delay -->
+  <!-- {0} = delay in seconds (e.g. 1.5) -->
+  <EchoColony.ConvDelayLabel>Delay between bubbles: {0}s</EchoColony.ConvDelayLabel>
+  <EchoColony.ConvDelayTooltip>Seconds between each bubble appearing. Higher = more natural pacing.</EchoColony.ConvDelayTooltip>
+
+  <!-- Cooldown -->
+  <!-- {0} = hours (integer) -->
+  <EchoColony.ConvCooldownLabel>Cooldown (same pair): {0}h</EchoColony.ConvCooldownLabel>
+  <EchoColony.ConvCooldownNoneLabel>Cooldown (same pair): No cooldown</EchoColony.ConvCooldownNoneLabel>
+  <EchoColony.ConvCooldownTooltip>Minimum in-game hours before the same two pawns can have another conversation. Prevents spam between pawns who interact constantly.</EchoColony.ConvCooldownTooltip>
+
+  <!-- Animal mode -->
+  <EchoColony.ConvAnimalModeLabel>Animal participation:</EchoColony.ConvAnimalModeLabel>
+  <EchoColony.ConvAnimalModeTooltip>Colonies can have hundreds of animals — control which ones generate conversations.</EchoColony.ConvAnimalModeTooltip>
+  <EchoColony.ConvAnimalModeDisabled>Disabled</EchoColony.ConvAnimalModeDisabled>
+  <EchoColony.ConvAnimalModeIntelligentOnly>Intelligent only</EchoColony.ConvAnimalModeIntelligentOnly>
+  <EchoColony.ConvAnimalModeAll>All animals</EchoColony.ConvAnimalModeAll>
+  <EchoColony.ConvAnimalModeHintDisabled>  Animals never trigger conversations.</EchoColony.ConvAnimalModeHintDisabled>
+  <EchoColony.ConvAnimalModeHintIntelligentOnly>  Only animals marked as intelligent in their prompt editor.</EchoColony.ConvAnimalModeHintIntelligentOnly>
+  <EchoColony.ConvAnimalModeHintAll>  All colony animals can trigger conversations (may be noisy).</EchoColony.ConvAnimalModeHintAll>
+
+  <!-- Participant filters -->
+  <EchoColony.ConvFiltersLabel>Participant filters:</EchoColony.ConvFiltersLabel>
+  <EchoColony.ConvIncludePrisoners>Include prisoners</EchoColony.ConvIncludePrisoners>
+  <EchoColony.ConvIncludePrisonersTooltip>Prisoners can be part of bubble conversations.</EchoColony.ConvIncludePrisonersTooltip>
+  <EchoColony.ConvIncludeSlaves>Include slaves</EchoColony.ConvIncludeSlaves>
+  <EchoColony.ConvIncludeSlavesTooltip>Slaves can be part of bubble conversations.</EchoColony.ConvIncludeSlavesTooltip>
+  <EchoColony.ConvIncludeGuests>Include guests &amp; visitors</EchoColony.ConvIncludeGuests>
+  <EchoColony.ConvIncludeGuestsTooltip>Allow non-colony pawns (quest lodgers, allied visitors, traders) to appear in conversations. Prisoners and slaves are always treated as colony regardless of this setting.</EchoColony.ConvIncludeGuestsTooltip>
+
+  <!-- Minimum opinion -->
+  <!-- {0} = opinion value (integer) -->
+  <EchoColony.ConvMinOpinionLabel>Minimum opinion to trigger: {0}</EchoColony.ConvMinOpinionLabel>
+  <EchoColony.ConvMinOpinionNoFilter>Minimum opinion to trigger: No filter</EchoColony.ConvMinOpinionNoFilter>
+  <EchoColony.ConvMinOpinionTooltip>Only trigger between pawns whose mutual opinion meets this threshold. −100 disables the filter. Enemies will still argue at any setting.</EchoColony.ConvMinOpinionTooltip>
+
+  <!-- Max colony size -->
+  <!-- {0} = pawn count (integer) -->
+  <EchoColony.ConvMaxColonySizeLabel>Auto-disable above colony size: {0} pawns</EchoColony.ConvMaxColonySizeLabel>
+  <EchoColony.ConvMaxColonySizeNever>Auto-disable above colony size: Never</EchoColony.ConvMaxColonySizeNever>
+  <EchoColony.ConvMaxColonySizeTooltip>Automatically disables conversations when the colony is too large. 0 = no limit. Useful to avoid API overload on mega-colonies.</EchoColony.ConvMaxColonySizeTooltip>
+
+  <!-- Disable at speed -->
+  <!-- {0} = speed multiplier (integer, e.g. 3) -->
+  <EchoColony.ConvDisableAtSpeedLabel>Disable AI at game speed: ×{0}+</EchoColony.ConvDisableAtSpeedLabel>
+  <EchoColony.ConvDisableAtSpeedNever>Disable AI at game speed: Never</EchoColony.ConvDisableAtSpeedNever>
+  <EchoColony.ConvDisableAtSpeedTooltip>Stops generating AI dialogue when the game runs at or above this speed. Helps avoid wasting API calls during fast-forward. 0 = always generate.</EchoColony.ConvDisableAtSpeedTooltip>
+
+  <!-- Allow simultaneous -->
+  <EchoColony.ConvAllowSimultaneous>Allow simultaneous conversations</EchoColony.ConvAllowSimultaneous>
+  <EchoColony.ConvAllowSimultaneousTooltip>When off (default), a pawn pair cannot start a new AI conversation while one is already in progress. Prevents duplicate bubbles. Turn on only if you set a very low cooldown.</EchoColony.ConvAllowSimultaneousTooltip>
+
+  <!-- Global prompt -->
+  <EchoColony.ConvGlobalPromptLabel>Global conversation prompt (optional):</EchoColony.ConvGlobalPromptLabel>
+  <EchoColony.ConvGlobalPromptTooltip>Extra instructions appended to every pawn conversation prompt. Use this to set colony tone, world lore, or dialect rules. Appended after the built context, before the output instruction.</EchoColony.ConvGlobalPromptTooltip>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       Monologues — Settings UI
+       ═══════════════════════════════════════════════════════════════════════ -->
+
+  <!-- Section header & description -->
+  <EchoColony.MonoSectionHeader>Monologues (solo AI lines)</EchoColony.MonoSectionHeader>
+  <EchoColony.MonoSectionDesc>Colonists occasionally mutter, react, or think aloud by themselves. Triggered by random chance each hour and by significant emotional events.</EchoColony.MonoSectionDesc>
+
+  <!-- Master switch -->
+  <EchoColony.MonoEnableLabel>Enable monologues</EchoColony.MonoEnableLabel>
+  <EchoColony.MonoEnableTooltip>Master switch. When enabled, pawns may speak a single AI-generated line when something notable happens or just at random intervals.</EchoColony.MonoEnableTooltip>
+
+  <!-- Cooldown -->
+  <!-- {0} = hours (integer) -->
+  <EchoColony.MonoCooldownLabel>Cooldown between monologues: {0}h</EchoColony.MonoCooldownLabel>
+  <EchoColony.MonoCooldownTooltip>Minimum hours before the same pawn can produce another monologue.</EchoColony.MonoCooldownTooltip>
+
+  <!-- Hourly chance -->
+  <!-- {0} = percentage (integer, e.g. 15) -->
+  <EchoColony.MonoChanceLabel>Random chance per hour: {0}%</EchoColony.MonoChanceLabel>
+  <EchoColony.MonoChanceOffLabel>Random chance per hour: Off</EchoColony.MonoChanceOffLabel>
+  <EchoColony.MonoChanceTooltip>Each game hour, every eligible pawn rolls this chance to speak spontaneously. Set to 0 to disable random monologues (thought-triggered ones still fire).</EchoColony.MonoChanceTooltip>
+
+  <!-- Thought impact threshold -->
+  <!-- {0} = mood value (integer, e.g. 5) -->
+  <EchoColony.MonoThoughtImpactLabel>Minimum thought impact to trigger: ±{0} mood</EchoColony.MonoThoughtImpactLabel>
+  <EchoColony.MonoThoughtImpactTooltip>Thoughts with mood impact below this threshold won't trigger an immediate monologue. Higher values = only big events make pawns speak. Default: ±5.</EchoColony.MonoThoughtImpactTooltip>
+
+  <!-- Chat log toggle button (in settings) -->
+  <EchoColony.ChatLogShow>📋 Show conversation log</EchoColony.ChatLogShow>
+  <EchoColony.ChatLogHide>📋 Hide conversation log</EchoColony.ChatLogHide>
+
+  <!-- Chat log hotkey selector -->
+  <EchoColony.ChatLogHotkeyLabel>Hotkey (open/close log):</EchoColony.ChatLogHotkeyLabel>
+  <EchoColony.ChatLogHotkeyNone>[Not set]</EchoColony.ChatLogHotkeyNone>
+  <EchoColony.ChatLogHotkeyPress>Press a key... (Esc to cancel, Del to clear)</EchoColony.ChatLogHotkeyPress>
+
+  <EchoColony.ChatLogHint>  You can also bind a key in Options → Controls → EchoColony.</EchoColony.ChatLogHint>
+
+
+  <!-- Chat log toggle button (in mod settings) -->
+  <EchoColony.ChatLogShow>📋 Open Conversation Log</EchoColony.ChatLogShow>
+  <EchoColony.ChatLogHide>📋 Close Conversation Log</EchoColony.ChatLogHide>
+
+  <!-- Chat log hotkey selector -->
+  <EchoColony.ChatLogHotkeyLabel>Hotkey (open/close log):</EchoColony.ChatLogHotkeyLabel>
+  <EchoColony.ChatLogHotkeyNone>[Not set]</EchoColony.ChatLogHotkeyNone>
+  <EchoColony.ChatLogHotkeyPress>Press a key... (Esc to cancel, Del to clear)</EchoColony.ChatLogHotkeyPress>
+
+  <!-- Font size option -->
+  <EchoColony.ChatLogLargeFont>Larger text in conversation log</EchoColony.ChatLogLargeFont>
+  <EchoColony.ChatLogHotkeyLabel>Hotkey (open/close log):</EchoColony.ChatLogHotkeyLabel>
+  <EchoColony.ChatLogHotkeyNone>[Not set]</EchoColony.ChatLogHotkeyNone>
+  <EchoColony.ChatLogHotkeyPress>Press a key... (Esc to cancel, Del to clear)</EchoColony.ChatLogHotkeyPress>
+
+  <EchoColony.ChatLogHint>  The log records all AI dialogue as it happens. Drag the title bar to move it.</EchoColony.ChatLogHint>
+
+  <!-- Export / Import -->
+  <EchoColony.ExportButton>Export</EchoColony.ExportButton>
+  <EchoColony.ExportSuccess>Conversation exported for {0}.</EchoColony.ExportSuccess>
+  <EchoColony.ExportFailed>Export failed. Check the log for details.</EchoColony.ExportFailed>
+  
+  <EchoColony.ImportButtonShort>Import</EchoColony.ImportButtonShort>
+  <EchoColony.ImportTitle>Import memories for {0}</EchoColony.ImportTitle>
+  <EchoColony.ImportSubtitle>Files from: {0}</EchoColony.ImportSubtitle>
+  <EchoColony.ImportNoFiles>No exported conversations found. Export one first using the Export button in a chat window.</EchoColony.ImportNoFiles>
+  <EchoColony.ImportButton>Load</EchoColony.ImportButton>
+  <EchoColony.DeleteButton>Delete</EchoColony.DeleteButton>
+  <EchoColony.DeleteConfirm>Permanently delete the export "{0}"? This cannot be undone.</EchoColony.DeleteConfirm>
+  <EchoColony.DeleteSuccess>Export "{0}" deleted.</EchoColony.DeleteSuccess>
+  <EchoColony.DeleteFailed>Could not delete the file. Check the log for details.</EchoColony.DeleteFailed>
+  <EchoColony.ImportConfirm>Load "{0}" into {1}?\n\nThis will replace their current conversation ({2} lines, {3} memories).</EchoColony.ImportConfirm>
+  <EchoColony.ImportSuccess>Memories from "{0}" loaded into {1}.</EchoColony.ImportSuccess>
+  <EchoColony.ImportFailed>Import failed. The file may be corrupted.</EchoColony.ImportFailed>
+  
+  <EchoColony.ConvDailyLimitUnlimited>Daily conversation limit: Unlimited  (today: {0})</EchoColony.ConvDailyLimitUnlimited>
+  <EchoColony.ConvDailyLimitLabel>Daily conversation limit: {0}  (today: {1})</EchoColony.ConvDailyLimitLabel>
+  <EchoColony.ConvDailyLimitTooltip>Maximum AI conversations per in-game day across the whole colony. 0 = unlimited. Useful for large colonies to control API usage.</EchoColony.ConvDailyLimitTooltip>
+  
+</LanguageData>

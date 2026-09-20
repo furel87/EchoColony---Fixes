@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Ejemplo 1: Joywire (Requiere nota funcional Y directiva de conducta) -->
+  <!--<EchoColony.HediffAIPromptDef>
+    <defName>Prompt_Joywire</defName>
+    <targetHediff>Joywire</targetHediff>
+    <customLabel>joywire neural chip</customLabel>-->
+    <!-- Texto corto inline que reemplaza al lore base del juego -->
+    <!--<functionalNote>brain implant that forces continuous dopamine release</functionalNote>-->
+    <!-- Instrucción de interpretación -->
+    <!--<behavioralDirective>You are unnaturally happy, excessively calm, and completely unbothered by tragic events or danger.</behavioralDirective>
+  </EchoColony.HediffAIPromptDef>-->
+
+  <!-- Ejemplo 2: Prótesis Pura (Solo requiere nota funcional) -->
+  <!--<EchoColony.HediffAIPromptDef>
+    <defName>Prompt_BionicEye</defName>
+    <targetHediff>BionicEye</targetHediff>
+    <customLabel>bionic eye</customLabel>
+    <functionalNote>advanced optical implant with infrared vision</functionalNote>
+  </EchoColony.HediffAIPromptDef>-->
+
+  <!-- Ejemplo 3: Condición Mental (Solo requiere directiva de conducta) -->
+  <!--<EchoColony.HediffAIPromptDef>
+    <defName>Prompt_Alzheimers</defName>
+    <targetHediff>Alzheimers</targetHediff>
+    <behavioralDirective>You frequently lose your train of thought, confuse people's names, and ask about things that happened hours ago.</behavioralDirective>
+  </EchoColony.HediffAIPromptDef>-->
+</Defs>
