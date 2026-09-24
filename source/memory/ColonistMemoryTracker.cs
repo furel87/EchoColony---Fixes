@@ -82,7 +82,7 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Devuelve la lista cruda de interacciones del día actual en modo lectura.
+        /// Returns the raw list of interactions for the current day in read-only mode.
         /// </summary>
         public IReadOnlyList<RawInteraction> GetCurrentDayInteractions()
         {
@@ -102,16 +102,16 @@ namespace EchoColony
                 return;
             }
 
-            // Unimos todo el historial bruto acumulado hoy
+            // We're compiling all the raw data collected today
             string rawJoinedText = string.Join("\n", currentDayInteractions);
 
-            // Importante: Vaciamos inmediatamente el búfer para que el nuevo día empiece limpio 
-            // y no se dupliquen datos si el callback de la IA tarda un poco.
+            // Important: We immediately clear the buffer so that the new day starts fresh 
+            // and to prevent data duplication if the AI callback takes a while.
             ClearDayMemBuffer();
 
             Log.Message($"[EchoColony] Triggering AI summary for {pawn?.LabelShort ?? "Unknown"} (Day {dayToProcess}) with {rawJoinedText.Length} chars of raw logs.");
 
-            // Enviamos el bloque de texto bruto a la IA para generar el resumen diario definitivo
+            // We send the block of raw text to the AI to generate the final daily summary
             SummarizeRawDayWithAI(dayToProcess, rawJoinedText);
         }
 
@@ -134,15 +134,15 @@ namespace EchoColony
                 //EchoDebugLogger.LogAIInteraction(this.pawn, prompt.ToString(), aiSummary);
                 if (!string.IsNullOrWhiteSpace(aiSummary))
                 {
-                    // Guardamos el resumen optimizado en la entrada histórica del día procesado
+                    // We save the optimized summary in the historical entry for the processed day
                     memories[day] = $"[{dateHeader}]\n{aiSummary.Trim()}";
 
                     Log.Message($"[EchoColony] Saved permanent AI summary for {pawn?.LabelShort} for day {day}");
                 }
                 else
                 {
-                    // Fallback de emergencia si la IA falla por time-out o error de red:
-                    // Guardamos un extracto recortado para que no se pierda la información por completo
+                    // Emergency fallback if the AI fails due to a timeout or network error:
+                    // We save a truncated excerpt so that the information isn't lost entirely
                     string fallbackText = rawInteractions.Length > 300 ? rawInteractions.Substring(0, 300) + "..." : rawInteractions;
                     memories[day] = $"[{dateHeader}]\n[Automatic Summary Failed - Raw Record]:\n{fallbackText}";
                     Log.Warning($"[EchoColony] AI summary failed or returned empty for {pawn?.LabelShort} day {day}. Fallback saved.");
@@ -151,7 +151,6 @@ namespace EchoColony
 
             try
             {
-                // Reutilizamos tu método interno de llamadas a modelos locales/remotos
                 GenerateOptimizedMemory(promptText, $"DAILY_SUMMARY_{GeminiAPI.CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
             }
             catch (Exception ex)
@@ -235,8 +234,8 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Establece o sobrescribe directamente la memoria de un día sin procesar con IA ni recalcular fechas.
-        /// Diseñado para importaciones de archivos JSON, restauración de backups y depuración.
+        /// Directly sets or overwrites a day's raw data without AI processing or date recalculation.
+        /// Designed for JSON file imports, backup restores, and debugging.
         /// </summary>
         public void SetMemoryForDay(int day, string fullMemoryText)
         {
@@ -282,7 +281,7 @@ namespace EchoColony
         /// <summary>
         /// Generates optimized memory using the configured AI model
         /// </summary>
-        private void GenerateOptimizedMemory(string prompt, string pawnName, System.Action<string> callback)
+        private void GenerateOptimizedMemory(string prompt, string type, System.Action<string> callback)
         {
             if (MyStoryModComponent.Instance == null)
             {
@@ -318,7 +317,7 @@ namespace EchoColony
             }
             else if (MyMod.Settings.modelSource == ModelSource.Player2)
             {
-                memoryCoroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, callback, $"OPTIMIZED_MEMORY");
+                memoryCoroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, callback, $"{type}");
                 Log.Message("[EchoColony] Optimizing memory with Player2");
             }
             else if (MyMod.Settings.modelSource == ModelSource.OpenRouter)
