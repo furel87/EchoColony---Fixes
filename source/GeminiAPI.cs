@@ -619,7 +619,7 @@ namespace EchoColony
                 : BuildMessagesJson(messages);
 
             if (MyMod.Settings?.debugMode == true)
-                LogPlayer2Debug("REQUEST", useVision ? "[VISION REQUEST — image payload omitted from log]" : jsonBody);
+                LogPlayer2Debug($"REQUEST_{CleanNameForFileName(pawn?.LabelShort)}", useVision ? "[VISION REQUEST — image payload omitted from log]" : jsonBody);
 
             int   maxRetries = 3;
             float retryDelay = 1f;
@@ -650,13 +650,13 @@ namespace EchoColony
                 if (!hasError)
                 {
                     Log.Message($"[EchoColony] Player2 Web API raw response: {responseText}");
-                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug("RESPONSE", responseText);
+                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"RESPONSE_{CleanNameForFileName(pawn?.LabelShort)}", responseText);
                     string reply = ParseStandardLLMResponse(responseText);
                     reply = TrimTextAfterHashtags(reply);
                     reply = CleanResponse(reply);
                     EchoMemory.AddTurn("user", userMessage);
                     EchoMemory.AddTurn("assistant", reply);
-                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug("FINAL_REPLY", reply);
+                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"FINAL_REPLY_{CleanNameForFileName(pawn?.LabelShort)}", reply);
                     onResponse?.Invoke(reply);
                     yield break;
                 }
@@ -1525,6 +1525,18 @@ namespace EchoColony
             {
                 Log.Error($"[EchoColony] Failed to save Player2 debug log: {ex.Message}");
             }
+        }
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
         }
     }
 }
