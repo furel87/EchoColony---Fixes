@@ -645,7 +645,7 @@ namespace EchoColony
                     isLateJoiner: isLateJoiner);
 
                 bool done = false;
-                yield return ProcessTurn(CleanNameForFileName(next?.LabelShort), prompt, response =>
+                yield return ProcessTurn(GeminiAPI.CleanNameForFileName(next?.LabelShort), prompt, response =>
                 {
                     // Remove placeholder
                     if (session.History.Count > 0 &&
@@ -995,7 +995,7 @@ namespace EchoColony
                     gameLanguage
                 );
 
-                yield return ProcessTurn(CleanNameForFileName(pawn?.LabelShort), memoryPrompt,
+                yield return ProcessTurn(GeminiAPI.CleanNameForFileName(pawn?.LabelShort), memoryPrompt,
                     r => { memBody = !string.IsNullOrWhiteSpace(r) ? r.Trim() : summary; memDone = true; });
 
                 int mw = 0;
@@ -1240,19 +1240,6 @@ namespace EchoColony
             base.PostOpen();
             cachedHeights.Clear();
             lastMessageTextSeen = null;
-        }
-
-        private static string CleanNameForFileName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-
-            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
-            string safe = name.Replace(" ", "_");
-            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
-            {
-                safe = safe.Replace(c.ToString(), "");
-            }
-            return safe;
         }
     }
 }

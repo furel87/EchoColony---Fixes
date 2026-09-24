@@ -84,8 +84,8 @@ namespace EchoColony.Conversations
             string aiResponse = null;
 
             // Formatear participantes limpiando caracteres no válidos para archivos
-            string safeInitiator = CleanNameForFileName(initiator?.LabelShort);
-            string safeRecipient = CleanNameForFileName(recipient?.LabelShort);
+            string safeInitiator = GeminiAPI.CleanNameForFileName(initiator?.LabelShort);
+            string safeRecipient = GeminiAPI.CleanNameForFileName(recipient?.LabelShort);
             string debugParticipants = $"{safeInitiator}_{safeRecipient}";
 
             yield return SendConversationRequest(fullPrompt, r => aiResponse = r, debugParticipants);
@@ -299,17 +299,5 @@ namespace EchoColony.Conversations
             return MyMod.Settings?.conversationBubbleDelay ?? 1.5f;
         }
 
-        private static string CleanNameForFileName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-
-            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
-            string safe = name.Replace(" ", "_");
-            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
-            {
-                safe = safe.Replace(c.ToString(), "");
-            }
-            return safe;
-        }
     }
 }

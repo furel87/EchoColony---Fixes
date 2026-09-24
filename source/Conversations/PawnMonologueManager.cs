@@ -166,7 +166,7 @@ namespace EchoColony.Conversations
             switch (MyMod.Settings.modelSource)
             {
                 case ModelSource.Player2:
-                    yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse, $"MONOLOGUE_{CleanNameForFileName(pawn?.LabelShort)}");
+                    yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse, $"MONOLOGUE_{GeminiAPI.CleanNameForFileName(pawn?.LabelShort)}");
                     break;
                 case ModelSource.Local:
                     yield return GeminiAPI.SendRequestToLocalModel(prompt, onResponse);
@@ -195,17 +195,5 @@ namespace EchoColony.Conversations
                 Conversations.ConversationChatLogRenderer.LoadPosition(s.chatLogX, s.chatLogY, s.chatLogW, s.chatLogH);
         }
 
-        private static string CleanNameForFileName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-
-            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
-            string safe = name.Replace(" ", "_");
-            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
-            {
-                safe = safe.Replace(c.ToString(), "");
-            }
-            return safe;
-        }
     }
 }

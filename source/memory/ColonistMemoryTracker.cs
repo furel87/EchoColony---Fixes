@@ -152,7 +152,7 @@ namespace EchoColony
             try
             {
                 // Reutilizamos tu método interno de llamadas a modelos locales/remotos
-                GenerateOptimizedMemory(promptText, $"DAILY_SUMMARY_{CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
+                GenerateOptimizedMemory(promptText, $"DAILY_SUMMARY_{GeminiAPI.CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
             }
             catch (Exception ex)
             {
@@ -271,7 +271,7 @@ namespace EchoColony
             // Send to AI
             try
             {
-                GenerateOptimizedMemory(prompt, $"EDITED_MEMORY_OPTIMIZATION_{CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
+                GenerateOptimizedMemory(prompt, $"EDITED_MEMORY_OPTIMIZATION_{GeminiAPI.CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
             }
             catch (Exception ex)
             {
@@ -730,18 +730,6 @@ namespace EchoColony
             currentDayInteractions.Clear();
         }
 
-        private static string CleanNameForFileName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-
-            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
-            string safe = name.Replace(" ", "_");
-            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
-            {
-                safe = safe.Replace(c.ToString(), "");
-            }
-            return safe;
-        }
     }
 
     public enum InteractionType

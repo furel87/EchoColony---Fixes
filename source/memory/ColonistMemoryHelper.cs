@@ -12,8 +12,8 @@ namespace EchoColony
     public static class ColonistMemoryHelper
     {
         /// <summary>
-        /// Método de envoltura void para llamadas desde la UI o métodos sincrónicos (Fire-and-forget).
-        /// Inicia la corrutina en segundo plano sin congelar la ejecución del llamador.
+        /// Void wrapper method for calls from the UI or synchronous methods (fire-and-forget).
+        /// Starts the coroutine in the background without freezing the caller's execution.
         /// </summary>
         public static void CheckAndGenerateMemory(Pawn pawn, int minTurnsThreshold = 4)
         {
@@ -24,8 +24,8 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Corrutina que comprueba y genera la memoria del colono.
-        /// Permite ser esperada con 'yield return' en flujos asíncronos como el chat grupal.
+        /// A routine that checks and generates the settler's memory.
+        /// Allows it to be awaited with 'yield return' in asynchronous flows such as group chat.
         /// </summary>
         public static IEnumerator CheckAndGenerateMemoryRoutine(Pawn pawn, int minTurnsThreshold = 4)
         {
@@ -43,8 +43,7 @@ namespace EchoColony
 
             bool isDone = false;
 
-            // Obtenemos la corrutina de la API según la configuración
-            IEnumerator apiCoroutine = GetApiMemoryCoroutine(fullPrompt, CleanNameForFileName(pawn?.LabelShort), (summary) =>
+            IEnumerator apiCoroutine = GetApiMemoryCoroutine(fullPrompt, GeminiAPI.CleanNameForFileName(pawn?.LabelShort), (summary) =>
             {
                 var tracker = ColonistMemoryManager.GetOrCreate()?.GetTrackerFor(pawn);
                 if (tracker != null)
@@ -77,11 +76,9 @@ namespace EchoColony
 
             if (apiCoroutine != null)
             {
-                // Espera a que la petición a la API finalice
                 yield return apiCoroutine;
             }
 
-            // Red de seguridad adicional para asegurar la ejecución del callback antes de continuar
             while (!isDone)
             {
                 yield return null;
@@ -139,19 +136,6 @@ namespace EchoColony
                 default:
                     return GeminiAPI.SendRequestToGemini(fullPrompt, callback);
             }
-        }
-
-        private static string CleanNameForFileName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-
-            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
-            string safe = name.Replace(" ", "_");
-            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
-            {
-                safe = safe.Replace(c.ToString(), "");
-            }
-            return safe;
         }
     }
 }
