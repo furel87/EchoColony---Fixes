@@ -152,7 +152,7 @@ namespace EchoColony
             try
             {
                 // Reutilizamos tu método interno de llamadas a modelos locales/remotos
-                GenerateOptimizedMemory(promptText, summaryCallback);
+                GenerateOptimizedMemory(promptText, $"DAILY_SUMMARY_{CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
             }
             catch (Exception ex)
             {
@@ -248,7 +248,7 @@ namespace EchoColony
         /// <summary>
         /// Generates a prompt for individual memories using AI
         /// </summary>
-        public void OptimizeCustomMemoryWithAI(int day, string editedMem)
+        public void OptimizeCustomMemoryWithAI(int day, string editedMem, Pawn pawn)
         {
             if (string.IsNullOrWhiteSpace(editedMem)) return;
 
@@ -271,7 +271,7 @@ namespace EchoColony
             // Send to AI
             try
             {
-                GenerateOptimizedMemory(prompt, summaryCallback);
+                GenerateOptimizedMemory(prompt, $"EDITED_MEMORY_OPTIMIZATION_{CleanNameForFileName(pawn?.LabelShort)}", summaryCallback);
             }
             catch (Exception ex)
             {
@@ -282,7 +282,7 @@ namespace EchoColony
         /// <summary>
         /// Generates optimized memory using the configured AI model
         /// </summary>
-        private void GenerateOptimizedMemory(string prompt, System.Action<string> callback)
+        private void GenerateOptimizedMemory(string prompt, string pawnName, System.Action<string> callback)
         {
             if (MyStoryModComponent.Instance == null)
             {
@@ -318,7 +318,7 @@ namespace EchoColony
             }
             else if (MyMod.Settings.modelSource == ModelSource.Player2)
             {
-                memoryCoroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, callback);
+                memoryCoroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, callback, $"OPTIMIZED_MEMORY");
                 Log.Message("[EchoColony] Optimizing memory with Player2");
             }
             else if (MyMod.Settings.modelSource == ModelSource.OpenRouter)
@@ -729,6 +729,19 @@ namespace EchoColony
         {
             currentDayInteractions.Clear();
         }
+
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
+        }
     }
 
     public enum InteractionType
@@ -787,7 +800,6 @@ namespace EchoColony
                     return text;
             }
         }
-
 
     }
 }

@@ -393,7 +393,7 @@ public class ColonistMemoryViewer : Window
                 // ✅ CORREGIDO: Usar GetOrCreate()
                 var manager = ColonistMemoryManager.GetOrCreate();
                 var tracker = manager?.GetTrackerFor(pawn);
-                tracker?.OptimizeCustomMemoryWithAI(day, pendingEdits[day]);
+                tracker?.OptimizeCustomMemoryWithAI(day, pendingEdits[day], pawn);
 
                 pendingEdits.Remove(day);
                 Messages.Message("La IA está personificando tu nota...", MessageTypeDefOf.TaskCompletion);

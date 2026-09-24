@@ -102,12 +102,7 @@ namespace EchoColony
             if (!string.IsNullOrEmpty(ageGuidance))
                 sb.AppendLine($"Age behavior: {ageGuidance}");
 
-            var childhood = speaker.story?.AllBackstories?
-                .FirstOrDefault(b => b.slot == BackstorySlot.Childhood);
-            var adulthood = speaker.story?.AllBackstories?
-                .FirstOrDefault(b => b.slot == BackstorySlot.Adulthood);
-            if (childhood != null || adulthood != null)
-                sb.AppendLine($"Background: {childhood?.title ?? "unknown"} / {adulthood?.title ?? "unknown"}");
+            sb.AppendLine(BuildBackstory(speaker));
 
             var traits = speaker.story?.traits?.allTraits?.Select(t => t.LabelCap).ToList();
             if (traits?.Any() == true)
@@ -456,6 +451,86 @@ namespace EchoColony
                 parts.Add(combat.Split('.')[0]);
 
             return parts.Any() ? string.Join("; ", parts) : "";
+        }
+
+        private static string BuildBackstory(Pawn pawn)
+        {
+            if (pawn?.story == null) return string.Empty;
+
+            var entries = new List<string>();
+
+            // 1. Trasfondo de Infancia (Childhood)
+            if (pawn.story.Childhood != null)
+            {
+                var childhood = pawn.story.Childhood;
+
+                // Obtiene el título ajustado al género del colono o su etiqueta por defecto
+                string title = childhood.TitleFor(pawn.gender);
+                if (string.IsNullOrWhiteSpace(title)) title = childhood.title;
+                if (string.IsNullOrWhiteSpace(title)) title = childhood.LabelCap;
+
+                // Prioriza 'description' (campo XML nativo) sobre 'baseDesc'
+                string rawDesc = !string.IsNullOrWhiteSpace(childhood.description)
+                    ? childhood.description
+                    : childhood.baseDesc;
+
+                string desc = FormatBackstoryText(rawDesc, pawn);
+
+                if (!string.IsNullOrWhiteSpace(desc) && !desc.Equals(title, StringComparison.OrdinalIgnoreCase))
+                    entries.Add($"Childhood ({title}): \"{desc}\"");
+                else if (!string.IsNullOrEmpty(title))
+                    entries.Add($"Childhood: {title}");
+            }
+
+            // 2. Trasfondo de Adultez (Adulthood)
+            if (pawn.story.Adulthood != null)
+            {
+                var adulthood = pawn.story.Adulthood;
+
+                string title = adulthood.TitleFor(pawn.gender);
+                if (string.IsNullOrWhiteSpace(title)) title = adulthood.title;
+                if (string.IsNullOrWhiteSpace(title)) title = adulthood.LabelCap;
+
+                string rawDesc = !string.IsNullOrWhiteSpace(adulthood.description)
+                    ? adulthood.description
+                    : adulthood.baseDesc;
+
+                string desc = FormatBackstoryText(rawDesc, pawn);
+
+                if (!string.IsNullOrWhiteSpace(desc) && !desc.Equals(title, StringComparison.OrdinalIgnoreCase))
+                    entries.Add($"Adulthood ({title}): \"{desc}\"");
+                else if (!string.IsNullOrEmpty(title))
+                    entries.Add($"Adulthood: {title}");
+            }
+
+            if (!entries.Any()) return string.Empty;
+
+            return "*Backstory & Origin:*\n  - " + string.Join("\n  - ", entries);
+        }
+
+        private static string FormatBackstoryText(string rawText, Pawn pawn)
+        {
+            if (string.IsNullOrWhiteSpace(rawText)) return string.Empty;
+
+            try
+            {
+                // Resuelve sustituciones dinámicas de RimWorld ([PAWN_nameDef], [PAWN_pronoun], etc.)
+                string formatted = rawText.Formatted(pawn.Named("PAWN")).AdjustedFor(pawn).ToString();
+
+                // 1. Elimina etiquetas internas de UI de RimWorld como (*Name)...(/Name)
+                formatted = System.Text.RegularExpressions.Regex.Replace(formatted, @"\((\*|\/).*?\)", "");
+
+                // 2. Elimina etiquetas de formato XML/HTML (<color=...>, <i>, etc.)
+                formatted = System.Text.RegularExpressions.Regex.Replace(formatted, "<.*?>", "").Trim();
+
+                return formatted;
+            }
+            catch
+            {
+                // Fallback defensivo si el formateador del juego falla con caracteres especiales
+                string clean = System.Text.RegularExpressions.Regex.Replace(rawText, @"\((\*|\/).*?\)", "");
+                return System.Text.RegularExpressions.Regex.Replace(clean, "<.*?>", "").Trim();
+            }
         }
 
         //*furel - New memory cration prompt - just taking the minimum necesary to a more personified a memory.

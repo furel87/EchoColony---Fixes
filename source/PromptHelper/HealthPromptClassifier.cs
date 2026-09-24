@@ -74,11 +74,30 @@ namespace EchoColony
 
             if (!injuries.Any()) return;
 
-            // 1. Ordenar todas las heridas de mayor a menor severidad
-            var sortedInjuries = injuries.OrderByDescending(i => i.Severity).ToList();
+            // Separar heridas abiertas/recientes de cicatrices permanentes
+            var freshInjuries = injuries.Where(i => !i.IsPermanent()).ToList();
+            var scars = injuries.Where(i => i.IsPermanent()).ToList();
+
+            // Procesar heridas abiertas
+            if (freshInjuries.Any())
+            {
+                ProcessInjuryGroup(freshInjuries, healthStatus, "Wounds", isScar: false);
+            }
+
+            // Procesar cicatrices permanentes
+            if (scars.Any())
+            {
+                ProcessInjuryGroup(scars, healthStatus, "Scars", isScar: true);
+            }
+        }
+
+        private static void ProcessInjuryGroup(List<Hediff_Injury> injuryList, List<string> healthStatus, string categoryName, bool isScar)
+        {
+            // 1. Ordenar de mayor a menor severidad
+            var sorted = injuryList.OrderByDescending(i => i.Severity).ToList();
 
             // 2. Extraer las 3 más graves para detalle explícito
-            var top3 = sortedInjuries.Take(3).ToList();
+            var top3 = sorted.Take(3).ToList();
 
             var topDetails = top3
                 .GroupBy(i => i.Part != null ? i.Part.LabelCap.ToString() : "Body")
@@ -89,18 +108,26 @@ namespace EchoColony
 
                     if (count > 1)
                     {
-                        return $"{count} wounds on {part}";
+                        string pluralTerm = isScar ? "scars" : "wounds";
+                        return $"{count} {pluralTerm} on {part}";
                     }
 
                     var injury = group.First();
                     string sevLabel = injury.Severity > 10f ? "severe" : injury.Severity > 5f ? "serious" : "minor";
+
+                    // Si es cicatriz, especificamos el tipo de herida original entre paréntesis
+                    if (isScar)
+                    {
+                        return $"{sevLabel} scar ({injury.def.label}) on {part}";
+                    }
+
                     return $"{sevLabel} {injury.def.label} on {part}";
                 });
 
-            string topInjuriesText = string.Join(", ", topDetails);
+            string topText = string.Join(", ", topDetails);
 
-            // 3. Evaluar la gravedad de las heridas restantes (de la 4ª en adelante)
-            var remaining = sortedInjuries.Skip(3).ToList();
+            // 3. Evaluar las heridas/cicatrices restantes (de la 4ª en adelante)
+            var remaining = sorted.Skip(3).ToList();
 
             if (remaining.Any())
             {
@@ -114,12 +141,15 @@ namespace EchoColony
                 if (minorCount > 0) summaryParts.Add($"{minorCount} minor");
 
                 string remainingSummary = string.Join(", ", summaryParts);
+                string itemTerm = remaining.Count == 1
+                    ? (isScar ? "scar" : "wound")
+                    : (isScar ? "scars" : "wounds");
 
-                healthStatus.Add($"Wounds: {topInjuriesText} (plus {remainingSummary} additional wounds across your body).");
+                healthStatus.Add($"{categoryName}: {topText} (plus {remainingSummary} additional {itemTerm} across your body).");
             }
             else
             {
-                healthStatus.Add($"Wounds: {topInjuriesText}.");
+                healthStatus.Add($"{categoryName}: {topText}.");
             }
         }
 

@@ -293,8 +293,10 @@ namespace EchoColony
             switch (MyMod.Settings.modelSource)
             {
                 case ModelSource.Player2:
-                    if (isAnimal || isMech)
-                        yield return SendRequestToPlayer2WithPrompt(prompt, onResponse);
+                    if (isAnimal)
+                        yield return SendRequestToPlayer2WithPrompt(prompt, onResponse, "ANIMAL_CHAT");
+                    else if (isMech)
+                        yield return SendRequestToPlayer2WithPrompt(prompt, onResponse, "MECH_CHAT");
                     else
                         yield return SendRequestToPlayer2(pawn, prompt, onResponse, imageBase64);
                     yield break;
@@ -677,7 +679,7 @@ namespace EchoColony
             }
         }
 
-        public static IEnumerator SendRequestToPlayer2WithPrompt(string fullPrompt, Action<string> onResponse)
+        public static IEnumerator SendRequestToPlayer2WithPrompt(string fullPrompt, Action<string> onResponse, string type = null)
         {
             if (!Player2AuthManager.IsAuthenticated)
             {
@@ -697,7 +699,7 @@ namespace EchoColony
 
             string jsonBody = BuildMessagesJson(messages);
 
-            if (MyMod.Settings?.debugMode == true) LogPlayer2Debug("PROMPT_REQUEST", jsonBody);
+            if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"{type}_REQUEST", jsonBody);
 
             int   maxRetries = 3;
             float retryDelay = 1f;
@@ -727,11 +729,11 @@ namespace EchoColony
 
                 if (!hasError)
                 {
-                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug("PROMPT_RESPONSE", responseText);
+                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"{type}_RESPONSE", responseText);
                     string reply = ParseStandardLLMResponse(responseText);
                     reply = TrimTextAfterHashtags(reply);
                     reply = CleanResponse(reply);
-                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug("PROMPT_FINAL", reply);
+                    if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"{type}_FINAL", reply);
                     onResponse?.Invoke(reply);
                     yield break;
                 }
@@ -1511,7 +1513,7 @@ namespace EchoColony
                 if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
                 string latestPath = Path.Combine(folderPath, $"Player2_{type}_LATEST.txt");
                 string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-                string historyPath = Path.Combine(folderPath, $"Player2_{type}_{timestamp}.txt");
+                string historyPath = Path.Combine(folderPath, $"Player2_{timestamp}_{type}_.txt");
                 string debugContent = $"=== PLAYER2 {type} DEBUG LOG ===\n" +
                                       $"Last Updated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}\n" +
                                       $"Type: {type}\n" +

@@ -645,7 +645,7 @@ namespace EchoColony
                     isLateJoiner: isLateJoiner);
 
                 bool done = false;
-                yield return ProcessTurn(next, prompt, response =>
+                yield return ProcessTurn(CleanNameForFileName(next?.LabelShort), prompt, response =>
                 {
                     // Remove placeholder
                     if (session.History.Count > 0 &&
@@ -888,7 +888,7 @@ namespace EchoColony
 
         // ── API call helper ──────────────────────────────────────────────────────
 
-        private IEnumerator ProcessTurn(Pawn speaker, string prompt, Action<string> onComplete)
+        private IEnumerator ProcessTurn(string speaker, string prompt, Action<string> onComplete)
         {
             string result   = "";
             bool   complete = false;
@@ -917,7 +917,7 @@ namespace EchoColony
  
                 case ModelSource.Player2:
                     // Player2 uses its own message format; pass prompt as user content
-                    coroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, cb);
+                    coroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, cb, $"GROUP_CHAT_{speaker}");
                     break;
  
                 case ModelSource.OpenRouter:
@@ -962,7 +962,7 @@ namespace EchoColony
             bool   sumDone = false;
             string gameLanguage = LanguageDatabase.activeLanguage?.FriendlyNameEnglish ?? "English";
 
-            yield return ProcessTurn(group[0],
+            yield return ProcessTurn("SUMMARY",
                 "[SYSTEM]\n Summarize this group conversation in 2-3 sentences:\n\n" +
                 $"CRITICAL: You must write the summary strictly in {gameLanguage}:\n\n" + "[USER]" + transcript,
                 r => { if (!string.IsNullOrWhiteSpace(r) && !r.StartsWith("⚠")) summary = r.Trim(); sumDone = true; });
@@ -995,7 +995,7 @@ namespace EchoColony
                     gameLanguage
                 );
 
-                yield return ProcessTurn(pawn, memoryPrompt,
+                yield return ProcessTurn(CleanNameForFileName(pawn?.LabelShort), memoryPrompt,
                     r => { memBody = !string.IsNullOrWhiteSpace(r) ? r.Trim() : summary; memDone = true; });
 
                 int mw = 0;
@@ -1240,6 +1240,19 @@ namespace EchoColony
             base.PostOpen();
             cachedHeights.Clear();
             lastMessageTextSeen = null;
+        }
+
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
         }
     }
 }

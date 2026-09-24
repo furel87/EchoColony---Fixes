@@ -44,7 +44,7 @@ namespace EchoColony
             bool isDone = false;
 
             // Obtenemos la corrutina de la API según la configuración
-            IEnumerator apiCoroutine = GetApiMemoryCoroutine(fullPrompt, (summary) =>
+            IEnumerator apiCoroutine = GetApiMemoryCoroutine(fullPrompt, CleanNameForFileName(pawn?.LabelShort), (summary) =>
             {
                 var tracker = ColonistMemoryManager.GetOrCreate()?.GetTrackerFor(pawn);
                 if (tracker != null)
@@ -124,14 +124,14 @@ namespace EchoColony
             return string.Join("\n", lines);
         }
 
-        private static IEnumerator GetApiMemoryCoroutine(string fullPrompt, System.Action<string> callback)
+        private static IEnumerator GetApiMemoryCoroutine(string fullPrompt, string pawnName, System.Action<string> callback)
         {
             switch (MyMod.Settings.modelSource)
             {
                 case ModelSource.Local:
                     return GeminiAPI.SendRequestToLocalModel(fullPrompt, callback);
                 case ModelSource.Player2:
-                    return GeminiAPI.SendRequestToPlayer2WithPrompt(fullPrompt, callback);
+                    return GeminiAPI.SendRequestToPlayer2WithPrompt(fullPrompt, callback, $"TODAY_MEMORY_{pawnName}");
                 case ModelSource.OpenRouter:
                     return GeminiAPI.SendRequestToOpenRouter(fullPrompt, callback);
                 case ModelSource.Custom:
@@ -139,6 +139,19 @@ namespace EchoColony
                 default:
                     return GeminiAPI.SendRequestToGemini(fullPrompt, callback);
             }
+        }
+
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
         }
     }
 }

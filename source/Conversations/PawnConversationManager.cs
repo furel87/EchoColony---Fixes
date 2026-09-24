@@ -83,7 +83,12 @@ namespace EchoColony.Conversations
             // Call AI — dispatch to the active backend (mirrors ColonistChatWindow pattern)
             string aiResponse = null;
 
-            yield return SendConversationRequest(fullPrompt, r => aiResponse = r);
+            // Formatear participantes limpiando caracteres no válidos para archivos
+            string safeInitiator = CleanNameForFileName(initiator?.LabelShort);
+            string safeRecipient = CleanNameForFileName(recipient?.LabelShort);
+            string debugParticipants = $"{safeInitiator}_{safeRecipient}";
+
+            yield return SendConversationRequest(fullPrompt, r => aiResponse = r, debugParticipants);
 
             if (string.IsNullOrWhiteSpace(aiResponse) || aiResponse.StartsWith("⚠") || aiResponse.StartsWith("❌"))
             {
@@ -244,38 +249,38 @@ namespace EchoColony.Conversations
         /// in the prompt, no pawn-specific Player2 session needed.
         /// Mirrors the dispatch logic in ColonistChatWindow.SendMessage().
         /// </summary>
-        private static IEnumerator SendConversationRequest(string prompt, Action<string> onResponse)
-{
-    if (MyMod.Settings == null)
-    {
-        onResponse?.Invoke("⚠ ERROR: Settings not loaded");
-        yield break;
-    }
+        private static IEnumerator SendConversationRequest(string prompt, Action<string> onResponse, string debugParticipants = "")
+        {
+            if (MyMod.Settings == null)
+            {
+                onResponse?.Invoke("⚠ ERROR: Settings not loaded");
+                yield break;
+            }
 
-    switch (MyMod.Settings.modelSource)
-    {
-        case ModelSource.Player2:
-            yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse);
-            break;
+            switch (MyMod.Settings.modelSource)
+            {
+                case ModelSource.Player2:
+                    yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse, $"CONVERSATION_{debugParticipants}");
+                    break;
 
-        case ModelSource.Local:
-            yield return GeminiAPI.SendRequestToLocalModel(prompt, onResponse);
-            break;
+                case ModelSource.Local:
+                    yield return GeminiAPI.SendRequestToLocalModel(prompt, onResponse);
+                    break;
 
-        case ModelSource.OpenRouter:
-            yield return GeminiAPI.SendRequestToOpenRouter(prompt, onResponse);
-            break;
+                case ModelSource.OpenRouter:
+                    yield return GeminiAPI.SendRequestToOpenRouter(prompt, onResponse);
+                    break;
 
-        case ModelSource.Custom:
-            yield return GeminiAPI.SendRequestToCustomProvider(prompt, onResponse);
-            break;
+                case ModelSource.Custom:
+                    yield return GeminiAPI.SendRequestToCustomProvider(prompt, onResponse);
+                    break;
 
-        case ModelSource.Gemini:
-        default:
-            yield return GeminiAPI.SendRequestToGemini(prompt, onResponse);
-            break;
-    }
-}
+                case ModelSource.Gemini:
+                default:
+                    yield return GeminiAPI.SendRequestToGemini(prompt, onResponse);
+                    break;
+            }
+        }
         // ── Settings helpers ──────────────────────────────────────────────────────
 
         private static bool IsConversationEnabled()
@@ -292,6 +297,19 @@ namespace EchoColony.Conversations
         private static float GetBubbleDelay()
         {
             return MyMod.Settings?.conversationBubbleDelay ?? 1.5f;
+        }
+
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
         }
     }
 }

@@ -465,7 +465,7 @@ namespace EchoColony.Factions
                     break;
 
                 case ModelSource.Player2:
-                    coroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, OnResponse);
+                    coroutine = GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, OnResponse, "FACTION_CHAT");
                     break;
 
                 case ModelSource.OpenRouter:
@@ -625,7 +625,7 @@ namespace EchoColony.Factions
             switch (source)
             {
                 case ModelSource.Player2:
-                    eval = GeminiAPI.SendRequestToPlayer2WithPrompt(evalPrompt, r => { result = r; done = true; });
+                    eval = GeminiAPI.SendRequestToPlayer2WithPrompt(evalPrompt, r => { result = r; done = true; }, "FACTION_EVALUATION");
                     break;
                 case ModelSource.OpenRouter:
                     eval = GeminiAPI.SendRequestToOpenRouter(evalPrompt, r => { result = r; done = true; });

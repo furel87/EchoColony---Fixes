@@ -133,7 +133,7 @@ namespace EchoColony.Conversations
                 if (string.IsNullOrWhiteSpace(fullPrompt)) yield break;
 
                 string aiResponse = null;
-                yield return SendMonologueRequest(fullPrompt, r => aiResponse = r);
+                yield return SendMonologueRequest(fullPrompt, r => aiResponse = r, pawn);
 
                 if (string.IsNullOrWhiteSpace(aiResponse) ||
                     aiResponse.StartsWith("⚠") || aiResponse.StartsWith("❌"))
@@ -161,12 +161,12 @@ namespace EchoColony.Conversations
         // ── API dispatch ──────────────────────────────────────────────────────────
         // Mirrors PawnConversationManager.SendConversationRequest
 
-        private static IEnumerator SendMonologueRequest(string prompt, Action<string> onResponse)
+        private static IEnumerator SendMonologueRequest(string prompt, Action<string> onResponse, Pawn pawn)
         {
             switch (MyMod.Settings.modelSource)
             {
                 case ModelSource.Player2:
-                    yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse);
+                    yield return GeminiAPI.SendRequestToPlayer2WithPrompt(prompt, onResponse, $"MONOLOGUE_{CleanNameForFileName(pawn?.LabelShort)}");
                     break;
                 case ModelSource.Local:
                     yield return GeminiAPI.SendRequestToLocalModel(prompt, onResponse);
@@ -193,6 +193,19 @@ namespace EchoColony.Conversations
             var s = MyMod.Settings;
             if (s != null)
                 Conversations.ConversationChatLogRenderer.LoadPosition(s.chatLogX, s.chatLogY, s.chatLogW, s.chatLogH);
+        }
+
+        private static string CleanNameForFileName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+
+            // Reemplazar espacios por guiones bajos y eliminar caracteres no válidos en Windows/Linux
+            string safe = name.Replace(" ", "_");
+            foreach (char c in System.IO.Path.GetInvalidFileNameChars())
+            {
+                safe = safe.Replace(c.ToString(), "");
+            }
+            return safe;
         }
     }
 }
