@@ -701,7 +701,7 @@ namespace EchoColony
 
             string jsonBody = BuildMessagesJson(messages);
 
-            if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"{type}_", "REQUEST", jsonBody); //furel - Modified name output to indicate where comes from.
+            if (MyMod.Settings?.debugMode == true) LogPlayer2Debug($"{type}", "REQUEST", jsonBody); //furel - Modified name output to indicate where comes from.
 
             int   maxRetries = 3;
             float retryDelay = 1f;
