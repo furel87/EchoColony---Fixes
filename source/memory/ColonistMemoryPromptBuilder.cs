@@ -41,8 +41,6 @@ namespace EchoColony
                 promptBlocks.Add("*CORE ROLEPLAY DIRECTIVES:*\n" + string.Join("\n", directives));
             }
 
-            // AddIfNotEmpty(promptBlocks, BuildBehavioralDirectives(pawn));
-
             string gameLanguage = LanguageDatabase.activeLanguage?.FriendlyNameEnglish ?? "English";
 
             // 4. Definición de la tarea y reglas de estilo
