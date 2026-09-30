@@ -207,7 +207,7 @@ namespace EchoColony
             if (!string.IsNullOrEmpty(groupContext))
             {            
                 // Brevity constraint appended to the actual API message — not the context —
-            // so the model sees it immediately before generating its reply.
+                // so the model sees it immediately before generating its reply.
                 apiMsg = groupContext + userMsg + " [Answer in one sentence, 100 characters max. Be brief.]";
                 ChatGameComponent.Instance.ClearGroupHistory(pawn);
             }

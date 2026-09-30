@@ -293,7 +293,7 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Stores the tick of the interaction and the first valid turn.
+        /// Stores the tick and turnof the interaction and the first valid turn.
         /// </summary>
         /// <param name="pawn"></param>
         /// <param name="currentTurn"></param>
@@ -313,7 +313,7 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Updates just the last turn
+        /// Updates just the start turn.
         /// </summary>
         /// <param name="pawn"></param>
         /// <param name="newStartTurn"></param>
@@ -344,7 +344,7 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Comprueba si la sesión ha caducado por haber superado el tiempo límite sin hablar.
+        /// Check if the session has expired due to exceeding the time limit without speaking.
         /// </summary>
         /// <param name="pawn">El colono a comprobar.</param>
         /// <param name="timeoutTicks">Tiempo límite en ticks. Por defecto: 5 horas de juego (12,500 ticks).</param>
@@ -371,8 +371,9 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Registra el tick del juego en el que ocurrió la última interacción con el peón.
+        /// Updates the tick of the game in which the last interaction with the pawn occurred.
         /// </summary>
+        /// <param name="pawn"></param>
         public void UpdateInteractionTick(Pawn pawn)
         {
             if (pawn == null) return;
@@ -381,7 +382,7 @@ namespace EchoColony
         }
 
         /// <summary>
-        /// Almacen el turno de la conversación
+        /// Updates the current turn of the conversation for the pawn.
         /// </summary>
         /// <param name="pawn"></param>
         /// <param name="turn"></param>
@@ -389,6 +390,7 @@ namespace EchoColony
         {
             interactionStates[pawn.ThingID].CurrentTurn = turn;
         }
+
         //furel - Modified method to retrieve recent chat lines, skipping the last N lines to avoid including the current prompt and placeholder.
         /// <summary>
         /// Gets the recent lines of chat for a pawn, skipping the last N lines (default 2) to avoid including the current prompt and placeholder.
@@ -425,9 +427,22 @@ namespace EchoColony
             return available.TakeLast(linesToTake).ToList();
         }
 
+        /// <summary>
+        /// Updates the counter of turns processed and stored in memory for the pawn.
+        /// </summary>
+        public void UpdateLastSavedTurn(Pawn pawn, int turn)
+        {
+            if (pawn == null) return;
+            var info = GetInteractionInfo(pawn);
+            if (info != null)
+            {
+                info.LastSavedTurnCount = turn;
+            }
+        }
+
         //*furel- New methods for manage group chat history and participants.
         /// <summary>
-        /// Registra una nueva conversación grupal para un colono.
+        /// Registers a new group conversation for a pawn.
         /// </summary>
         public void RegisterGroupConversation(Pawn pawn, IEnumerable<string> otherParticipants)
         {
@@ -436,6 +451,7 @@ namespace EchoColony
             // Convertimos IEnumerable a List y filtramos cadenas nulas o vacías
             var participantsList = otherParticipants
                 .Where(name => !string.IsNullOrWhiteSpace(name))
+                .OrderBy(name => name)
                 .ToList();
 
             if (participantsList.Count == 0) return;
@@ -452,11 +468,16 @@ namespace EchoColony
             if (history.Records == null)
                 history.Records = new List<GroupChatRecord>();
 
+            var lastRecord = history.Records.LastOrDefault();
+            if (lastRecord != null && lastRecord.ParticipantNames.SequenceEqual(participantsList))
+            {
+                return; // Mismo grupo consecutivo, se ignora la duplicación
+            }
             history.Records.Add(new GroupChatRecord(participantsList));
         }
 
         /// <summary>
-        /// Obtiene el historial de grupos en orden de participación sin modificar el diccionario.
+        /// Retrieves the group history in order of participation without modifying the dictionary.
         /// </summary>
         public List<GroupChatRecord> GetGroupHistory(Pawn pawn)
         {
@@ -465,32 +486,17 @@ namespace EchoColony
                 return history.Records ?? new List<GroupChatRecord>();
             }
 
-            // Retorna una lista vacía sin instanciar entradas innecesarias en el diccionario
             return new List<GroupChatRecord>();
         }
 
         /// <summary>
-        /// Limpia y remueve el registro del colono especifico para liberar memoria.
+        /// Clears and removes the group record for the specified pawn to free up memory.
         /// </summary>
         public void ClearGroupHistory(Pawn pawn)
         {
             if (pawn == null) return;
 
-            // En lugar de .Clear(), Remove elimina la clave por completo del diccionario
             groupChatHistory.Remove(pawn.ThingID);
-        }
-
-        /// <summary>
-        /// Actualiza el contador de turnos procesados y guardados en memoria para el peón.
-        /// </summary>
-        public void UpdateLastSavedTurn(Pawn pawn, int turn)
-        {
-            if (pawn == null) return;
-            var info = GetInteractionInfo(pawn);
-            if (info != null)
-            {
-                info.LastSavedTurnCount = turn;
-            }
         }
 
     }
