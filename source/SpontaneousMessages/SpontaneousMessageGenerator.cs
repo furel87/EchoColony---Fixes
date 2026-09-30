@@ -97,15 +97,15 @@ namespace EchoColony.SpontaneousMessages
             );
 
             //furel - Updated conversation turn and interaction tick for the colonist, so it now counts to mantein the conversation flow. 
-            ChatGameComponent.Instance.UpdateConversationTurn(request.colonist, info.CurrentTurn + 1);
-            if (ChatGameComponent.Instance.GetInteractionInfo(request.colonist).LastTick == 0)
-            {
+            //ChatGameComponent.Instance.UpdateConversationTurn(request.colonist, info.CurrentTurn + 1);
+            //if (ChatGameComponent.Instance.GetInteractionInfo(request.colonist).LastTick == 0)
+            //{
                 ChatGameComponent.Instance.RegisterInteraction(request.colonist, info.CurrentTurn + 1);
-            }
-            else
-            {
-                ChatGameComponent.Instance.UpdateInteractionTick(request.colonist);
-            }
+            //}
+            //else
+            //{
+            //    ChatGameComponent.Instance.UpdateInteractionTick(request.colonist);
+            //}
 
             if (MyMod.Settings.debugMode)
             {

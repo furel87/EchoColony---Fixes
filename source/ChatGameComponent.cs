@@ -19,7 +19,7 @@ namespace EchoColony
 
         public class PawnInteractionInfo : IExposable
         {
-            // Usamos campos directamente en lugar de { get; set; }
+
             public int LastTick;
             public int StartTurn;
             public int CurrentTurn;
@@ -38,7 +38,6 @@ namespace EchoColony
         {
             public List<string> ParticipantNames = new List<string>();
 
-            // Constructor vacío obligatorio para Scribe/Loading
             public GroupChatRecord() { }
 
             public GroupChatRecord(IEnumerable<string> participantNames)
@@ -304,6 +303,7 @@ namespace EchoColony
             var info = GetInteractionInfo(pawn);
 
             info.LastTick = Find.TickManager.TicksGame;
+            info.CurrentTurn = currentTurn;
 
             // Si es la primera interacción de una nueva sesión/bloque, fijamos el turno inicial
             if (info.StartTurn == 0)

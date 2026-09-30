@@ -313,16 +313,16 @@ namespace EchoColony
 
             var info = ChatGameComponent.Instance.GetInteractionInfo(pawn);
 
-            ChatGameComponent.Instance.UpdateConversationTurn(pawn, info.CurrentTurn+1);
+            //ChatGameComponent.Instance.UpdateConversationTurn(pawn, info.CurrentTurn+1);
 
-            if (info.LastTick == 0)
-            {
+            //if (info.LastTick == 0)
+            //{
                 ChatGameComponent.Instance.RegisterInteraction(pawn, info.CurrentTurn + 1);
-            }
-            else
-            {
-                ChatGameComponent.Instance.UpdateInteractionTick(pawn);
-            }
+           // }
+            //else
+            //{
+            //    ChatGameComponent.Instance.UpdateInteractionTick(pawn);
+            //}
 
             ColonistMemoryHelper.CheckAndGenerateMemory(pawn);
 

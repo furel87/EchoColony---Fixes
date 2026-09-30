@@ -96,20 +96,18 @@ namespace EchoColony
             CalculateTurnCountFromHistory();
             lastSavedTurnCount = ChatGameComponent.Instance.GetInteractionInfo(pawn).LastSavedTurnCount;
 
-            // Si por algún motivo el turno guardado en savefile supera los turnos reales calculados, sincronizamos
-            if (lastSavedTurnCount > conversationTurnCount)
-            {
-                lastSavedTurnCount = conversationTurnCount;
-                ChatGameComponent.Instance.UpdateLastSavedTurn(pawn, lastSavedTurnCount);
-            }
-
-
             //furel - Check if the session should be reset, if so, we generate a memory for the colonist for the unproceset turns.
             if (ChatGameComponent.Instance.ShouldResetSession(pawn))
             {
                 ColonistMemoryHelper.CheckAndGenerateMemory(pawn, 1);
             }
-                
+
+            // Si por algún motivo el turno guardado en savefile supera los turnos reales calculados, sincronizamos
+            if (lastSavedTurnCount > conversationTurnCount)
+            {
+                lastSavedTurnCount = conversationTurnCount;
+                ChatGameComponent.Instance.UpdateLastSavedTurn(pawn, lastSavedTurnCount);
+            }    
 
             if (ChatGameComponent.Instance.GetInteractionInfo(pawn).CurrentTurn !=conversationTurnCount)
                 ChatGameComponent.Instance.UpdateConversationTurn(pawn, conversationTurnCount);
@@ -629,19 +627,19 @@ namespace EchoColony
             messageHistory.Add(new GeminiMessage("model", response));
             conversationTurnCount++;
             //furel - Update the conversation turn count in the interaction info, so we can track the number of turns in the current session.
-            ChatGameComponent.Instance.UpdateConversationTurn(pawn, conversationTurnCount);
+            //ChatGameComponent.Instance.UpdateConversationTurn(pawn, conversationTurnCount);
             Log.Message($"[EchoColony] Turn completed #{conversationTurnCount} for {pawn.LabelShort}");
 
             //If is the first interaction or is reset it registers the tick and the turn if not, it updates the tick of the interaction,
             //so we can track the last tick of the interaction.
-            if (ChatGameComponent.Instance.GetInteractionInfo(pawn).LastTick == 0)
-            {
+            //if (ChatGameComponent.Instance.GetInteractionInfo(pawn).LastTick == 0)
+            //{
                 ChatGameComponent.Instance.RegisterInteraction(pawn, conversationTurnCount);
-            }
-            else
-            {
-                ChatGameComponent.Instance.UpdateInteractionTick(pawn);
-            }
+            //}
+            //else
+            //{
+            //    ChatGameComponent.Instance.UpdateInteractionTick(pawn);
+            //}
 
             // --- FUREL: NEW CONVERSATION STORAGE LOGIC ---
             // last saved turn now is stored in the interaction info, so we can track the number of turns since the last save to use it whit spontaneous
