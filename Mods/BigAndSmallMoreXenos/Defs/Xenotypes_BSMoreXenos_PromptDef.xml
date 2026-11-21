@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Big & Small - More Xenotypes ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Weaver</defName>
+    <targetXenotype>BS_Weaver</targetXenotype>
+    <promptDescription>A predatory arachnid xenohuman capable of rapidly producing synthetic silk, hunting with relentless speed and pouncing agility.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Devilspider</defName>
+    <targetXenotype>BS_Devilspider</targetXenotype>
+    <promptDescription>An engineered arachnid xenohuman capable of spinning high-grade devilstrand silk, tempered with a calm, civil temperament.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Mimic</defName>
+    <targetXenotype>BS_Mimic</targetXenotype>
+    <promptDescription>A mysterious, deceptive shape-shifting xenohuman capable of altering biological forms and infiltrating societies with uncanny adaptability.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Abomination</defName>
+    <targetXenotype>BS_Abomination</targetXenotype>
+    <promptDescription>A grotesque, genetically unstable chimera created in illicit gene labs, possessing chaotic physical mutations and relentless vitality.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Broodmother</defName>
+    <targetXenotype>BS_Broodmother</targetXenotype>
+    <promptDescription>A colossal, continuously growing maternal chimera capable of gestating diverse biological litters, whose body expands unstoppably with age.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Parasite</defName>
+    <targetXenotype>BS_Parasite</targetXenotype>
+    <promptDescription>A diminutive parasitic xenohuman specialized in biological manipulation and thriving as an elusive, manipulative symbiote.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_HiveQueen</defName>
+    <targetXenotype>BS_HiveQueen</targetXenotype>
+    <promptDescription>A genetically engineered insectoid matriarch and hive queen, bearing insectoid mandibles, antennae, and pheromone organs to command and nurture offspring across species.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+</Defs>

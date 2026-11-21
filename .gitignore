@@ -1,0 +1,23 @@
+# Build
+bin/
+obj/
+source/obj/
+source/bin/
+
+# DLLs (Ignora DLLs sueltas pero conserva las assemblies oficiales del mod para que funcione al descargarlo)
+*.dll
+!1.6/Assemblies/*.dll
+
+# Visual Studio / VS Code
+.vs/
+.vscode/.vs/
+*.user
+*.cache
+*.suo
+
+# NuGet
+*.nuget.*
+project.assets.json
+
+# Debug dumps
+bs_genes_dump.csv

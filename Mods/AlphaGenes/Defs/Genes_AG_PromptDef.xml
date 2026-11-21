@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== AlphaGenes: Alpha Animals Creatures ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RadYakEars</defName>
+    <targetGene>AG_RadYakEars</targetGene>
+    <customLabel>radyak ears</customLabel>
+    <promptDescription>long, shaggy pointed yak ears protruding from the sides of the head</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_AnimusEars</defName>
+    <targetGene>AG_AnimusEars</targetGene>
+    <customLabel>animus ears</customLabel>
+    <promptDescription>large, upright triangular fennec-fox ears with soft inner fur</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FeraliskEyes</defName>
+    <targetGene>AG_FeraliskEyes</targetGene>
+    <customLabel>feralisk spider eyes</customLabel>
+    <promptDescription>four glossy black bulbous spider eyes with wide panoramic focus</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_BumbledroneWings</defName>
+    <targetGene>AG_BumbledroneWings</targetGene>
+    <customLabel>bumbledrone bee wings</customLabel>
+    <promptDescription>two pairs of clear, rapid-buzzing membranous insect bee wings</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_DrainerWings</defName>
+    <targetGene>AG_DrainerWings</targetGene>
+    <customLabel>drainer butterfly wings</customLabel>
+    <promptDescription>giant dark membranous moth-like wings with intricate vein patterns</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_AerofleetHead</defName>
+    <targetGene>AG_AerofleetHead</targetGene>
+    <customLabel>aerofleet jellyfish hood</customLabel>
+    <promptDescription>translucent, gelatinous bioluminescent blue jellyfish-like hood draping the head</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RayHoundTentacles</defName>
+    <targetGene>AG_RayHoundTentacles</targetGene>
+    <customLabel>rayhound snout tentacles</customLabel>
+    <promptDescription>two fleshy, sensitive sensory tentacles protruding outward from the nose</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Eldritch & Lovecraftian ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_EyeOfShubNiggurath</defName>
+    <targetGene>AG_EyeOfShubNiggurath</targetGene>
+    <customLabel>fanged eye-mouth</customLabel>
+    <promptDescription>grotesque gaping mouth lined with needle-sharp fangs in place of an eye</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_EldritchHorns</defName>
+    <targetGene>AG_EldritchHorns</targetGene>
+    <customLabel>eldritch antlers</customLabel>
+    <promptDescription>massive gnarled, runic calcified antlers protruding from the forehead</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_HornCrown</defName>
+    <targetGene>AG_HornCrown</targetGene>
+    <customLabel>horn crown</customLabel>
+    <promptDescription>a coronal ring of sharp calcified bone horns jutting around the brow</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_BodyTentacles</defName>
+    <targetGene>AG_BodyTentacles</targetGene>
+    <customLabel>back tentacles</customLabel>
+    <promptDescription>cluster of writhing, fleshy purple tentacles sprouting from the upper back</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FaceTentacles</defName>
+    <targetGene>AG_FaceTentacles</targetGene>
+    <customLabel>facial tentacles</customLabel>
+    <promptDescription>cluster of squirming, viscous tentacles hanging around the jaw like a beard</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Fictional Subspecies ==================== -->
+
+  <!-- Forsaken -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ForsakenEyes</defName>
+    <targetGene>AG_ForsakenEyes</targetGene>
+    <customLabel>forsaken glowing eyes</customLabel>
+    <promptDescription>four glowing yellow eyes (two large primary eyes with two smaller ones underneath)</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ForsakenBody</defName>
+    <targetGene>AG_ForsakenBody</targetGene>
+    <customLabel>forsaken gaunt torso</customLabel>
+    <promptDescription>deeply emaciated torso with prominent ribs and sunken cranial/dermal valleys</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ForsakenHead</defName>
+    <targetGene>AG_ForsakenHead</targetGene>
+    <customLabel>forsaken skull</customLabel>
+    <promptDescription>angular, gaunt head with pronounced cranial bone ridges and sunken temples</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Nereid -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NereidBody</defName>
+    <targetGene>AG_NereidBody</targetGene>
+    <customLabel>nereid aquatic body</customLabel>
+    <promptDescription>aquatic humanoid torso covered in fine iridescent scales with glowing bioluminescent speckles</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NereidHead</defName>
+    <targetGene>AG_NereidHead</targetGene>
+    <customLabel>nereid scaled head</customLabel>
+    <promptDescription>hairless, smooth head covered in fine scales with glowing bioluminescent dots</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NereidFins</defName>
+    <targetGene>AG_NereidFins</targetGene>
+    <customLabel>aquatic fin-ears</customLabel>
+    <promptDescription>elongated, webbed fin-like ears tapering to delicate points</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NereidTail</defName>
+    <targetGene>AG_NereidTail</targetGene>
+    <customLabel>nereid caudal fin</customLabel>
+    <promptDescription>broad, flexible fish-like tail fin extending behind them (still walks upright)</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Drakonori -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_DrakonoriHead</defName>
+    <targetGene>AG_DrakonoriHead</targetGene>
+    <customLabel>drakonori reptile head</customLabel>
+    <promptDescription>reptilian head covered in tough scales with a pronounced crocodilian snout</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Drakonori_Tail</defName>
+    <targetGene>AG_Drakonori_Tail</targetGene>
+    <customLabel>drakonori scaled tail</customLabel>
+    <promptDescription>heavy, muscular draconic tail covered in thick scales</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_DrakonoriWings</defName>
+    <targetGene>AG_DrakonoriWings</targetGene>
+    <customLabel>draconic wings</customLabel>
+    <promptDescription>large, leathery bat-like dragon wings sprouting from the back</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_DrakonoriBody</defName>
+    <targetGene>AG_DrakonoriBody</targetGene>
+    <customLabel>draconic scaled body</customLabel>
+    <promptDescription>broad, muscular torso clad in interlocking reptilian scales</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Mutations & Modifications ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ScytherHands</defName>
+    <targetGene>AG_ScytherHands</targetGene>
+    <customLabel>scyther blade arms</customLabel>
+    <promptDescription>long razor-sharp osseous and mechanite scythe blades fused into the forearms</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VFEI_PneumaticClaw</defName>
+    <targetGene>AG_VFEI_PneumaticClaw</targetGene>
+    <customLabel>chitinous pincer claw</customLabel>
+    <promptDescription>heavy chitinous insectoid pincer claw in place of a hand</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SlimeBody</defName>
+    <targetGene>AG_SlimeBody</targetGene>
+    <customLabel>gelatinous slime skin</customLabel>
+    <promptDescription>translucent, glistening blue gelatinous body that drips fluid continuously</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SlugFace</defName>
+    <targetGene>AG_SlugFace</targetGene>
+    <customLabel>slug stalk-eyes</customLabel>
+    <promptDescription>eyes mounted on elongated, mobile fleshy stalks protruding from the head</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ChameleonVision</defName>
+    <targetGene>AG_ChameleonVision</targetGene>
+    <customLabel>chameleon eyes</customLabel>
+    <promptDescription>protruding conical chameleon eyes capable of rotating and focusing independently</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NearBlindness</defName>
+    <targetGene>AG_NearBlindness</targetGene>
+    <customLabel>clouded unseeing eyes</customLabel>
+    <promptDescription>milky, opaque and cloudy unseeing eyes</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FungalSprout</defName>
+    <targetGene>AG_FungalSprout</targetGene>
+    <customLabel>fungal chest eruptions</customLabel>
+    <promptDescription>swollen blood-filled pustules and fungal caps erupting from the chest and shoulders</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_LargerBodySize</defName>
+    <targetGene>AG_LargerBodySize</targetGene>
+    <customLabel>colossus build</customLabel>
+    <promptDescription>unusually massive and towering physical build</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SmallerBodySize</defName>
+    <targetGene>AG_SmallerBodySize</targetGene>
+    <customLabel>diminutive build</customLabel>
+    <promptDescription>abnormally diminutive and compact body stature</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+  
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VenomFangs</defName>
+    <targetGene>AG_VenomFangs</targetGene>
+    <customCategory>Ability</customCategory>
+  </EchoColony.GeneAIPromptDef>
+  
+  <!-- ==================== AlphaGenes: Exotic Sustenance & Specific Needs ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_CorpseFeeding</defName>
+    <targetGene>AG_CorpseFeeding</targetGene>
+    <customLabel>corpse feeder</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>feeds through skin contact with rotting corpses and corpse bile liquid</promptDescription>
+    <behavioralDirective>Finds the stench of rotting corpses nourishing rather than foul, and actively seeks decomposing remains to feed.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_LightSustenance</defName>
+    <targetGene>AG_LightSustenance</targetGene>
+    <customLabel>photosynthetic sustenance</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>photosynthetic skin that absorbs nourishment directly from sunlight, dying if deprived of bright light</promptDescription>
+    <behavioralDirective>Yearns to bask under bright sunlight or high-intensity lamps; feels starving and anxious in prolonged darkness.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Voice Modifications ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SlugVoice</defName>
+    <targetGene>AG_SlugVoice</targetGene>
+    <customLabel>slug voice</customLabel>
+    <behavioralDirective>Speaks with a wet, squishing, gurgling cadence like liquid mud.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RockVoice</defName>
+    <targetGene>AG_RockVoice</targetGene>
+    <customLabel>rock voice</customLabel>
+    <behavioralDirective>Speaks with a deep, abrasive grinding rumble resembling two boulders scraping against each other.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FrogVoice</defName>
+    <targetGene>AG_FrogVoice</targetGene>
+    <customLabel>frog voice</customLabel>
+    <behavioralDirective>Speaks with a raspy, rhythmic croaking timbre with throaty vocal bursts.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_GutturalVoice</defName>
+    <targetGene>AG_GutturalVoice</targetGene>
+    <customLabel>guttural voice</customLabel>
+    <behavioralDirective>Speaks with an intensely harsh, raspy throat-heavy gravel voice.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_GrowlingVoice</defName>
+    <targetGene>AG_GrowlingVoice</targetGene>
+    <customLabel>growling voice</customLabel>
+    <behavioralDirective>Speaks with a feral, predatory rasp laced with low predatory snarls and growls.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_HivelingVoice</defName>
+    <targetGene>AG_HivelingVoice</targetGene>
+    <customLabel>hiveling voice</customLabel>
+    <behavioralDirective>Speaks with a high-pitched, vibrating insectoid buzz interspersed with rapid chittering clicks.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Psychology, Fears & Mental States ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Thalassophobia</defName>
+    <targetGene>AG_Thalassophobia</targetGene>
+    <customLabel>thalassophobia</customLabel>
+    <behavioralDirective>Possesses a terrifying, visceral phobia of water, marshland, and rainfall, risking immediate panic breakdowns when wet or near open water.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FireObsession</defName>
+    <targetGene>AG_FireObsession</targetGene>
+    <customLabel>fire obsession</customLabel>
+    <behavioralDirective>Pathologically fascinated by open flames and fire, constantly drawn to watching or standing near blazes.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_InnerPeace</defName>
+    <targetGene>AG_InnerPeace</targetGene>
+    <customLabel>inner peace</customLabel>
+    <behavioralDirective>Maintains an unshakable, stoic calm; is entirely unprovoked and untroubled by social insults, slights, or arguments.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Rowdy</defName>
+    <targetGene>AG_Rowdy</targetGene>
+    <customLabel>rowdy temperament</customLabel>
+    <behavioralDirective>Treats brawling, teasing, and rough social sparring as fun and recreational.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Sensitivity_Vicious</defName>
+    <targetGene>AG_Sensitivity_Vicious</targetGene>
+    <customLabel>vicious UV hypersensitivity</customLabel>
+    <behavioralDirective>Direct sunlight violently knocks them unconscious; experiences mortal dread of daylight and open skies.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Sensitivity_Lethal</defName>
+    <targetGene>AG_Sensitivity_Lethal</targetGene>
+    <customLabel>lethal UV vulnerability</customLabel>
+    <behavioralDirective>Direct sunlight is lethal to your flesh, burning and killing you in minutes. You harbor a mortal dread of the sun and open daylight skies, existing strictly by night or in roofed shelters.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_UVPowered_Major</defName>
+    <targetGene>AG_UVPowered_Major</targetGene>
+    <customLabel>solar powered</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>cellular compounds recharge in sunlight granting high energy and mood, but prolonged darkness leaves them lethargic and subdued</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VolatileMood</defName>
+    <targetGene>AG_VolatileMood</targetGene>
+    <customLabel>volatile mood</customLabel>
+    <behavioralDirective>You experience extreme, unpredictable mood swings on a daily basis, oscillating erratically between cheerful elation and deep melancholic gloom.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Enforcer</defName>
+    <targetGene>AG_Enforcer</targetGene>
+    <customLabel>natural enforcer</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>physically and mentally commanding, naturally adept at subduing and arresting unruly individuals</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ArrestAvoidance</defName>
+    <targetGene>AG_ArrestAvoidance</targetGene>
+    <customLabel>confrontation-averse</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>hesitant and inept at physically asserting authority or arresting unruly individuals</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ToughSinews</defName>
+    <targetGene>AG_ToughSinews</targetGene>
+    <customLabel>reinforced sinews</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>unnaturally dense muscle and tendon fibers allow wielding colossal heavy weapons without powered armor support</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Bodily Effects & Bio-Mechanisms ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_BoomNodules</defName>
+    <targetGene>AG_BoomNodules</targetGene>
+    <customLabel>chemfuel nodules</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>grotesque chemfuel-filled pustules line the skin, destined to detonate violently in a massive explosion upon death</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_TetraCoils</defName>
+    <targetGene>AG_TetraCoils</targetGene>
+    <customLabel>bio-electric tetra coils</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>techno-organic coils wired into the genome continuously recharge nearby batteries wirelessly</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Polluter</defName>
+    <targetGene>AG_Polluter</targetGene>
+    <customLabel>living polluter</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>body continuously generates toxic waste and pollution, corrupting the ground wherever they walk</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Exotic Sustenance, Blood & Digestion ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_MetalEater</defName>
+    <targetGene>AG_MetalEater</targetGene>
+    <customLabel>mineral eater</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>sustained exclusively by ingesting raw metals and mineral ores instead of organic food</promptDescription>
+    <behavioralDirective>You do not eat organic food. You sustain your metallurgic biology by ingesting raw metal ores, steel, and minerals.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_TableResistance</defName>
+    <targetGene>AG_TableResistance</targetGene>
+    <customLabel>table-independent diner</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>completely indifferent to dining etiquette or eating without a table, content to eat anywhere on the go</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_AcidicBlood</defName>
+    <targetGene>AG_AcidicBlood</targetGene>
+    <customLabel>acidic blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>blood is a violently corrosive acid that spatters outward when wounded or slain, burning nearby assailants</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ChemfuelBlood</defName>
+    <targetGene>AG_ChemfuelBlood</targetGene>
+    <customLabel>chemfuel blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>circulates volatile liquid chemfuel instead of blood, making open wounds dangerously combustible</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_CryoBlood</defName>
+    <targetGene>AG_CryoBlood</targetGene>
+    <customLabel>cryo blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>blood acts as sub-zero cryogenic refrigerant, causing flash frost and dropping surrounding temperatures when spilt</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_TarBlood</defName>
+    <targetGene>AG_TarBlood</targetGene>
+    <customLabel>tar-like blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>bleeds dense, pitch-black sticky tar that clings to terrain and severely hinders movement</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_PebbleBlood</defName>
+    <targetGene>AG_PebbleBlood</targetGene>
+    <customLabel>crystallizing pebble blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>blood instantly crystallizes into solid stone pebbles upon contact with air</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SlimeBlood</defName>
+    <targetGene>AG_SlimeBlood</targetGene>
+    <customLabel>viscous slime blood</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>circulates thick, iridescent green alien slime rather than red mammalian blood</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RatVomit</defName>
+    <targetGene>AG_RatVomit</targetGene>
+    <customLabel>rat vomit</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>nausea violently expels clusters of rogue mechanites that immediately coalesce into live, skittering rats</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_BloodVomit</defName>
+    <targetGene>AG_BloodVomit</targetGene>
+    <customLabel>hemorrhagic vomit</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>acts of vomiting trigger severe internal hemorrhaging, vomiting pure blood and sustaining widespread bodily bruising</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ChemfuelVomit</defName>
+    <targetGene>AG_ChemfuelVomit</targetGene>
+    <customLabel>chemfuel vomit</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>expels volatile, highly flammable liquid chemfuel when nauseous</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_PukeCryo</defName>
+    <targetGene>AG_PukeCryo</targetGene>
+    <customLabel>cryo vomit</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>expels freezing cryogenic fluid when nauseous, chilling the ground and surrounding atmosphere</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Active Abilities, Psionics & Exotic Phenomena ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_DevourBrains</defName>
+    <targetGene>AG_DevourBrains</targetGene>
+    <customLabel>devour brains</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can feast on the brain of an incapacitated victim, killing them to absorb a portion of their intellect and highest skills</promptDescription>
+    <behavioralDirective>You can devour the brains of incapacitated foes to absorb their knowledge and skills, viewing fallen enemies as intellectual nourishment.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ParasiticStinger</defName>
+    <targetGene>AG_ParasiticStinger</targetGene>
+    <customLabel>parasitic stinger</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can inject parasitic xenogerm eggs into a victim using a stinger; the eggs gestate and violently burst forth as offspring, killing the host</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_GeneSyphon</defName>
+    <targetGene>AG_GeneSyphon</targetGene>
+    <customLabel>gene syphon</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can forcefully extract a genetic trait from an incapacitated victim and assimilate it into their own genome, killing the host</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_PetrifyingGaze</defName>
+    <targetGene>AG_PetrifyingGaze</targetGene>
+    <customLabel>petrifying gaze</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>projects an ocular beam of transforming mechanites that permanently petrifies organic targets into solid stone</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_InsanityBlast</defName>
+    <targetGene>AG_InsanityBlast</targetGene>
+    <customLabel>insanity blast</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>launches a psychic wave that shatters target minds, driving them into a violent, indiscriminate berserk rage</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_BansheeScream</defName>
+    <targetGene>AG_BansheeScream</targetGene>
+    <customLabel>banshee scream</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>unleashes an unearthly shriek that strikes nearby enemies with terror, crippling their defense and accuracy</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_PsychicAbsorption</defName>
+    <targetGene>AG_PsychicAbsorption</targetGene>
+    <customLabel>psychic trauma absorption</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can psychically draw negative thoughts, anguish, and trauma from other colonists onto themselves to relieve them</promptDescription>
+    <behavioralDirective>You act as an empathetic emotional sponge, instinctively absorbing the mental grief, despair, and anguish of your companions to carry their burden yourself.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NereidPocketPlane</defName>
+    <targetGene>AG_NereidPocketPlane</targetGene>
+    <customLabel>pocket plane sanctuary</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can open a spatial rift into a personal extradimensional pocket dimension as an isolated sanctuary</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_GreaterFireSpew</defName>
+    <targetGene>AG_GreaterFireSpew</targetGene>
+    <customLabel>greater fire spew</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>spews a torrent of self-igniting combustible bile from a neck organ, igniting a wide firestorm</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FreezingBreath</defName>
+    <targetGene>AG_FreezingBreath</targetGene>
+    <customLabel>freezing breath</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>exhales a jet of cryogenic fluid that flash-freezes targets, inflicting severe hypothermia and frostburn</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_NoxiousBreath</defName>
+    <targetGene>AG_NoxiousBreath</targetGene>
+    <customLabel>noxious breath</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>exhales a suffocating cloud of noxious fumes whose stench forces targets to vomit uncontrollably</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_GreaterAcidicVomit</defName>
+    <targetGene>AG_GreaterAcidicVomit</targetGene>
+    <customLabel>greater acid spray</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>regurgitates concentrated corrosive stomach acids in a wide cone that melts through flesh and armor</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Zap</defName>
+    <targetGene>AG_Zap</targetGene>
+    <customLabel>electric discharge</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>accumulates bio-electrical charge to fire a powerful jolt of lightning that electrocutes targets</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Spinnerets</defName>
+    <targetGene>AG_Spinnerets</targetGene>
+    <customLabel>wrist spinnerets</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>produces tensile silk cords from wrist glands, throwing sticky webbing to ensnare and stun targets</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Detonation</defName>
+    <targetGene>AG_Detonation</targetGene>
+    <customLabel>bodily detonation</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can detonate their body in a violent kinetic explosion at will without sustaining injury</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_AcidicDetonation</defName>
+    <targetGene>AG_AcidicDetonation</targetGene>
+    <customLabel>acidic detonation</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can detonate their body in a burst of corrosive acid at will without sustaining injury</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_UnstableMutation</defName>
+    <targetGene>AG_UnstableMutation</targetGene>
+    <customLabel>unstable mutation</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can force their genome to mutate once per day, activating a random temporary gene for 12 hours</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RainyThunderstormMaker</defName>
+    <targetGene>AG_RainyThunderstormMaker</targetGene>
+    <customLabel>living thunderstorm generator</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>interwoven atmospheric mechanites continuously lower pressure and charge the air, summoning constant rainy thunderstorms</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SnowMaker</defName>
+    <targetGene>AG_SnowMaker</targetGene>
+    <customLabel>living blizzard generator</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>airborne bodily mechanites drastically lower upper atmospheric temperatures, causing constant localized snowfall</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Fogger</defName>
+    <targetGene>AG_Fogger</targetGene>
+    <customLabel>living fog generator</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>bodily mechanites condense surrounding humidity, manifesting a perpetual bank of thick, dense fog</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ToxGasProducer</defName>
+    <targetGene>AG_ToxGasProducer</targetGene>
+    <customLabel>tox gas producer</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>respiratory organs periodically vent lethal clouds of dense toxic gas into the immediate area</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_RotStinkProducer</defName>
+    <targetGene>AG_RotStinkProducer</targetGene>
+    <customLabel>rot stink producer</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>biological pores periodically emit clouds of putrid rot stink, sickening anyone nearby</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_SmokeProducer</defName>
+    <targetGene>AG_SmokeProducer</targetGene>
+    <customLabel>smoke producer</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>periodically exhales thick banks of dense smoke that obscure line of sight and hinder ranged fire</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_PsychicRemapping</defName>
+    <targetGene>AG_PsychicRemapping</targetGene>
+    <customLabel>inverted psychic polarity</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>altered neural pathways invert psychic drone effects, experiencing euphoria and mood boosts during negative psychic drones</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Insectoid Mutations, Teratogenesis & Bizarre Anatomy ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VFEI_SynapticCerebellum</defName>
+    <targetGene>AG_VFEI_SynapticCerebellum</targetGene>
+    <customLabel>synaptic insectoid cerebellum</customLabel>
+    <behavioralDirective>You possess an insectoid collective consciousness sensitive to psychic synapses. You perceive reality through alien telepathic impressions and struggle to formulate long or cohesive grammatical sentences, communicating in abrupt, disjointed phrasing.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VFEI_AdrenalSecretors</defName>
+    <targetGene>AG_VFEI_AdrenalSecretors</targetGene>
+    <customLabel>hyperactive adrenal secretors</customLabel>
+    <behavioralDirective>Your hyperactive insectoid adrenal glands drive sadistic, aggressive instincts. You feel a chemical thrill from inflicting physical pain on others and are quick to exhibit unwarranted hostility.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_ChainsawHands</defName>
+    <targetGene>AG_ChainsawHands</targetGene>
+    <customLabel>biological chainsaw hands</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>forearms end in biological, DNA-codified chainsaws made of dense bone and cartilaginous teeth</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Teratogenesis</defName>
+    <targetGene>AG_Teratogenesis</targetGene>
+    <customLabel>teratogenesis</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>chaotic genetic instability continuously sprouts visible tumors and cancerous cellular growths across the body</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VFEI_VentricularSleeve</defName>
+    <targetGene>AG_VFEI_VentricularSleeve</targetGene>
+    <customLabel>ventricular sleeve</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>cardiovascular mutation coagulates blood into an oxygenated gel that instantly cauterizes lacerations and severed limbs</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_VFEI_PheromoneSecretor</defName>
+    <targetGene>AG_VFEI_PheromoneSecretor</targetGene>
+    <customLabel>pheromone secretor</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>continuously exudes airborne insectoid pheromones that induce calm euphoria in nearby companions</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_CrabClaw</defName>
+    <targetGene>AG_CrabClaw</targetGene>
+    <customLabel>giant crab claw</customLabel>
+    <customCategory>Cosmetic</customCategory>
+    <promptDescription>one arm is mutated into a massive, heavy crushing crustacean pincer claw</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_Proboscis</defName>
+    <targetGene>AG_Proboscis</targetGene>
+    <customLabel>feeding proboscis</customLabel>
+    <customCategory>Cosmetic</customCategory>
+    <promptDescription>a long, segmented tubular insectoid proboscis protruding from the jaw in place of a human mouth</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FungalClumps</defName>
+    <targetGene>AG_FungalClumps</targetGene>
+    <customLabel>fungal clumps</customLabel>
+    <customCategory>Cosmetic</customCategory>
+    <promptDescription>overgrown colonies of toxic fungal caps and mycelium sprouting outward from the torso</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_FungalTentacles</defName>
+    <targetGene>AG_FungalTentacles</targetGene>
+    <customLabel>fungal tentacles</customLabel>
+    <customCategory>Cosmetic</customCategory>
+    <promptDescription>braided clusters of virulent, twitching fungal tentacles writhing from the chest and shoulders</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Conditional Cross-Mod Defs (MayRequire) ==================== -->
+
+  <!-- Anomaly -->
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_DeadlifeProducer</defName>
+    <targetGene>AG_DeadlifeProducer</targetGene>
+    <customLabel>deadlife dust producer</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>biological pores periodically exhale deadlife dust that reanimates nearby corpses as undead shamblers</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_MeatBurst</defName>
+    <targetGene>AG_MeatBurst</targetGene>
+    <customLabel>fleshbeast burst</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>body violently ruptures upon death, spawning ravenous anomalous fleshbeasts from their remains</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_FleshSpitter</defName>
+    <targetGene>AG_FleshSpitter</targetGene>
+    <customLabel>flesh spitter symbiote</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>a grotesque, sentient cancerous fleshbeast growth on the shoulder that independently spits acid at nearby threats</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_GreaterFleshWhip</defName>
+    <targetGene>AG_GreaterFleshWhip</targetGene>
+    <customLabel>greater flesh whips</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>two thick, muscular bladed flesh tentacles protruding from the body that whip around as lethal melee weapons</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_GreaterToughspikes</defName>
+    <targetGene>AG_GreaterToughspikes</targetGene>
+    <customLabel>greater toughspikes</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>four functional calcified toughspike claws growing from the back used to impale enemies in melee combat</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_PseudoDeadlife</defName>
+    <targetGene>AG_PseudoDeadlife</targetGene>
+    <customLabel>pseudo-deadlife state</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>archite colony keeps bodily tissues suspended between life and death, conferring tremendous unnatural resilience</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Prompt_AG_GreyPocketPlane</defName>
+    <targetGene>AG_GreyPocketPlane</targetGene>
+    <customLabel>grey pocket plane</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can tear open a spatial portal into an anomalous, eerie grey void pocket plane as a personal shelter</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Royalty -->
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>Prompt_AG_Invisibility</defName>
+    <targetGene>AG_Invisibility</targetGene>
+    <customLabel>psychic camouflage</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>psychically shifts dermal pigmentation and light refraction to become completely invisible</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>Prompt_AG_SelfSkip</defName>
+    <targetGene>AG_SelfSkip</targetGene>
+    <customLabel>tactical self-skip</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>psychically teleports their own physical body across short distances in the blink of an eye</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>Prompt_AG_PsychicSight</defName>
+    <targetGene>AG_PsychicSight</targetGene>
+    <customLabel>inner psychic sight</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>biologically blind to regular light, perceiving physical surroundings and movements entirely through psychic vision</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Alpha Animals -->
+  <EchoColony.GeneAIPromptDef MayRequire="sarg.alphaanimals">
+    <defName>Prompt_AG_NightlingAffinity</defName>
+    <targetGene>AG_NightlingAffinity</targetGene>
+    <customLabel>nightling affinity</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>possesses an instinctive telepathic bond with nightlings, able to automatically calm and tame them</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="sarg.alphaanimals">
+    <defName>Prompt_AG_BlueGelProduction</defName>
+    <targetGene>AG_BlueGelProduction</targetGene>
+    <customLabel>blue gel secretion</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>skin continuously exudes globs of high-density blue bio-gel that can fuel specialized machinery</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Alpha Biomes -->
+  <EchoColony.GeneAIPromptDef MayRequire="sarg.alphabiomes">
+    <defName>Prompt_AG_AcidRainMaker</defName>
+    <targetGene>AG_AcidRainMaker</targetGene>
+    <customLabel>acid rainmaker</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>bodily mechanites drastically acidify local precipitation, summoning perpetual corrosive acid rain</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Vanilla Races Expanded -->
+  <EchoColony.GeneAIPromptDef MayRequire="vanillaracesexpanded.sanguophage">
+    <defName>Prompt_AG_BloodsuckerDistrust</defName>
+    <targetGene>AG_BloodsuckerDistrust</targetGene>
+    <customLabel>vampiric lineage rivalry</customLabel>
+    <behavioralDirective>You feel an instinctive, bitter distrust and rivalry toward sanguophages or vampires belonging to bloodlines other than your own.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef MayRequire="vanillaracesexpanded.fungoid">
+    <defName>Prompt_AlphaGenes_FungalStrength</defName>
+    <targetGene>AlphaGenes_FungalStrength</targetGene>
+    <customLabel>fungal muscle strength</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>dense, reinforced fungal fibrous muscle structures grant tremendous supernatural strength in close-quarters combat</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== AlphaGenes: Beauty Spectrum ==================== -->
+  <!-- <EchoColony.GeneAIPromptDef> -->
+    <!-- <defName>Prompt_AG_Beauty_Angelic</defName> -->
+    <!-- <targetGene>AG_Beauty_Angelic</targetGene> -->
+    <!-- <customLabel>angelic beauty</customLabel> -->
+    <!-- <customCategory>Cosmetic</customCategory> -->
+    <!-- <promptDescription>possesses an unnatural, almost pristine beauty that captivates onlookers</promptDescription> -->
+  <!-- </EchoColony.GeneAIPromptDef> -->
+
+  <!-- <EchoColony.GeneAIPromptDef> -->
+    <!-- <defName>Prompt_AG_Beauty_VeryVeryUgly</defName> -->
+    <!-- <targetGene>AG_Beauty_VeryVeryUgly</targetGene> -->
+    <!-- <customLabel>repulsive</customLabel> -->
+    <!-- <customCategory>Cosmetic</customCategory> -->
+    <!-- <promptDescription>unfathomably grotesque and nauseating appearance</promptDescription> -->
+  <!-- </EchoColony.GeneAIPromptDef> -->
+  
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_AG_UnsettlingAppearance</defName>
+    <targetGene>AG_UnsettlingAppearance</targetGene>
+    <customCategory>Cosmetic</customCategory>
+  </EchoColony.GeneAIPromptDef>
+
+</Defs>

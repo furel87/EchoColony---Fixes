@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.5>
+    <li>/</li>
+    <li>1.6</li>
+    <li IfModActive="ludeon.rimworld.royalty">Mods/Royalty</li>
+    <li IfModActive="ludeon.rimworld.ideology">Mods/Ideology</li>
+    <li IfModActive="ludeon.rimworld.biotech">Mods/Biotech</li>
+    <li IfModActive="ludeon.rimworld.anomaly">Mods/Anomaly</li>
+    <li IfModActive="ludeon.rimworld.odyssey">Mods/Odyssey</li>
+    <li IfModActive="vat.epoeforked">Mods/EPOE</li>
+    <li IfModActive="redmattis.bigsmall.core">Mods/BigAndSmall</li>
+    <li IfModActive="redmattis.bigsmall">Mods/BigAndSmallRaces</li>
+    <li IfModActive="redmattis.morexenos">Mods/BigAndSmallMoreXenos</li>
+    <li IfModActive="sarg.alphagenes">Mods/AlphaGenes</li>
+  </v1.5>
+  <v1.6>
+    <li>/</li>
+    <li>1.6</li>
+    <li IfModActive="ludeon.rimworld.royalty">Mods/Royalty</li>
+    <li IfModActive="ludeon.rimworld.ideology">Mods/Ideology</li>
+    <li IfModActive="ludeon.rimworld.biotech">Mods/Biotech</li>
+    <li IfModActive="ludeon.rimworld.anomaly">Mods/Anomaly</li>
+    <li IfModActive="ludeon.rimworld.odyssey">Mods/Odyssey</li>
+    <li IfModActive="vat.epoeforked">Mods/EPOE</li>
+    <li IfModActive="redmattis.bigsmall.core">Mods/BigAndSmall</li>
+    <li IfModActive="redmattis.bigsmall">Mods/BigAndSmallRaces</li>
+    <li IfModActive="redmattis.morexenos">Mods/BigAndSmallMoreXenos</li>
+    <li IfModActive="sarg.alphagenes">Mods/AlphaGenes</li>
+  </v1.6>
+  <default>
+    <li>/</li>
+    <li>1.6</li>
+    <li IfModActive="ludeon.rimworld.royalty">Mods/Royalty</li>
+    <li IfModActive="ludeon.rimworld.ideology">Mods/Ideology</li>
+    <li IfModActive="ludeon.rimworld.biotech">Mods/Biotech</li>
+    <li IfModActive="ludeon.rimworld.anomaly">Mods/Anomaly</li>
+    <li IfModActive="ludeon.rimworld.odyssey">Mods/Odyssey</li>
+    <li IfModActive="vat.epoeforked">Mods/EPOE</li>
+    <li IfModActive="redmattis.bigsmall.core">Mods/BigAndSmall</li>
+    <li IfModActive="redmattis.bigsmall">Mods/BigAndSmallRaces</li>
+    <li IfModActive="redmattis.morexenos">Mods/BigAndSmallMoreXenos</li>
+    <li IfModActive="sarg.alphagenes">Mods/AlphaGenes</li>
+  </default>
+</loadFolders>

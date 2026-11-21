@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Alpha Genes: Core Xenotypes ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Fleetkind</defName>
+    <targetXenotype>AG_Fleetkind</targetXenotype>
+    <promptDescription>A self-sustaining, bio-electric humanoid xenotype engineered with translucent jellyfish-like dermal features, able to generate internal bio-electricity and thrive in total isolation from outside civilizations.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Helixien</defName>
+    <targetXenotype>AG_Helixien</targetXenotype>
+    <promptDescription>A scavenger xenotype adapted to filth and decay, thriving amidst rot and corpses. Exudes a nauseating, putrid gas and feeds through dermal absorption of decaying organic bile and sludge.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Animusen</defName>
+    <targetXenotype>AG_Animusen</targetXenotype>
+    <promptDescription>A gentle, fennec-eared cold-adapted xenohuman spliced with animus fox traits. Endowed with natural psychic sensitivity, profound emotional empathy, and a calm, soothing disposition.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Lapis</defName>
+    <targetXenotype>AG_Lapis</targetXenotype>
+    <promptDescription>A pragmatic, subterranean mineral-eating xenotype created for desolate mining worlds. Incapable of digesting normal food, sustaining their dense metallurgic biology exclusively on raw minerals and ores.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Wretch</defName>
+    <targetXenotype>AG_Wretch</targetXenotype>
+    <promptDescription>A tragic, genetically unstable xenohuman resulting from illegal laboratory tampering. Their genome undergoes daily uncontrollable mutations, shifting unpredictably between bizarre bodily adaptations and painful deformities.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Taukai</defName>
+    <targetXenotype>AG_Taukai</targetXenotype>
+    <promptDescription>A radiation-immune xenotype with translucent, molten wax-like flesh and continuous tumorous cellular growths, possessing the bizarre ability to repurpose and consume their own cancerous tumors for physical enhancements.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Hiveling</defName>
+    <targetXenotype>AG_Hiveling</targetXenotype>
+    <promptDescription>A chitinous, barely-human insectoid hybrid thriving in toxic pollution. Completely sterile, they possess hive-minded instincts and reproduce by injecting parasitic eggs into living hosts.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_MindDevourer</defName>
+    <targetXenotype>AG_MindDevourer</targetXenotype>
+    <promptDescription>An eldritch, tentacle-faced psychic predator inspiring dread in all who behold them. Masters of psionic warfare capable of feasting on the brains of incapacitated foes to absorb their intellect and memories.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Efreet</defName>
+    <targetXenotype>AG_Efreet</targetXenotype>
+    <promptDescription>A fearsome, horn-crowned demonic shock trooper strain of the impid. Completely immune to flame and obsessed with fire, wielding lethal talons and devastating close-quarters combat prowess.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Drakonori</defName>
+    <targetXenotype>AG_Drakonori</targetXenotype>
+    <promptDescription>A striking reptilian-humanoid hybrid combining otherworldly beauty with scaled armor, leathery dragon wings, and predatory crocodilian instincts. Capable of ferocious melee combat and aerial agility.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Nereid</defName>
+    <targetXenotype>AG_Nereid</targetXenotype>
+    <promptDescription>An aquatic, bioluminescent oceanic xenohuman with webbed fin-ears, luminous eyes, and iridescent scales, capable of opening spatial portals into an abyssal pocket plane as a personal sanctuary.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_AG_Forsaken</defName>
+    <targetXenotype>AG_Forsaken</targetXenotype>
+    <promptDescription>An ancient, enigmatic offshoot of humanity from a fallen empire. Characterized by gaunt, angular frames, four glowing yellow eyes, and an innate mastery of forgotten techno-arcane arts.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <!-- ==================== Alpha Genes: Cross-Mod Xenotypes (MayRequire) ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef MayRequire="DankPyon.Medieval.Overhaul">
+    <defName>XenoPrompt_AG_RoxTouched</defName>
+    <targetXenotype>AG_RoxTouched</targetXenotype>
+    <promptDescription>A tall, robust bovine-humanoid xenotype clad in thick velvety fur with crescent-shaped horns, culturally revering the mythological All-Knowing Rox.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef MayRequire="vanillaracesexpanded.fungoid">
+    <defName>XenoPrompt_AG_Mycormorph</defName>
+    <targetXenotype>AG_Mycormorph</targetXenotype>
+    <promptDescription>A rotting, fungus-infused military bioweapon survivor, whose decaying flesh is riddled with extensive mycelial networks that constantly emit foul odors and provoke hostile aggression.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef MayRequire="vanillaracesexpanded.phytokin">
+    <defName>XenoPrompt_VRE_Ocularkin</defName>
+    <targetXenotype>VRE_Ocularkin</targetXenotype>
+    <promptDescription>A bizarre, alien plant-humanoid adapted to the corrupt ocular trees of another dimension, drawing sustenance from light and possessing extreme psychic sensitivity.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef MayRequire="vanillaracesexpanded.sanguophage">
+    <defName>XenoPrompt_AG_Malachai</defName>
+    <targetXenotype>AG_Malachai</targetXenotype>
+    <promptDescription>A monstrous, predatory vampiric bloodline that extracts and incorporates the genetic material of prey into their own flesh, driven by ruthless ambitions and deep hatred for other sanguophage lineages.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+</Defs>

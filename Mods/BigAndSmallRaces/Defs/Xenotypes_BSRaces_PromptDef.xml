@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ==================== Big & Small - Races: Giants & Titans ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Jotun</defName>
+    <targetXenotype>BS_Jotun</targetXenotype>
+    <promptDescription>A towering, colossal giant engineered with immense physical strength and durability, built to endure harsh frontier worlds and wield massive weaponry.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_FrostJotun</defName>
+    <targetXenotype>BS_FrostJotun</targetXenotype>
+    <promptDescription>A frost-born titan of colossal height and pale, icy skin, biologically adapted to thrive in extreme sub-zero blizzards with crushing physical might.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_FireJotun</defName>
+    <targetXenotype>BS_FireJotun</targetXenotype>
+    <promptDescription>A volcanic fire-giant of colossal stature, completely immune to scorching heat and blazing temperatures, possessing immense physical strength.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Surtr</defName>
+    <targetXenotype>BS_Surtr</targetXenotype>
+    <promptDescription>An ancient archite-ascended fire titan, embodying primordial flame, apocalyptic heat, and near-invulnerable physical might.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Ymir</defName>
+    <targetXenotype>BS_Ymir</targetXenotype>
+    <promptDescription>An ancient archite-ascended frost progenitor titan, radiating glacial cold and possessing monumental physical stature and regenerative vitality.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Half_Jotun</defName>
+    <targetXenotype>BS_Half_Jotun</targetXenotype>
+    <promptDescription>A hybrid giant standing noticeably taller and heavier than baseline humans, inheriting substantial jotun strength and resilience without reaching full titan proportions.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Ogre</defName>
+    <targetXenotype>BS_Ogre</targetXenotype>
+    <promptDescription>A hulking, brutish giant with a heavy frame, dull wits, and tremendous crude muscle power, built for manual labor and brutal melee combat.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_GreatOgre</defName>
+    <targetXenotype>BS_GreatOgre</targetXenotype>
+    <promptDescription>A massive, primeval ogre titan of immense size and terrifying brute strength, possessing primitive cunning and formidable durability.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_BrokenTitan</defName>
+    <targetXenotype>BS_BrokenTitan</targetXenotype>
+    <promptDescription>An incomplete, vat-grown titan whose cellular structure suffers from chronic genetic deterioration and unstable metabolic decay.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Corrupterd_Titan</defName>
+    <targetXenotype>BS_Corrupterd_Titan</targetXenotype>
+    <promptDescription>A nightmarish, nanotechnologically corrupted titan whose berserk xenogenes and rogue archites have mutated into a violently insane living bioweapon.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <!-- ==================== Big & Small - Races: Trolls ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Troll</defName>
+    <targetXenotype>BS_Troll</targetXenotype>
+    <promptDescription>A young troll of heavy, monstrous build and rough hide, possessing rapid biological cellular regeneration that visibly mends wounds and knits torn flesh.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_TrollAdult</defName>
+    <targetXenotype>BS_TrollAdult</targetXenotype>
+    <promptDescription>A hulking adult troll with gnarled skin, brutish features, and astonishing biological regeneration that continuously knits flesh and mends scars.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_TrollOld</defName>
+    <targetXenotype>BS_TrollOld</targetXenotype>
+    <promptDescription>An ancient, colossal troll whose petrified, mossy bark-like hide resembles living stone and wood, possessing near-indestructible regenerative vitality.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <!-- ==================== Big & Small - Races: Little People & Subterraneans ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Dwarf</defName>
+    <targetXenotype>BS_Dwarf</targetXenotype>
+    <promptDescription>A stout, compact dwarven subterranean humanoid, remarkably dense and physically sturdy for their small frame, gifted with acute dark-vision and natural affinity for craftsmanship and mining.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Gnome</defName>
+    <targetXenotype>BS_Gnome</targetXenotype>
+    <promptDescription>A diminutive, nimble humanoid folk of miniature stature and spirited personality, quick on their feet and thriving in tight domestic quarters.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Svartalf</defName>
+    <targetXenotype>BS_Svartalf</targetXenotype>
+    <promptDescription>A shadowy, subterranean dvergr offshoot adapted to lightless cavern depths, possessing a secretive demeanor and resilient subterranean constitution.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Redcap</defName>
+    <targetXenotype>BS_Redcap</targetXenotype>
+    <promptDescription>A sinister, predatory goblinoid folk driven by a thirst for blood, swift in ambushes and possessing feral combat ferocity.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <!-- ==================== Big & Small - Races: Pilotable Constructs & Golems ==================== -->
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Hearthguard</defName>
+    <targetXenotype>BS_Hearthguard</targetXenotype>
+    <promptDescription>A compact biomechanical warmech construct forged in dvergr workshops, designed to encase and protect a small pilot in frontline combat.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_Hearthdoll</defName>
+    <targetXenotype>BS_Hearthdoll</targetXenotype>
+    <promptDescription>A miniature biomechanical shell built by dvergr to allow smaller kin to operate at baseline human proportions.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_PilotableFleshGolem</defName>
+    <targetXenotype>BS_PilotableFleshGolem</targetXenotype>
+    <promptDescription>A grotesque, hollowed-out flesh golem engineered through arcane alchemy, animated only when piloted by a diminutive creature from within.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+  <EchoColony.XenotypeAIPromptDef>
+    <defName>XenoPrompt_BS_FleshGolemServant</defName>
+    <targetXenotype>BS_FleshGolemServant</targetXenotype>
+    <promptDescription>An obedient, mindless homunculus crafted from stitched muscle and synthetic sinew to perform heavy brute labor.</promptDescription>
+  </EchoColony.XenotypeAIPromptDef>
+
+</Defs>

@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- 
+EchoColony - Big & Small Genes Prompt Definitions
+Categories:
+- Cosmetic
+- Trait
+- Ability 
+- Needs
+-->
+
+  <!-- ==================== Big & Small: Horns & Head Cosmetics ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_StubbyDemonHorns_Skin</defName>
+    <targetGene>BS_StubbyDemonHorns_Skin</targetGene>
+    <customLabel>stubby skin-colored horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_StubbyDemonHorns</defName>
+    <targetGene>BS_StubbyDemonHorns</targetGene>
+    <customLabel>stubby conical horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TyrantCrown</defName>
+    <targetGene>BS_TyrantCrown</targetGene>
+    <customLabel>large curved tyrant horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TyrantCrown_Skin</defName>
+    <targetGene>BS_TyrantCrown_Skin</targetGene>
+    <customLabel>large curved skin-colored tyrant horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrollHorns</defName>
+    <targetGene>BS_TrollHorns</targetGene>
+    <customLabel>gnarled branch horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TallJotunHorns_Skin</defName>
+    <targetGene>BS_TallJotunHorns_Skin</targetGene>
+    <customLabel>tall skin-colored horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TallJotunHorns</defName>
+    <targetGene>BS_TallJotunHorns</targetGene>
+    <customLabel>tall upright horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SmallQuadHorns</defName>
+    <targetGene>BS_SmallQuadHorns</targetGene>
+    <customLabel>small quad horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SmallQuadHorns_Skin</defName>
+    <targetGene>BS_SmallQuadHorns_Skin</targetGene>
+    <customLabel>small skin-colored quad horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HexaHorns</defName>
+    <targetGene>BS_HexaHorns</targetGene>
+    <customLabel>six demon horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HexaHorns_Skin</defName>
+    <targetGene>BS_HexaHorns_Skin</targetGene>
+    <customLabel>six skin-colored demon horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_OniHorns</defName>
+    <targetGene>BS_OniHorns</targetGene>
+    <customLabel>twin oni horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_OniSingleHorn</defName>
+    <targetGene>BS_OniSingleHorn</targetGene>
+    <customLabel>single oni forehead horn</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DragonHorns</defName>
+    <targetGene>BS_DragonHorns</targetGene>
+    <customLabel>draconic horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Hair & Skin Colors ==================== -->
+
+  <!-- False friend: "serpentine hair" is just matte green hair, NOT live snakes -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_MatteGreenHair</defName>
+    <targetGene>BS_MatteGreenHair</targetGene>
+    <customLabel>matte green hair</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HairPermafrost</defName>
+    <targetGene>BS_HairPermafrost</targetGene>
+    <customLabel>electric blue hair</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrollBeard</defName>
+    <targetGene>BS_TrollBeard</targetGene>
+    <customLabel>knotted troll beard</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_FuzzyBrows</defName>
+    <targetGene>BS_FuzzyBrows</targetGene>
+    <customLabel>thick bushy eyebrows</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SkinFrostWhite</defName>
+    <targetGene>BS_SkinFrostWhite</targetGene>
+    <customLabel>frost-white skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SkinPermafrost</defName>
+    <targetGene>BS_SkinPermafrost</targetGene>
+    <customLabel>dark cerulean blue skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Skin_Marble_White</defName>
+    <targetGene>BS_Skin_Marble_White</targetGene>
+    <customLabel>marble white skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SkinBurningOrange</defName>
+    <targetGene>BS_SkinBurningOrange</targetGene>
+    <customLabel>bright orange skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_VeryLightOrange</defName>
+    <targetGene>BS_VeryLightOrange</targetGene>
+    <customLabel>pale cream skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SkinBloodRed</defName>
+    <targetGene>BS_SkinBloodRed</targetGene>
+    <customLabel>blood-red skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Skin_DarkAsh</defName>
+    <targetGene>BS_Skin_DarkAsh</targetGene>
+    <customLabel>dark ashen skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_BorealSkin</defName>
+    <targetGene>BS_BorealSkin</targetGene>
+    <customLabel>fair pale skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VU_LightPallorSkin</defName>
+    <targetGene>VU_LightPallorSkin</targetGene>
+    <customLabel>corpse-pale skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VU_DarkPallorSkin</defName>
+    <targetGene>VU_DarkPallorSkin</targetGene>
+    <customLabel>ashen grey-green skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VU_NosferatuSkin</defName>
+    <targetGene>VU_NosferatuSkin</targetGene>
+    <customLabel>pale green vampire skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VU_ZombieSkin</defName>
+    <targetGene>VU_ZombieSkin</targetGene>
+    <customLabel>greyish-green zombie skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_CreamSkin</defName>
+    <targetGene>BS_CreamSkin</targetGene>
+    <customLabel>cream skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_LightGreenSkin</defName>
+    <targetGene>BS_LightGreenSkin</targetGene>
+    <customLabel>fair green skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_BurgundySkin</defName>
+    <targetGene>BS_BurgundySkin</targetGene>
+    <customLabel>deep burgundy skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DeepVioletSkin</defName>
+    <targetGene>BS_DeepVioletSkin</targetGene>
+    <customLabel>deep violet skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Size & Body Frames ==================== -->
+
+  <!-- False friend: Rabbit Frame is a tiny fast humanoid, NOT a rabbit beastman -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_RabbitFrame</defName>
+    <targetGene>BS_RabbitFrame</targetGene>
+    <customLabel>diminutive agile humanoid frame (50cm)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_GnomeFrame</defName>
+    <targetGene>GnomeFrame</targetGene>
+    <customLabel>nisse dwarf frame (50-60cm)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AriettyFrame</defName>
+    <targetGene>BS_AriettyFrame</targetGene>
+    <customLabel>miniature fairy-scale frame (30-40cm)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SmallFrame</defName>
+    <targetGene>BS_SmallFrame</targetGene>
+    <customLabel>short child-sized frame</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_DwarfFrame</defName>
+    <targetGene>DwarfFrame</targetGene>
+    <customLabel>stocky dwarf frame</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_JotunFrame</defName>
+    <targetGene>JotunFrame</targetGene>
+    <customLabel>towering jotun giant frame (2.8m)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_HalfJotunFrame</defName>
+    <targetGene>HalfJotunFrame</targetGene>
+    <customLabel>half-giant frame (2.3m)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_LargeFrame</defName>
+    <targetGene>BS_LargeFrame</targetGene>
+    <customLabel>tall imposing frame (2.1m)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_HalfColossusFrame</defName>
+    <targetGene>HalfColossusFrame</targetGene>
+    <customLabel>massive colossus frame (2.5m)</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_OgreFrame</defName>
+    <targetGene>OgreFrame</targetGene>
+    <customLabel>bulky muscular ogre build</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_GreatOgreFrame</defName>
+    <targetGene>GreatOgreFrame</targetGene>
+    <customLabel>massive great ogre build</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_TitanFrame</defName>
+    <targetGene>TitanFrame</targetGene>
+    <customLabel>colossal archotech titan frame</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_EndlessGrowth</defName>
+    <targetGene>BS_EndlessGrowth</targetGene>
+    <customLabel>endlessly growing giant frame</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Bodies, Ears, Noses & Tails ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_BrokenTitanBody</defName>
+    <targetGene>BS_BrokenTitanBody</targetGene>
+    <customLabel>industrial cyborg torso</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_BrokenTitanHead</defName>
+    <targetGene>BS_BrokenTitanHead</targetGene>
+    <customLabel>industrial cyborg head</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_MimicBody</defName>
+    <targetGene>BS_MimicBody</targetGene>
+    <customLabel>grotesque maw-torso with gaping jaws</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_FurryBody</defName>
+    <targetGene>BS_FurryBody</targetGene>
+    <customLabel>thick fur-covered body</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_WerewolfSnoot</defName>
+    <targetGene>BS_WerewolfSnoot</targetGene>
+    <customLabel>lupine werewolf snout and head</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DessicatedBody</defName>
+    <targetGene>BS_DessicatedBody</targetGene>
+    <customLabel>skeletal desiccated body</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AnimalEars</defName>
+    <targetGene>BS_AnimalEars</targetGene>
+    <customLabel>furry animal ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_FoxEars</defName>
+    <targetGene>BS_FoxEars</targetGene>
+    <customLabel>fox ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrollEars</defName>
+    <targetGene>BS_TrollEars</targetGene>
+    <customLabel>long troll ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrollEars_Great</defName>
+    <targetGene>BS_TrollEars_Great</targetGene>
+    <customLabel>massive bat-like troll ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DragonEars</defName>
+    <targetGene>BS_DragonEars</targetGene>
+    <customLabel>finned dragon ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrollNose</defName>
+    <targetGene>BS_TrollNose</targetGene>
+    <customLabel>large bulbous troll nose</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DemonTail</defName>
+    <targetGene>BS_DemonTail</targetGene>
+    <customLabel>spade-tipped demon tail</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Wings ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DemonAngelwings</defName>
+    <targetGene>BS_DemonAngelwings</targetGene>
+    <customLabel>hybrid bat-and-feathered wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_GoldenGorgonWings</defName>
+    <targetGene>BS_GoldenGorgonWings</targetGene>
+    <customLabel>radiant golden feathered wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_MajesticBird</defName>
+    <targetGene>BS_MajesticBird</targetGene>
+    <customLabel>large feathered bird wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_MajesticBird_Mid</defName>
+    <targetGene>BS_MajesticBird_Mid</targetGene>
+    <customLabel>feathered bird wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AngelWings</defName>
+    <targetGene>BS_AngelWings</targetGene>
+    <customLabel>large angelic messenger wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AngelWings_Mid</defName>
+    <targetGene>BS_AngelWings_Mid</targetGene>
+    <customLabel>angelic messenger wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_GracefulAngelwings</defName>
+    <targetGene>BS_GracefulAngelwings</targetGene>
+    <customLabel>graceful feathered wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HolyAngelwings</defName>
+    <targetGene>BS_HolyAngelwings</targetGene>
+    <customLabel>fluffy feathered angel wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_MenacingAngelwings</defName>
+    <targetGene>BS_MenacingAngelwings</targetGene>
+    <customLabel>dark menacing feathered wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SmallDemonWings</defName>
+    <targetGene>BS_SmallDemonWings</targetGene>
+    <customLabel>small leathery demon wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_LargeDemonWings</defName>
+    <targetGene>BS_LargeDemonWings</targetGene>
+    <customLabel>large leathery demon wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AncientDemonWings</defName>
+    <targetGene>BS_AncientDemonWings</targetGene>
+    <customLabel>colossal ancient demon wings</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Diets & Specific Needs ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Diet_Carnivore</defName>
+    <targetGene>BS_Diet_Carnivore</targetGene>
+    <customLabel>obligate carnivore</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>can only consume animal meat and meat meals; will vomit and sicken if fed vegetarian food</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Diet_Herbivore</defName>
+    <targetGene>BS_Diet_Herbivore</targetGene>
+    <customLabel>obligate herbivore</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>can only consume plant-based foods and vegetables; will vomit and sicken if fed meat</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Diet_Fuel</defName>
+    <targetGene>BS_Diet_Fuel</targetGene>
+    <customLabel>fuel-diet organism</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>synthetic biology that drinks chemical fuel (chemfuel) instead of eating organic food</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_NoFood</defName>
+    <targetGene>BS_NoFood</targetGene>
+    <customLabel>sustenance-free</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>sustained purely by internal archotech energy; does not need to eat food</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_NoFood_Hemogenic</defName>
+    <targetGene>BS_NoFood_Hemogenic</targetGene>
+    <customLabel>hemogen-only sustenance</customLabel>
+    <customCategory>Needs</customCategory>
+    <promptDescription>does not eat organic food; sustained exclusively by regular consumption of human blood (hemogen)</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Psychology & Directives ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DroneKind</defName>
+    <targetGene>BS_DroneKind</targetGene>
+    <customLabel>drone caste</customLabel>
+    <behavioralDirective>You belong to a drone caste with a simplified, collective consciousness. You lack philosophical depth or artistic impulse, process emotional events pragmatically, and do not mourn deaths unless directly witnessed.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_NoFamilyRelations</defName>
+    <targetGene>BS_NoFamilyRelations</targetGene>
+    <customLabel>kinship detached</customLabel>
+    <behavioralDirective>You are completely detached from concepts of family, bloodlines, or kinship. You recognize individuals solely by their current utility, alliance, or personal merit, viewing family ties as meaningless conventions.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrulyAgeless</defName>
+    <targetGene>BS_TrulyAgeless</targetGene>
+    <customLabel>truly ageless</customLabel>
+    <behavioralDirective>You are immune to time, physical aging, and biological entropy. You view mortal concerns with the serene patience of an eternal being.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_FeedingFrenzy</defName>
+    <targetGene>BS_FeedingFrenzy</targetGene>
+    <customLabel>frenzied feeder</customLabel>
+    <behavioralDirective>In combat, you are seized by a primal predatory frenzy, compelled to gorge on fresh fallen foes to sustain yourself.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Flirty</defName>
+    <targetGene>BS_Flirty</targetGene>
+    <customLabel>naturally flirty</customLabel>
+    <behavioralDirective>You are naturally charming, playful, and flirtatious, frequently teasing and flirting with others, yet completely carefree and unbothered by social rejection.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_NotFlirty</defName>
+    <targetGene>BS_NotFlirty</targetGene>
+    <customLabel>completely unromantic</customLabel>
+    <behavioralDirective>You have zero interest in romance or flirting. You never flirt with anyone, completely ignore romantic advances, and interact with purely platonic directness.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SimpleMind</defName>
+    <targetGene>BS_SimpleMind</targetGene>
+    <customLabel>simple mind</customLabel>
+    <behavioralDirective>You possess an innocent, simple mind incapable of understanding science, complex crafting, or intellectual theories. You live in the moment and find genuine joy in basic tasks and simple pleasures.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_VerySimpleMind</defName>
+    <targetGene>BS_VerySimpleMind</targetGene>
+    <customLabel>childlike simple mind</customLabel>
+    <behavioralDirective>You have a deeply simple, childlike mentality. Abstract planning, complex machinery, and advanced crafting baffle you, but you possess an irrepressible cheerful nature and simple joy.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DrunkenPower</defName>
+    <targetGene>BS_DrunkenPower</targetGene>
+    <customLabel>drunken might</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>gains immense physical strength and durability only when intoxicated with alcohol</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_DvergrConstitution</defName>
+    <targetGene>BS_DvergrConstitution</targetGene>
+    <customLabel>dwarven grit</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>tenacious dwarven pain tolerance and physical resilience</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Deathlike</defName>
+    <targetGene>BS_Deathlike</targetGene>
+    <customLabel>undead affinity</customLabel>
+    <behavioralDirective>You feel a natural affinity with the dead and necrotic phenomena, completely undisturbed by corpses, rot, or graveyard gloom.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HeatGenerator</defName>
+    <targetGene>BS_HeatGenerator</targetGene>
+    <customLabel>living furnace</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>body radiates intense heat like a furnace, constantly warming the surrounding area</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_ColdGenerator</defName>
+    <targetGene>BS_ColdGenerator</targetGene>
+    <customLabel>living cryo-generator</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>body radiates freezing cold, constantly chilling the surrounding area</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_GeneEater</defName>
+    <targetGene>BS_GeneEater</targetGene>
+    <customLabel>gene-eater</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>can absorb and assimilate genetic material from corpses to evolve</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Soul & Essence Mechanics ==================== -->
+
+  <!-- Soul Transformations (Active Abilities) -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrueForm_Angelic</defName>
+    <targetGene>BS_TrueForm_Angelic</targetGene>
+    <customLabel>angelic true form</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can temporarily manifest an angelic form sprouting feathered wings and a radiant halo, gaining extreme durability and preventing death</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrueForm_Demonic</defName>
+    <targetGene>BS_TrueForm_Demonic</targetGene>
+    <customLabel>demonic true form</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can temporarily transform into a terrifying horned demon with monstrous wings and talons, able to breathe devastating fire</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrueForm_Demonic_Hemo</defName>
+    <targetGene>BS_TrueForm_Demonic_Hemo</targetGene>
+    <customLabel>blood-demonic true form</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can consume stored hemogen to rapidly unleash a horned demonic form with monstrous wings and fire breath</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TrueForm_Goliath</defName>
+    <targetGene>BS_TrueForm_Goliath</targetGene>
+    <customLabel>goliath true form</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can temporarily expand into a colossal, unstoppable titan with massive physical durability</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Soul Siphoning & Consumption (Abilities & Traits) -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_ConsumeSoul</defName>
+    <targetGene>BS_ConsumeSoul</targetGene>
+    <customLabel>siphon soul</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can brutally drain the soul of a downed foe, killing them permanently to absorb their essence and highest skills</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_ConsumeSoul_Enslave</defName>
+    <targetGene>BS_ConsumeSoul_Enslave</targetGene>
+    <customLabel>create soul husk</customLabel>
+    <customCategory>Ability</customCategory>
+    <promptDescription>can drain the mind and soul of a downed foe without killing them, subjugating them into a permanent mindless thrall</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_ConsumeSoulOnHit</defName>
+    <targetGene>BS_ConsumeSoulOnHit</targetGene>
+    <customLabel>soul-rending strike</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>reflexively consumes the spiritual essence and memories of foes slain by close-quarters or melee blows</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Soul Traits & Power Scaling -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SoulPower</defName>
+    <targetGene>BS_SoulPower</targetGene>
+    <customLabel>latent soul power</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>possesses an innate spark of soul power that slightly enhances physical vitality and consciousness</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_SoulPowerGreat</defName>
+    <targetGene>BS_SoulPowerGreat</targetGene>
+    <customLabel>potent soul power</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>channels significant soul power, vastly elevating physical resilience, strength, and consciousness</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AnomalousPsychicPower</defName>
+    <targetGene>BS_AnomalousPsychicPower</targetGene>
+    <customLabel>soul attunement</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>harnesses soul power to dramatically amplify psychic sensitivity and psychic phenomena</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AnomalousForm</defName>
+    <targetGene>BS_AnomalousForm</targetGene>
+    <customLabel>soul-bound stature</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>physical size, body mass, and stature dynamically expand as soul power increases</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_HealingWithSoul</defName>
+    <targetGene>BS_HealingWithSoul</targetGene>
+    <customLabel>soul reconstitution</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>rapidly regenerates physical injuries and tissue damage by burning inner soul energy</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- Soul Psychology & Directives -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_GainSoulOnLovin</defName>
+    <targetGene>BS_GainSoulOnLovin</targetGene>
+    <customLabel>lovin' soul drain</customLabel>
+    <behavioralDirective>In romantic and intimate encounters, you are an essence predator: physical intimacy instinctively siphons the mind, memories, and soul of your partners to fuel your own power.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_GainSoulOnRecruit</defName>
+    <targetGene>BS_GainSoulOnRecruit</targetGene>
+    <customLabel>power from reverence</customLabel>
+    <behavioralDirective>You draw spiritual nourishment from the devotion, faith, and loyalty of others. Winning the hearts and minds of newcomers fills your soul with power and lets you absorb a portion of their wisdom.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Pain, Durability & Resilience ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Pain_None</defName>
+    <targetGene>BS_Pain_None</targetGene>
+    <customLabel>pain-free</customLabel>
+    <behavioralDirective>You are biologically incapable of feeling physical pain. You never register or complain about the agony of wounds, burns, or physical trauma, though you retain a normal sense of touch and physical comfort.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_PainNumb</defName>
+    <targetGene>BS_PainNumb</targetGene>
+    <customLabel>total physical numbness</customLabel>
+    <behavioralDirective>You are completely numb and incapable of feeling physical pain or tactile comfort. You never complain of aches, wounds, or suffering, but must visually inspect yourself to notice bleeding or bodily damage.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_TinyTough</defName>
+    <targetGene>BS_TinyTough</targetGene>
+    <customLabel>small stature toughness</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>amazingly dense and sturdy despite diminutive size, taking greatly reduced damage and shrugging off trauma</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_VeryDelicate</defName>
+    <targetGene>BS_VeryDelicate</targetGene>
+    <customLabel>fragile frame</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>fragile bone and tissue structure, taking significantly increased damage from any physical trauma</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Big & Small: Rescued Biological & Unique Genes ==================== -->
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Fast_TotalHealing</defName>
+    <targetGene>BS_Fast_TotalHealing</targetGene>
+    <customLabel>limb regeneration</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>possesses cellular regeneration, capable of slowly regrowing severed limbs and healing permanent scars over time</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_NaturalArmor_Great</defName>
+    <targetGene>BS_NaturalArmor_Great</targetGene>
+    <customLabel>subdermal riot armor</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>thick, dense natural armor plating under the skin that deflects blunt and sharp trauma like riot gear</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AutoPregnancy</defName>
+    <targetGene>BS_AutoPregnancy</targetGene>
+    <customLabel>spontaneous self-cloning</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>biologically reproduces via spontaneous parthenogenesis, periodically gestating and birthing exact clones of themselves without a partner</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_AutoPregnancyArchite</defName>
+    <targetGene>BS_AutoPregnancyArchite</targetGene>
+    <customLabel>archite parthenogenesis</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>periodically self-impregnates through archotech energy, manifesting unpredictable anomalous xenogenes in offspring</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_ChocolateProduction</defName>
+    <targetGene>BS_ChocolateProduction</targetGene>
+    <customLabel>chocolate head growth</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>sprouts edible bars of chocolate directly from the head, occasionally complete with wrappers</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_JellyProduction</defName>
+    <targetGene>BS_JellyProduction</targetGene>
+    <customLabel>insect jelly secretion</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>secretes sweet, edible insect jelly from specialized biological bodily glands</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Corrupted</defName>
+    <targetGene>BS_Corrupted</targetGene>
+    <customLabel>nanite corruption</customLabel>
+    <behavioralDirective>You are agonizingly twisted by rogue nanomachines and warped xenogenes, suffering from severe psychotic instability, frantic impulses, and sudden surges of uncontrollable violence.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Damaged_Genes</defName>
+    <targetGene>BS_Damaged_Genes</targetGene>
+    <customLabel>degraded xenogenes</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>degraded genetic sequence causes chronic mental cloudiness and difficulty regulating impulses</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_Pilotable</defName>
+    <targetGene>BS_Pilotable</targetGene>
+    <customLabel>pilotable biomech</customLabel>
+    <behavioralDirective>You are an engineered biomechanical shell built to be piloted from within by another colonist. Without a pilot inside, you have minimal initiative; when piloted, you act as their physical instrument and extension.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_BS_PilotRequired</defName>
+    <targetGene>BS_PilotRequired</targetGene>
+    <customLabel>operator-dependent</customLabel>
+    <customCategory>Trait</customCategory>
+    <promptDescription>requires a dedicated operator within its chassis to coordinate movements and function at full capability</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+</Defs>

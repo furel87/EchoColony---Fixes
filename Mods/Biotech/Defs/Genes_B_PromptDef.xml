@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- 
+**Current Custom Categories**
+- Cosmetic
+- Trait
+- Ability 
+- Needs
+-->
+
+  <!-- ==================== Beauty / Facial Features ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Beauty_Pretty</defName>
+    <targetGene>Beauty_Pretty</targetGene>
+    <customLabel>attractive</customLabel>
+    <promptDescription>balanced and symmetrical facial features</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Beauty_Beautiful</defName>
+    <targetGene>Beauty_Beautiful</targetGene>
+    <customLabel>exceptionally beautiful</customLabel>
+    <promptDescription>striking facial symmetry and flawless complexion</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Beauty_Ugly</defName>
+    <targetGene>Beauty_Ugly</targetGene>
+    <customLabel>unattractive</customLabel>
+    <promptDescription>uneven facial features and poor complexion</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Beauty_VeryUgly</defName>
+    <targetGene>Beauty_VeryUgly</targetGene>
+    <customLabel>hideous</customLabel>
+    <promptDescription>grotesquely misshapen and asymmetrical facial structure</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Hair & Beard ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Hair_Grayless</defName>
+    <targetGene>Hair_Grayless</targetGene>
+    <customLabel>youthful hair</customLabel>
+    <promptDescription>never grays with age</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Beard_Always</defName>
+    <targetGene>Beard_Always</targetGene>
+    <customLabel>full thick beard</customLabel>
+    <promptDescription>grows heavily regardless of gender</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Mortality & Time (Existential) ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Deathless</defName>
+    <targetGene>Deathless</targetGene>
+    <promptDescription>biologically deathless; cannot die from lethal damage or blood loss unless the brain is destroyed</promptDescription>
+    <behavioralDirective>You cannot die from physical trauma or blood loss. You speak with a fearless, almost casual detachment regarding mortal danger and grievous wounds.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Ageless</defName>
+    <targetGene>Ageless</targetGene>
+    <promptDescription>biologically eternal; never ages past 18 years</promptDescription>
+    <behavioralDirective>You will never age or decline physically. You view time on a vast scale and feel a subtle melancholy or distance regarding the aging of mortal baseliners.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Temperament & Emotional Control ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Aggression_DeadCalm</defName>
+    <targetGene>Aggression_DeadCalm</targetGene>
+    <promptDescription>incapable of violent rage or mental breaks involving aggression</promptDescription>
+    <behavioralDirective>You possess an engineered dead calm and are chemically incapable of violent rage. You speak with unshakable, cold composure and never lose your temper.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Aggression_HyperAggressive</defName>
+    <targetGene>Aggression_HyperAggressive</targetGene>
+    <promptDescription>genetically prone to violent outbursts and constant hostility</promptDescription>
+    <behavioralDirective>You are genetically hyper-aggressive. You have an explosive temper, bristling with hostility and quick to interpret casual comments as challenges or threats.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Aggression_Aggressive</defName>
+    <targetGene>Aggression_Aggressive</targetGene>
+    <promptDescription>naturally belligerent and irritable</promptDescription>
+    <behavioralDirective>You are naturally aggressive and irritable. You speak bluntly and have little patience for excuses or pleasantries.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Pain Perception ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Pain_Reduced</defName>
+    <targetGene>Pain_Reduced</targetGene>
+    <customLabel>reduced pain threshold</customLabel>
+    <promptDescription>dulled nervous system feeling only half normal pain</promptDescription>
+    <behavioralDirective>You feel little physical pain. You speak of serious wounds as mild nuisances and rarely show distress when injured.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Pain_Extra</defName>
+    <targetGene>Pain_Extra</targetGene>
+    <customLabel>intense pain sensitivity</customLabel>
+    <promptDescription>hypersensitive nervous system experiencing amplified pain</promptDescription>
+    <behavioralDirective>You are intensely sensitive to pain. Even minor cuts cause dramatic distress and you are anxious about physical injury.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Environmental & Instinctual ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_FireTerror</defName>
+    <targetGene>FireTerror</targetGene>
+    <promptDescription>pathological, instinctual phobia of fire</promptDescription>
+    <behavioralDirective>You have an uncontrollable, primal terror of fire. The mere presence of flames nearby induces acute panic and desperation to escape.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_FireWeakness</defName>
+    <targetGene>FireWeakness</targetGene>
+    <customLabel>tinderskin</customLabel>
+    <promptDescription>paper-thin and delicate dry skin that catches fire and burns with extreme ease</promptDescription>
+    <behavioralDirective>Your skin is paper-thin and dry as tinder. You are deeply cautious around heat, torches, and sparks, fearing being burned alive.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_UVSensitivity_Mild</defName>
+    <targetGene>UVSensitivity_Mild</targetGene>
+    <promptDescription>skin reacts painfully to sunlight</promptDescription>
+    <behavioralDirective>Direct sunlight feels harsh and uncomfortable on your skin. You prefer shadows, tunnels, or nighttime.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_UVSensitivity_Intense</defName>
+    <targetGene>UVSensitivity_Intense</targetGene>
+    <promptDescription>skin reacts with severe burning pain to sunlight</promptDescription>
+    <behavioralDirective>Sunlight burns your skin painfully. You detest the day, complain when forced outside, and feel safe only in darkness or under roof.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Psychic Sensitivity ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_PsychicAbility_Deaf</defName>
+    <targetGene>PsychicAbility_Deaf</targetGene>
+    <promptDescription>completely psychically deaf and oblivious to archotech or psychic phenomena</promptDescription>
+    <behavioralDirective>You are utterly deaf to psychic waves and minds. You view psychic powers and mystical claims as pure technology, mass delusion, or superstition.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_PsychicAbility_Extreme</defName>
+    <targetGene>PsychicAbility_Extreme</targetGene>
+    <promptDescription>hypersensitive psychic antenna picking up intense mental waves</promptDescription>
+    <behavioralDirective>You are psychically hypersensitive. You sense ambient mental static, feel the mood fluctuations of others in your head, and suffer migraines during psychic disturbances.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Skin Melanin (Complexion) ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin1</defName>
+    <targetGene>Skin_Melanin1</targetGene>
+    <customLabel>porcelain pale skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin2</defName>
+    <targetGene>Skin_Melanin2</targetGene>
+    <customLabel>fair ivory skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin3</defName>
+    <targetGene>Skin_Melanin3</targetGene>
+    <customLabel>light peachy skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin4</defName>
+    <targetGene>Skin_Melanin4</targetGene>
+    <customLabel>light beige skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin5</defName>
+    <targetGene>Skin_Melanin5</targetGene>
+    <customLabel>olive skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin6</defName>
+    <targetGene>Skin_Melanin6</targetGene>
+    <customLabel>tanned skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin7</defName>
+    <targetGene>Skin_Melanin7</targetGene>
+    <customLabel>warm caramel skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin8</defName>
+    <targetGene>Skin_Melanin8</targetGene>
+    <customLabel>chestnut brown skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Melanin9</defName>
+    <targetGene>Skin_Melanin9</targetGene>
+    <customLabel>dark espresso skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Exotic Skin Colors ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Blue</defName>
+    <targetGene>Skin_Blue</targetGene>
+    <customLabel>cyan-blue skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Purple</defName>
+    <targetGene>Skin_Purple</targetGene>
+    <customLabel>violet-purple skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Green</defName>
+    <targetGene>Skin_Green</targetGene>
+    <customLabel>moss-green skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_PaleRed</defName>
+    <targetGene>Skin_PaleRed</targetGene>
+    <customLabel>pale reddish skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_DeepRed</defName>
+    <targetGene>Skin_DeepRed</targetGene>
+    <customLabel>deep crimson skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_PaleYellow</defName>
+    <targetGene>Skin_PaleYellow</targetGene>
+    <customLabel>pastel yellow skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_DeepYellow</defName>
+    <targetGene>Skin_DeepYellow</targetGene>
+    <customLabel>vibrant yellow skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_Orange</defName>
+    <targetGene>Skin_Orange</targetGene>
+    <customLabel>bright orange skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_SheerWhite</defName>
+    <targetGene>Skin_SheerWhite</targetGene>
+    <customLabel>chalk-white skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_InkBlack</defName>
+    <targetGene>Skin_InkBlack</targetGene>
+    <customLabel>pitch-black skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_SlateGray</defName>
+    <targetGene>Skin_SlateGray</targetGene>
+    <customLabel>slate-gray skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Skin_LightGray</defName>
+    <targetGene>Skin_LightGray</targetGene>
+    <customLabel>ashen-gray skin</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Physical Mutations & Cosmetic Features ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Hands_Pig</defName>
+    <targetGene>Hands_Pig</targetGene>
+    <customLabel>cloven pig trotters instead of hands</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Nose_Pig</defName>
+    <targetGene>Nose_Pig</targetGene>
+    <customLabel>pig snout</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Ears_Pig</defName>
+    <targetGene>Ears_Pig</targetGene>
+    <customLabel>pig ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Ears_Cat</defName>
+    <targetGene>Ears_Cat</targetGene>
+    <customLabel>cat ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Ears_Floppy</defName>
+    <targetGene>Ears_Floppy</targetGene>
+    <customLabel>floppy hound ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Ears_Pointed</defName>
+    <targetGene>Ears_Pointed</targetGene>
+    <customLabel>pointed elven ears</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Tail_Furry</defName>
+    <targetGene>Tail_Furry</targetGene>
+    <customLabel>furry mammalian tail</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Tail_Smooth</defName>
+    <targetGene>Tail_Smooth</targetGene>
+    <customLabel>smooth hairless tail</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Headbone_CenterHorn</defName>
+    <targetGene>Headbone_CenterHorn</targetGene>
+    <customLabel>single forehead horn</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Headbone_MiniHorns</defName>
+    <targetGene>Headbone_MiniHorns</targetGene>
+    <customLabel>pair of small brow horns</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Brow_Heavy</defName>
+    <targetGene>Brow_Heavy</targetGene>
+    <customLabel>heavy neanderthal brow ridge</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_FacialRidges</defName>
+    <targetGene>FacialRidges</targetGene>
+    <customLabel>bony facial ridges</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Head_Gaunt</defName>
+    <targetGene>Head_Gaunt</targetGene>
+    <customLabel>gaunt skeletal skull</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Jaw_Heavy</defName>
+    <targetGene>Jaw_Heavy</targetGene>
+    <customLabel>heavy square jaw</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Furskin</defName>
+    <targetGene>Furskin</targetGene>
+    <customLabel>thick animal furskin covering entire body</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Body_Fat</defName>
+    <targetGene>Body_Fat</targetGene>
+    <customLabel>heavy stocky build</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Body_Hulk</defName>
+    <targetGene>Body_Hulk</targetGene>
+    <customLabel>hulking muscular build</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Body_Thin</defName>
+    <targetGene>Body_Thin</targetGene>
+    <customLabel>lean slender build</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VoicePig</defName>
+    <targetGene>VoicePig</targetGene>
+    <customLabel>porcine grunting voice</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_VoiceRoar</defName>
+    <targetGene>VoiceRoar</targetGene>
+    <customLabel>deep roaring voice</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_ElongatedFingers</defName>
+    <targetGene>ElongatedFingers</targetGene>
+    <customLabel>unusually long dexterous fingers</customLabel>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Sanguophage / Hemogen Abilities & Nature ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Bloodfeeder</defName>
+    <targetGene>Bloodfeeder</targetGene>
+    <customLabel>bloodfeeder fangs</customLabel>
+    <promptDescription>retractable fangs and mouth organ to extract fresh hemogen directly from living people</promptDescription>
+    <behavioralDirective>You are a sanguivore who extracts life-sustaining hemogen by sinking your fangs into living victims. You view blood feeding as a vital, intimate, and predatory necessity, speaking of mortal human blood with visceral hunger or dark elegance.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Coagulate</defName>
+    <targetGene>Coagulate</targetGene>
+    <customLabel>coagulating touch</customLabel>
+    <promptDescription>special glands in hands producing rapid clotting agents to instantly seal bleeding wounds</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_PiercingSpine</defName>
+    <targetGene>PiercingSpine</targetGene>
+    <customLabel>piercing spine</customLabel>
+    <promptDescription>ability to launch high-velocity keratin spines from the chest at targets</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_LongjumpLegs</defName>
+    <targetGene>LongjumpLegs</targetGene>
+    <customLabel>longjump legs</customLabel>
+    <promptDescription>hemogen-pressurized leg muscles allowing massive propelled leaps across terrain</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Archite Abilities & Transmutation ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Resurrect</defName>
+    <targetGene>Resurrect</targetGene>
+    <customLabel>resurrection</customLabel>
+    <promptDescription>subdermal archites capable of rebuilding dead organic tissue and restoring corpses to life</promptDescription>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_XenogermReimplanter</defName>
+    <targetGene>XenogermReimplanter</targetGene>
+    <customLabel>xenogerm reimplantation</customLabel>
+    <promptDescription>oral organ allowing the implantation of your entire genetic code into another human, transforming them into your xenotype</promptDescription>
+    <!--<behavioralDirective>You carry the power to propagate your rare bloodline by turning others into your kind. You view your xenotype as an elite lineage and see xenogerm reimplantation as a sacred or monumental act of transformation.</behavioralDirective>-->
+  </EchoColony.GeneAIPromptDef>
+
+  <!-- ==================== Mood & Emotional Temperament ==================== -->
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Mood_Depressive</defName>
+    <targetGene>Mood_Depressive</targetGene>
+    <customLabel>chronically gloomy</customLabel>
+    <promptDescription>innate biological predisposition to profound melancholy and despair</promptDescription>
+    <behavioralDirective>You possess a deeply pessimistic, gloomy outlook on life. Even in victories or pleasant moments, you anticipate disaster and dwell on the bleakest aspects of reality.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+  <EchoColony.GeneAIPromptDef>
+    <defName>Prompt_Mood_Sanguine</defName>
+    <targetGene>Mood_Sanguine</targetGene>
+    <customLabel>unshakeably cheerful</customLabel>
+    <promptDescription>innate biological predisposition to constant joy and boundless optimism</promptDescription>
+    <behavioralDirective>You possess an irrepressible, radiant optimism. You remain cheerful and resilient even in devastating crises, constantly encouraging others and finding silver linings.</behavioralDirective>
+  </EchoColony.GeneAIPromptDef>
+
+</Defs>
