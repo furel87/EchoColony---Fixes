@@ -4,9 +4,9 @@ obj/
 source/obj/
 source/bin/
 
-# DLLs (Ignora DLLs sueltas pero conserva las assemblies oficiales del mod para que funcione al descargarlo)
+# DLLs
 *.dll
-!1.6/Assemblies/*.dll
+1.6/Assemblies/
 
 # Visual Studio / VS Code
 .vs/
