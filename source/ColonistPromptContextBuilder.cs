@@ -538,51 +538,155 @@ namespace EchoColony
             else return "";
         }
 
-        ///*furel - improvement* The relationships were compared to given strings. Now searches for existing relationDefs.
+        ///*furel - improvement* Optimized relationships:
+        // - Colony members are always included (even with neutral/low opinion).
+        // - Outsiders (non-colony) are only included if they have a strong relationship:
+        //   family/partner, strong friend (opinion >= 40), or mortal enemy (opinion <= -40).
         private static string BuildOptimizedRelationships(Pawn pawn)
         {
-            var colonists = Find.CurrentMap?.mapPawns?.FreeColonistsSpawned;
-            if (colonists == null || pawn.relations == null) return "*Relationships:* None";
+            if (pawn?.relations == null) return "*Relationships:* None";
+
+            var map = pawn.Map ?? Find.CurrentMap;
+            var colonyList = map?.mapPawns?.FreeColonistsSpawned
+                             ?? PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_Colonists;
+
+            var colonyMembers = (colonyList ?? new List<Pawn>())
+                .Where(p => p != null && p != pawn && p.Faction == Faction.OfPlayer && !p.Dead && !p.IsSlave && !p.IsPrisoner)
+                .Distinct()
+                .ToList();
 
             var family = new List<string>();
-            var significant = new List<string>();
+            var colonyOthers = new List<(Pawn pawn, string entry, int opinion)>();
+            var notableOutsiders = new List<(Pawn pawn, string entry, int opinion)>();
 
-            foreach (var other in colonists.Where(p => p != pawn))
+            // 1. Miembros de la colonia (todos son incluidos)
+            foreach (var other in colonyMembers)
             {
-                // Si existe relación, RimWorld nos devuelve el Def directamente
+                var relationDef = pawn.GetRelations(other).FirstOrDefault();
+                int opinion = pawn.relations.OpinionOf(other);
+                string entry = FormatRelationEntry(other, relationDef, opinion, isOutsider: false);
+
+                if (relationDef != null)
+                    family.Add(entry);
+                else
+                    colonyOthers.Add((other, entry, opinion));
+            }
+
+            // 2. Peones de fuera de la colonia (candidatos conocidos por relaciones, recuerdos o presencia)
+            var candidateOutsiders = new HashSet<Pawn>();
+
+            if (pawn.relations.DirectRelations != null)
+            {
+                foreach (var rel in pawn.relations.DirectRelations)
+                {
+                    if (rel?.otherPawn != null)
+                        candidateOutsiders.Add(rel.otherPawn);
+                }
+            }
+
+            if (pawn.needs?.mood?.thoughts?.memories?.Memories != null)
+            {
+                foreach (var mem in pawn.needs.mood.thoughts.memories.Memories)
+                {
+                    if (mem is Thought_MemorySocial soc && soc.otherPawn != null)
+                        candidateOutsiders.Add(soc.otherPawn);
+                }
+            }
+
+            if (map?.mapPawns?.AllPawnsSpawned != null)
+            {
+                foreach (var p in map.mapPawns.AllPawnsSpawned)
+                {
+                    if (p != null)
+                        candidateOutsiders.Add(p);
+                }
+            }
+
+            var colonySet = new HashSet<Pawn>(colonyMembers) { pawn };
+
+            foreach (var other in candidateOutsiders)
+            {
+                if (other == null || other.Dead || other.RaceProps?.Humanlike != true)
+                    continue;
+
+                // Si ya es colono de la colonia, se procesó arriba
+                if (colonySet.Contains(other) || (other.Faction == Faction.OfPlayer && other.IsColonist))
+                    continue;
+
                 var relationDef = pawn.GetRelations(other).FirstOrDefault();
                 int opinion = pawn.relations.OpinionOf(other);
 
-                bool hasRelation = relationDef != null;
-                bool isSignificant = Math.Abs(opinion) >= 20;
+                bool hasFamilyRelation = relationDef != null;
+                bool isStrongFriend = opinion >= 40;
+                bool isMortalEnemy = opinion <= -40;
 
-                if (hasRelation || isSignificant)
+                // Solo se incluyen de fuera si tienen relación fuerte: familia, amigo o enemigo mortal
+                if (hasFamilyRelation)
                 {
-                    string ageGender = FormatAgeAndGender(other);
-                    string xenotype = GenePromptClassifier.GetPawnXenotypeLabel(other);
-                    string attractiveness = UtilsPromptHelpers.GetPawnAttractivenessSummary(other);
-                    string appearance = UtilsPromptHelpers.GetPawnAppearanceSummary(other);
-
-                    string opinionDesc = RelationsPromptClassifier.GetOpinionLabel(opinion);
-
-                    string relLabel = hasRelation ? $"{relationDef.GetGenderSpecificLabelCap(other)}, " : "";
-                    string attractBlock = !string.IsNullOrEmpty(attractiveness) ? $" [Attractiveness: {attractiveness}]" : "";
-                    string appearanceBlock = !string.IsNullOrEmpty(appearance) ? $" [Appearance: {appearance}]" : "";
-
-                    string entry = $"  • {other.LabelShort} ({relLabel}{ageGender}, {xenotype}){attractBlock}{appearanceBlock} - {opinionDesc}";
-
-                    if (hasRelation) family.Add(entry);
-                    else significant.Add(entry);
+                    string entry = FormatRelationEntry(other, relationDef, opinion, isOutsider: true);
+                    family.Add(entry);
+                }
+                else if (isStrongFriend || isMortalEnemy)
+                {
+                    string entry = FormatRelationEntry(other, null, opinion, isOutsider: true);
+                    notableOutsiders.Add((other, entry, opinion));
                 }
             }
 
             var result = new List<string>();
-            if (family.Any()) result.Add("*Family & Close Relations:*\n" + string.Join("\n", family));
-            if (significant.Any()) result.Add("*Other Colonists:*\n" + string.Join("\n", significant.Take(6)));
+
+            if (family.Any())
+                result.Add("*Family & Close Relations:*\n" + string.Join("\n", family));
+
+            if (colonyOthers.Any())
+            {
+                // Ordenar por impacto de opinión (las opiniones más marcadas primero)
+                var orderedColonyOthers = colonyOthers.OrderByDescending(x => Math.Abs(x.opinion)).ToList();
+                var displayList = orderedColonyOthers.Take(15).Select(x => x.entry).ToList();
+                if (orderedColonyOthers.Count > 15)
+                    displayList.Add($"  • ...and {orderedColonyOthers.Count - 15} other colonists");
+
+                result.Add("*Other Colonists:*\n" + string.Join("\n", displayList));
+            }
+
+            if (notableOutsiders.Any())
+            {
+                // Ordenar los de fuera por magnitud de opinión, limitando a los más relevantes
+                var orderedOutsiders = notableOutsiders.OrderByDescending(x => Math.Abs(x.opinion)).Take(8).Select(x => x.entry);
+                result.Add("*Notable Outsiders (Friends & Rivals):*\n" + string.Join("\n", orderedOutsiders));
+            }
 
             return result.Any()
                 ? string.Join("\n", result)
                 : "*Relationships:* None significant";
+        }
+
+        private static string FormatRelationEntry(Pawn other, PawnRelationDef relationDef, int opinion, bool isOutsider)
+        {
+            string ageGender = FormatAgeAndGender(other);
+            string xenotype = GenePromptClassifier.GetPawnXenotypeLabel(other);
+            string attractiveness = UtilsPromptHelpers.GetPawnAttractivenessSummary(other);
+            string appearance = UtilsPromptHelpers.GetPawnAppearanceSummary(other);
+
+            string opinionDesc = RelationsPromptClassifier.GetOpinionLabel(opinion);
+
+            string relLabel = relationDef != null ? $"{relationDef.GetGenderSpecificLabelCap(other)}, " : "";
+            string attractBlock = !string.IsNullOrEmpty(attractiveness) ? $" [Attractiveness: {attractiveness}]" : "";
+            string appearanceBlock = !string.IsNullOrEmpty(appearance) ? $" [Appearance: {appearance}]" : "";
+
+            string outsiderBlock = "";
+            if (isOutsider)
+            {
+                string statusStr;
+                if (other.IsPrisonerOfColony) statusStr = "Colony Prisoner";
+                else if (other.IsSlaveOfColony) statusStr = "Colony Slave";
+                else if (other.Faction != null) statusStr = $"Outsider - {other.Faction.Name}";
+                else statusStr = "Outsider";
+
+                outsiderBlock = $" [{statusStr}]";
+            }
+
+            return $"  • {other.LabelShort} ({relLabel}{ageGender}, {xenotype}){outsiderBlock}{attractBlock}{appearanceBlock} - {opinionDesc}";
         }
 
         private static string BuildColonyPopulation(Pawn pawn)
